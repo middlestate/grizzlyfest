@@ -1,0 +1,85 @@
+@import 'zx_settings'
+
+normalize-css()
+base()
+
+
+
+
+p,a,li,span,h1,h2,h3,h4,h5,h6,input,textarea
+	font-family $defaultFont
+h1,h2,h3,h4,h5,h6,p,span
+	margin-bottom 25px
+h2
+	font-size 62px
+	line-height 78px
+	font-weight 900
+	color $white
+h3
+	font-size 50px
+	line-height 62px
+	font-weight 900
+h4
+	font-size 42px
+	line-height 56px
+	font-weight 900
+h5
+	font-size 32px
+	line-height 46px
+	font-weight 900
+
+
+.imagebg
+	.background-image-holder
+		background-position center center
+.bg-pink
+	background-color $pink
+.bg-blue
+	background-color $blue
+	&.bg-t5
+		background-color $bluet5
+.bg-maroon
+	background-color $maroon
+.bg-purple
+	background-color $purple
+	
+.color-pink
+	color $pink
+.color-blue
+	color $blue
+.color-maroon
+	color $maroon
+.color-purple
+	color $purple
+.color-white
+	color $white
+
+
+[data-overlay]
+	&::before
+		opacity 0.5
+	&.heavy::before
+		opacity 0.9
+	&.pink::before
+		background $pink
+	&.blue::before
+		background $blue
+	&.maroon::before
+		background $maroon
+	&.purple::before
+		background $purple
+	.container
+		z-index 1
+
+// --- misc
+.separator
+	height 50px
+	width 100%
+	background-size contain
+	background-image url('/img/icon/paw-white.png')
+	background-repeat no-repeat
+	background-position center center
+	margin-bottom 25px
+.x-pad
+	padding-top 25px
+	padding-bottom 25px

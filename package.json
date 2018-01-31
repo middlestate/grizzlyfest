@@ -1,0 +1,17 @@
+{
+  "name": "grizzlyfest",
+  "description": "grizzlyfestival",
+  "dependencies": {
+    "autoprefixer-stylus": "0.9.x",
+    "axis": "0.6.x",
+    "coffee-script": "1.x",
+    "css-pipeline": "0.3.x",
+    "jade": "1.x",
+    "js-pipeline": "0.2.x",
+    "jstransformer-marked": "1.x",
+    "marked": "^0.3.12",
+    "roots-contentful": "0.0.9",
+    "rupture": "0.6.x",
+    "stylus": "0.54.x"
+  }
+}

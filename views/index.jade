@@ -1,0 +1,74 @@
+extends layout
+
+block content
+	section.imagebg.parallax.pink.height-100(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/home-header.jpg")
+		.container.pos-vertical-center
+			.row.text-center
+				.col-sm-12
+					img(src="/img/logo/logo-blue.png")
+					.counter-class(data-date='2018/05/18 14:30:00')
+						#countdown-timer
+							.countdown-section
+								span.countdown-amount.first-item.countdown-days.counter-days 106
+								span.countdown-period Days
+							.countdown-section
+								span.countdown-amount.countdown-hours.counter-hours 23
+								span.countdown-period Hours
+							.countdown-section
+								span.countdown-amount.countdown-minutes.counter-minutes 48
+								span.countdown-period Minutes
+							.countdown-section
+								span.countdown-amount.countdown-seconds.counter-seconds 34
+								span.countdown-period Seconds
+					h2 MAY 18TH & 19TH 2018
+	section.height-70.imagebg
+		.background-image-holder
+			img(src="/img/bg/home-img1.jpg")
+		.container.pos-vertical-center
+			.row.text-center
+				.x-pad.col-sm-6.col-sm-offset-6.bg-blue.bg-t5
+					h2 THE LOCATION
+					.separator
+					h5.color-white.
+						FRESNO, CALIFORNIA #[br]
+						WOODWARD PARK#[br]
+						2:30PM - MIDNIGHT#[br]
+						ALL AGES
+	section.imagebg.maroon.heavy(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/home-img2.jpg")
+		.container.masonry
+			.row.text-center
+				.col-sm-12
+					h2 THE LINEUP
+					.separator
+			.row.masonry__container.text-center
+				.col-sm-4.masonry__item
+					a(href="#")
+						img(src="/img/artists/snoopDogg.jpg")
+						span Snoop Dogg
+				.col-sm-4.masonry__item
+					a(href="#")
+						img(src="/img/artists/C5-Hi-Res.jpg")
+						span C5
+				.col-sm-4.masonry__item
+					a(href="#")
+						img(src="/img/artists/Mangchi.jpg")
+						span Mangchi
+				.col-sm-4.masonry__item
+					a(href="#")
+						img(src="/img/artists/Phantogram-small.jpg")
+						span Phantogram
+				.col-sm-4.masonry__item
+					a(href="#")
+						img(src="/img/artists/Sharks-of-Dance.jpg")
+				.col-sm-4.masonry__item
+					a(href="#")
+						img(src="/img/artists/The Gospel Whiskey Runners.jpg")
+	
+	section.imagebg.blue(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/home-img4.jpg")
+		.container.masonry
