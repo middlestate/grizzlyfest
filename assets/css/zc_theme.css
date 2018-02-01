@@ -1010,10 +1010,10 @@ div[data-overlay] ul {
 
     .btn .btn__text,
     .btn i {
-        color: #252525;
+        /* color: #252525;
         border-color: #252525;
         font-weight: 700;
-        font-size: 0.85714286em;
+        font-size: 0.85714286em; */
     }
 
     .btn[class*='col-'] {
@@ -5426,7 +5426,7 @@ p > .btn {
 }
 
     .bg--dark .btn:not(.btn--primary):hover {
-        border-color: #656565;
+        /* border-color: #656565; */
     }
 
 .bg--dark .btn .btn__text {
@@ -5490,7 +5490,7 @@ p.lead img {
 }
 
 .imagebg:not(.image--light) span {
-    color: #fff;
+    /* color: #fff; */
 }
 
 .imagebg.border--round {
