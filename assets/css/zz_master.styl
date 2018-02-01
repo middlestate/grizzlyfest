@@ -60,9 +60,30 @@ h5
 	color $maroon
 .color-purple
 	color $purple
+.color-lightblue
+	color $lightblue
 .color-white
 	color $white
 
+.btn
+	border none
+	border-radius 0px
+	&.maroon
+		background-color $maroon
+	&.blue
+		background-color $blue
+	&.lightblue
+		background-color $lightblue
+	&.pink
+		background-color $pink
+	&.purple
+		background-color $purple
+	&.white
+		background-color $white
+	.btn__text
+		font-weight 600
+		font-size 18px
+		text-transform uppercase
 
 [data-overlay]
 	&::before
@@ -88,13 +109,14 @@ h5
 
 
 // --- misc
-.angle
+.angle:not(.btn)
 	clip-path: polygon(0 0, 100% 200px, 100% 100%, 0 100%);
 	margin-top -200px
 	padding 200px 0
 	z-index 2
 	position relative
 	&.footer
+		margin-top -200px
 		padding 200px 0 50px 0
 	@media (max-width 992px)
 		clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 100%);
@@ -108,8 +130,12 @@ h5
 		padding 75px 0
 		&.footer
 			padding 50px 0 25px 0
-
-
+a.btn.angle
+	clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+	&:hover
+		clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+#map.angle
+	padding 0
 .separator
 	height 50px
 	width 100%
