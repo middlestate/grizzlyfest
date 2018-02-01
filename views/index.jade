@@ -1,6 +1,7 @@
 extends layout
 
 block content
+	p= JSON.stringify(contentful.artists)
 	section.imagebg.parallax.pink.height-100(data-overlay)
 		.background-image-holder
 			img(src="/img/bg/home-header.jpg")
@@ -39,34 +40,32 @@ block content
 	section.angle.imagebg.maroon.heavy(data-overlay)
 		.background-image-holder
 			img(src="/img/bg/home-img2.jpg")
-		.container.masonry
+		#artists.container.masonry
 			.row.text-center
 				.col-sm-12
 					h2 THE LINEUP
 					.separator
 			.row.masonry__container.text-center
-				.col-sm-4.masonry__item
+				if contentful.artists != undefined
+					for item in contentful.artists
+						.artist.col-sm-4.col-xs-6.masonry__item
+							a(href="#{item._url}")
+								img.artist-photo(src="#{asset(item.artistPhoto)}")
+								span.artist-name= item.artistName
+								if item.socialLinks != undefined
+									ul.social-media
+										for link in item.socialLinks
+											li
+												a(href="#{link.fields.url}" target="_blank")
+													i.fa(class="fa-#{link.fields.site}")
+				//-.artist.col-sm-4.col-xs-6.masonry__item
 					a(href="#")
-						img(src="/img/artists/snoopDogg.jpg")
-						span Snoop Dogg
-				.col-sm-4.masonry__item
-					a(href="#")
-						img(src="/img/artists/C5-Hi-Res.jpg")
-						span C5
-				.col-sm-4.masonry__item
-					a(href="#")
-						img(src="/img/artists/Mangchi.jpg")
-						span Mangchi
-				.col-sm-4.masonry__item
-					a(href="#")
-						img(src="/img/artists/Phantogram-small.jpg")
-						span Phantogram
-				.col-sm-4.masonry__item
-					a(href="#")
-						img(src="/img/artists/Sharks-of-Dance.jpg")
-				.col-sm-4.masonry__item
-					a(href="#")
-						img(src="/img/artists/The Gospel Whiskey Runners.jpg")
+						img.artist-photo(src="/img/artists/snoopDogg.jpg")
+						span.artist-name Snoop Dogg
+						ul.social-media
+							li
+								a(href="#" target="_blank")
+									i.fa.fa-instagram
 		.container
 			.row.text-center
 				.col-sm-12
