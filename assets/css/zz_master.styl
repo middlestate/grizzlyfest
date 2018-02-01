@@ -88,6 +88,16 @@ h5
 
 
 // --- misc
+.angle
+	clip-path: polygon(0 0, 100% 200px, 100% 100%, 0 100%);
+	margin-top -200px
+	padding 200px 0
+	z-index 2
+	position relative
+	@media (max-width 992px)
+		clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 100%);
+		margin-top -100px
+		padding 100px 0
 .separator
 	height 50px
 	width 100%
@@ -253,9 +263,14 @@ header
 				a.btn
 					padding 0 20px
 			ul.menu-vertical
+				display block
 				li
 					display block
 					opacity 1
+					&:not(:first-child)
+						padding 0px 10px 20px 10px
+					&:first-child
+						padding 20px 10px 20px 10px
 			.dropdown
 				.dropdown__content
 					background $bluet5
