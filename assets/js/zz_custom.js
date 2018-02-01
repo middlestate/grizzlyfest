@@ -1,8 +1,8 @@
-$('video').click(function(){
-	if($(this)[0].paused){
-		$(this)[0].play()
+$(document).on('scroll', function(){
+	if($(document).scrollTop() > 300 && !$('header').hasClass('sticky')){
+		$('header').addClass('sticky');
 	}
-	else {
-		$(this)[0].pause()
+	else if ($(document).scrollTop() < 300 && $('header').hasClass('sticky')){
+		$('header').removeClass('sticky');
 	}
 })

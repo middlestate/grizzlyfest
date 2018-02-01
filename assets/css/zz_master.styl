@@ -1,10 +1,19 @@
 @import 'zx_settings'
 
-normalize-css()
-base()
+// normalize-css()
+// base()
 
 
-
+body
+	.content,footer
+		position relative
+	.content,header,footer
+		right 0
+		transition 0.5s
+	&.custom-toggled-class
+		.content,header,footer
+			right 80vw
+			transition 0.5s
 
 p,a,li,span,h1,h2,h3,h4,h5,h6,input,textarea
 	font-family $defaultFont
@@ -64,12 +73,19 @@ h5
 		background $pink
 	&.blue::before
 		background $blue
+	&.lightblue::before
+		background $lightblue
 	&.maroon::before
 		background $maroon
 	&.purple::before
 		background $purple
 	.container
 		z-index 1
+
+
+
+
+
 
 // --- misc
 .separator
@@ -83,3 +99,265 @@ h5
 .x-pad
 	padding-top 25px
 	padding-bottom 25px
+
+
+
+
+
+
+
+
+// --- header
+.fa-times-thin:before
+	content '\00d7'
+.closeX
+	color $white
+	position absolute
+	top 8px
+	right 25px
+	font-size 40px
+	cursor pointer
+body.index
+	header:not(.sticky)
+		img.logo
+			display none
+#menu-overlay-toggle
+	display none
+	height 100%
+	width 100%
+	position fixed
+	z-index 9
+	background rgba(0,0,0,0.5)
+	transition 0.5s
+	&.custom-toggled-class
+		z-index 0
+		//display none
+		background rgba(0,0,0,0.0)
+		transition 0.5s
+.dropdown__content
+	border-radius 0 !important
+	//box-shadow none !important
+	li
+		padding 10px 20px
+	a
+		padding 10px 20px
+#menu1
+	width auto
+	float none !important
+	//padding-top 10px
+
+header
+	height $headerHeight
+	position absolute
+	z-index 10
+	width 100%
+	.hamburger-toggle
+		display block
+		position relative
+		height 25px
+		width 22px
+		top 17px
+		right 10px
+		margin-left 22px
+		float right
+	.hamburg
+		position relative
+		top 12px
+	.hamburg span, .hamburg span:before, .hamburg span:after
+		//top 10px
+		cursor pointer
+		border-radius 1px
+		height 2px
+		width 22px
+		background white
+		position relative
+		display block
+		content ''
+
+	.hamburg span:before
+		top -8px
+	.hamburg span:after
+		bottom -6px
+	&.sticky
+		height 80px
+		position fixed
+		background $bluet5
+		a.logo
+			height 70px
+			.logo
+				height 70px
+		nav
+			#mega-menu
+				ul.menu-horizontal
+					li
+						line-height 40px !important
+					//top -10px
+					&>li > a, &>li > span.dropdown__trigger
+						line-height 80px !important
+					.dropdown
+						.dropdown__container
+							top 80px
+
+	// div
+	// 	position relative
+	// 	height 100%
+	a.logo
+		height 100px
+		position absolute
+		z-index 5
+		top 0
+		bottom 0
+		margin auto
+		.logo
+			height 100px
+
+
+	.nav-container
+		height 100%
+
+	nav
+		#mega-menu
+			position relative
+			//top 20px
+			a, span.dropdown__trigger
+				text-transform uppercase
+				opacity 1
+				color $white
+				transition .2s
+				font-size 16px
+				line-height inherit
+				font-weight 600
+				&:hover
+					color $blue
+					transition .2s
+			h1,h2,h3,h4,h5,h6,p
+				a
+					color $blue
+			ul.menu-horizontal
+				position relative
+				//top 10px
+				&>li
+					line-height 120px
+					display inline-block
+					&:not(:last-child)
+						margin-right 15px
+					&.header-btn
+						margin-right 0px
+						margin-left 15px
+					h6
+						font-size 16px
+					@media (max-width:992px)
+						line-height 25px
+						&.header-btn
+							margin-top 20px
+				a.btn
+					padding 0 20px
+			ul.menu-vertical
+				li
+					display block
+					opacity 1
+			.dropdown
+				.dropdown__content
+					background $bluet5
+					float left
+					position relative
+					width auto
+					padding 0
+
+
+// --- queries
+@media (max-width:992px)
+	#menu1
+		display block
+		width 80vw
+		right 0
+		transition 0.5s
+		position fixed
+		height 100vh
+		transition 0.5s
+		//width 100vw
+		background $maroon
+		top 0
+		&.custom-toggled-class
+			transition 0.5s
+			right -80vw !important
+			//display none
+		.container
+			padding 50px 25px
+	#menu-overlay-toggle
+		display block !important
+	.content
+		//padding-top 56px
+	.col-img-fix
+		position relative
+		min-height 300px
+		margin 15px 0
+	#updates-section
+		margin-top -25px
+	header
+		height 60px !important
+		.float-left
+			float left
+		.float-right
+			float right
+		&.sticky
+			a.logo
+				height 55px
+				img
+					height 100% !important
+		a.logo
+			height 55px
+			img
+				height 100% !important
+		.stack-interface
+			margin-top 5px
+		#mega-menu
+
+			top 0 !important
+			li
+				font-size 22px
+				margin 0 0 10px 0
+				padding 3px 20px
+		#mini-menu
+
+			top 0 !important
+			li
+				font-size 18px
+				margin 0 0 10px 0
+				padding 3px 20px
+		.dropdown__trigger
+			font-size 15px
+		#language-dropdown
+			li
+				padding 5px 0px
+				margin 0
+			right 0
+			left initial !important
+			transition 0.5s
+			position fixed
+			width 65%
+			@media (max-height:475px)
+				bottom 0
+				top initial
+
+
+	// #menu1
+	// 	width 80vw
+	// 	position fixed
+	// 	right 0
+	// 	transition 0.5s
+	// 	padding-top 0px
+	// 	//height 90vh
+	// 	overflow-y auto
+	// 	overflow-x hidden
+	.logo-mobile
+		margin-left 15px !important
+	.stack-menu
+		margin 25px 0px 0px 0px
+	ul.menu-horizontal
+		li
+			display block !important
+			&:not(:last-child)
+				margin-right 15px
+			&.header-btn
+				margin-left 0 !important

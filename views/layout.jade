@@ -20,9 +20,10 @@ html(xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#")
 
 		!= css("/")
 
-	body
+	body.dropdowns--hover(class="#{_path.substr(1,_path.indexOf('.')-1)}")
 		include /partials/_header
-		block content
+		.content
+			block content
 		include /partials/_footer
 		!= js("/")
 		//- Google Analytics
