@@ -19,8 +19,10 @@ html(xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#")
 		block head
 
 		!= css("/")
-
-	body.dropdowns--hover(class="#{_path.substr(1,_path.indexOf('.')-1)}")
+	
+	- var pageClass = /((?!\/)\w+(?=\.))/.exec(_path) == null ? '' : /((?!\/)\w+(?=\.))/.exec(_path)
+	- console.log(pageClass)
+	body.dropdowns--hover(class="#{pageClass[0]}")
 		include /partials/_header
 		.content
 			block content
