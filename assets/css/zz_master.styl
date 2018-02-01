@@ -94,10 +94,22 @@ h5
 	padding 200px 0
 	z-index 2
 	position relative
+	&.footer
+		padding 200px 0 50px 0
 	@media (max-width 992px)
 		clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 100%);
 		margin-top -100px
 		padding 100px 0
+		&.footer
+			padding 100px 0 50px 0
+	@media (max-width:767px)
+		clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+		margin-top -50px
+		padding 75px 0
+		&.footer
+			padding 50px 0 25px 0
+
+
 .separator
 	height 50px
 	width 100%
@@ -199,14 +211,18 @@ header
 		nav
 			#mega-menu
 				ul.menu-horizontal
-					li
-						line-height 40px !important
-					//top -10px
+					&>li
+						@media(min-width:992px)
+							line-height 40px
+							&.dropdown
+								top -2px
+
 					&>li > a, &>li > span.dropdown__trigger
-						line-height 80px !important
-					.dropdown
-						.dropdown__container
-							top 80px
+						@media(min-width:992px)
+							line-height 80px
+						.dropdown:not(.dropdown--active)
+							.dropdown__container
+								top 80px
 
 	// div
 	// 	position relative
@@ -249,8 +265,6 @@ header
 				&>li
 					line-height 120px
 					display inline-block
-					&:not(:last-child)
-						margin-right 15px
 					&.header-btn
 						margin-right 0px
 						margin-left 15px
@@ -267,17 +281,34 @@ header
 				li
 					display block
 					opacity 1
+					margin 0
 					&:not(:first-child)
-						padding 0px 10px 20px 10px
+						a
+							padding 10px 10px 10px 10px
 					&:first-child
-						padding 20px 10px 20px 10px
+						a
+							padding 20px 10px 10px 10px
+					&:last-child
+						a
+							padding 10px 10px 20px 10px
 			.dropdown
+				@media (max-width:992px)
+					line-height 25px
+					.dropdown__content
+						float none !important
+						li
+							a
+								display block
+							&:not(:last-child)
+								a
+									border-bottom solid $blue 1px
 				.dropdown__content
 					background $bluet5
 					float left
 					position relative
 					width auto
 					padding 0
+						
 
 
 // --- queries
@@ -289,6 +320,7 @@ header
 		transition 0.5s
 		position fixed
 		height 100vh
+		overflow-y auto
 		transition 0.5s
 		//width 100vw
 		background $maroon
@@ -298,7 +330,7 @@ header
 			right -80vw !important
 			//display none
 		.container
-			padding 50px 25px
+			padding 50px 25px 50px 0
 	#menu-overlay-toggle
 		display block !important
 	.content
@@ -327,33 +359,13 @@ header
 		.stack-interface
 			margin-top 5px
 		#mega-menu
-
 			top 0 !important
 			li
 				font-size 22px
 				margin 0 0 10px 0
 				padding 3px 20px
-		#mini-menu
-
-			top 0 !important
-			li
-				font-size 18px
-				margin 0 0 10px 0
-				padding 3px 20px
 		.dropdown__trigger
 			font-size 15px
-		#language-dropdown
-			li
-				padding 5px 0px
-				margin 0
-			right 0
-			left initial !important
-			transition 0.5s
-			position fixed
-			width 65%
-			@media (max-height:475px)
-				bottom 0
-				top initial
 
 
 	// #menu1
