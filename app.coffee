@@ -18,6 +18,17 @@ module.exports =
 	extensions: [
 		js_pipeline(files: ['assets/js/*.js','assets/js/*.coffee']),
 		css_pipeline(files: ['assets/css/*.css','assets/css/*.styl'])
+		contentful
+			access_token:'74cacbafcaa3ea5e845b748967be91f6697e813b0e51272726505dc47d292a8c'
+			space_id:'iqajn39axb7g'
+			content_types:
+				artists:
+					id:'artist'
+					filters:{
+						'order':'fields.order'
+					}
+					template: '/views/partials/artist.jade'
+					path: (e) -> "artist/#{e.url}"
 	]
 
 	stylus:
