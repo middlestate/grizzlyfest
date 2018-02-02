@@ -17,5 +17,5 @@ block content
 						ul.artist-social
 							for item in entry.socialLinks
 								li
-									a(href="item.fields.url" target="_blank")
+									a(href="#{item.fields.url}" target="_blank")
 										i.fa(class="fa-#{item.fields.site}")
