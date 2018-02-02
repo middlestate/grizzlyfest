@@ -47,17 +47,20 @@ block content
 					.separator
 			.row.masonry__container.text-center
 				if contentful.artists != undefined
+					- var max = 8
 					for item in contentful.artists
-						.artist.col-sm-4.col-xs-6.masonry__item
-							a(href="#{item._url}")
-								img.artist-photo(src="#{asset(item.artistPhoto)}")
-								span.artist-name= item.artistName
-								if item.socialLinks != undefined
-									ul.social-media
-										for link in item.socialLinks
-											li
-												a(href="#{link.fields.url}" target="_blank")
-													i.fa(class="fa-#{link.fields.site}")
+						- max--
+						if max >= 0
+							.artist.col-sm-4.col-xs-6.masonry__item
+								a(href="#{item._url}")
+									img.artist-photo(src="#{asset(item.artistPhoto)}")
+									span.artist-name= item.artistName
+									if item.socialLinks != undefined
+										ul.social-media
+											for link in item.socialLinks
+												li
+													a(href="#{link.fields.url}" target="_blank")
+														i.fa(class="fa-#{link.fields.site}")
 				//-.artist.col-sm-4.col-xs-6.masonry__item
 					a(href="#")
 						img.artist-photo(src="/img/artists/snoopDogg.jpg")
