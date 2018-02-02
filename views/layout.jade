@@ -19,10 +19,13 @@ html(xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#")
 		block head
 
 		!= css("/")
-	
+	//- run some logic to give the body tag a class of either: 1. the page name or 2. if the page is generated, get the content type (artist, sponsor, etc)
 	- var pageClass = /((?!\/)\w+(?=\.))/.exec(_path) == null ? '' : /((?!\/)\w+(?=\.))/.exec(_path)
-	- console.log(pageClass)
-	body.dropdowns--hover(class="#{pageClass[0]}")
+	- if(pageClass[0] === undefined && entry != null & entry.sys.contentType.sys.id != undefined){pageClass = entry.sys.contentType.sys.id}
+	- else{pageClass = pageClass[0]}
+	- console.log('loading a page type: ' + pageClass)
+	//-- console.log(pageClass)
+	body.dropdowns--hover(class="#{pageClass}")
 		include /partials/_header
 		.content
 			block content
