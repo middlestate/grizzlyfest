@@ -27,7 +27,7 @@ module.exports =
 					filters:{
 						'order':'fields.order'
 					}
-					template: '/views/partials/artist.jade'
+					template: '/views/partials/_artist.jade'
 					path: (e) -> "artist/#{e.url}"
 	]
 
