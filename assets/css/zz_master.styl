@@ -128,8 +128,10 @@ h5
 
 
 
-// --- misc
-.angle:not(.btn)
+
+
+// -- angle classes
+.angle:not(.btn):not(img)
 	clip-path: polygon(0 0, 100% 200px, 100% 100%, 0 100%);
 	margin-top -200px
 	padding 200px 0
@@ -150,12 +152,22 @@ h5
 		padding 75px 0
 		&.footer
 			padding 50px 0 25px 0
+//body:not(.index)
+// 	.footer.angle
+// 		margin-top 0
 a.btn.angle
 	clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
 	&:hover
 		clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
 #map.angle
 	padding 0
+img.angle
+	clip-path: polygon(0 0, calc(100% - 100px) 0, 100% 100%, 100px 100%);
+	padding 0 !important
+
+
+// --- misc
+
 .separator
 	height 50px
 	width 100%
@@ -167,13 +179,34 @@ a.btn.angle
 .x-pad
 	padding-top 25px
 	padding-bottom 25px
+.shift-up
+	position relative
+	top -200px
+	margin-bottom -200px
+	z-index 2
+section
+	&.shift-up
+		padding-top 0
 
 
 
+// --- artists bio page
+.artist-hero
+	.background-image-holder
+		filter blur(10px)
+.artist-social
+	li
+		display inline-block
+		margin 0 10px
+		a
+			display block
+			i
+				font-size 35px
+				color $textDefault
 
 
 
-//--- artists
+//--- artists section
 #artists
 	.artist
 		a
