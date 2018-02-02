@@ -1,0 +1,21 @@
+extends /layout
+
+block content
+	//-p= JSON.stringify(entry)
+	section.artist-hero.imagebg.parallax.height-50(data-overlay)
+		.background-image-holder
+			img(src="#{asset(entry.artistPhoto)}")
+	section.shift-up
+		.container
+			.row.text-center
+				.col-sm-12
+					img.artist-img.angle(src="#{asset(entry.artistPhoto)}")
+				.col-sm-12
+					h3= entry.artistName
+				.col-sm-12
+					if entry.socialLinks != undefined
+						ul.artist-social
+							for item in entry.socialLinks
+								li
+									a(href="item.fields.url" target="_blank")
+										i.fa(class="fa-#{item.fields.site}")
