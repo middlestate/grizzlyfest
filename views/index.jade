@@ -9,22 +9,22 @@ block content
 			.row.text-center
 				.col-sm-12
 					img(src="/img/logo/logo-blue.png")
-					.counter-class(data-date='2018/05/18 14:30:00')
+					#date-container.counter-class(data-date='2018/05/18 14:00:00')
 						#countdown-timer
 							.countdown-section
-								span.countdown-amount.first-item.countdown-days.counter-days 106
+								span.countdown-amount.first-item.countdown-days.counter-days XXX
 								span.countdown-period Days
 							.countdown-section
-								span.countdown-amount.countdown-hours.counter-hours 23
+								span.countdown-amount.countdown-hours.counter-hours XX
 								span.countdown-period Hours
 							.countdown-section
-								span.countdown-amount.countdown-minutes.counter-minutes 48
+								span.countdown-amount.countdown-minutes.counter-minutes XX
 								span.countdown-period Minutes
 							.countdown-section
-								span.countdown-amount.countdown-seconds.counter-seconds 34
+								span.countdown-amount.countdown-seconds.counter-seconds XX
 								span.countdown-period Seconds
 					h2 MAY 18TH & 19TH 2018
-	section.angle.height-70.imagebg
+	section.angle.height-70.imagebg.bg-ct
 		.background-image-holder
 			img(src="/img/bg/home-img1.jpg")
 		.container.pos-vertical-center
@@ -35,7 +35,7 @@ block content
 					h5.color-white.
 						FRESNO, CALIFORNIA #[br]
 						WOODWARD PARK#[br]
-						2:30PM - MIDNIGHT#[br]
+						2:00PM - MIDNIGHT#[br]
 						ALL AGES
 	section.angle.imagebg.maroon.heavy(data-overlay)
 		.background-image-holder
@@ -53,7 +53,7 @@ block content
 						if max >= 0
 							.artist.col-sm-4.col-xs-6.masonry__item
 								a(href="#{item._url}")
-									img.artist-photo(src="#{asset(item.artistPhoto)}")
+									img.angle.artist-photo(src="#{asset(item.artistPhoto)}")
 									span.artist-name= item.artistName
 									if item.socialLinks != undefined
 										ul.social-media
