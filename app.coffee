@@ -4,7 +4,10 @@ autoprefixer = require 'autoprefixer-stylus'
 js_pipeline  = require 'js-pipeline'
 css_pipeline = require 'css-pipeline'
 contentful   = require 'roots-contentful'
+subPages     = {}
 
+transformFunction = (entry) ->
+	subPages[entry.id] = entry
 module.exports =
 	output: 'public'
 	env: 'en'
@@ -12,6 +15,7 @@ module.exports =
 		env: 'en'
 		basedir: 'views'
 		md: require 'marked'
+		subPages:subPages
 	
 	ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf']
 
@@ -29,6 +33,9 @@ module.exports =
 					}
 					template: '/views/partials/_artist.jade'
 					path: (e) -> "artist/#{e.url}"
+				subPages:
+					id:'subPage'
+					transform:transformFunction
 	]
 
 	stylus:
