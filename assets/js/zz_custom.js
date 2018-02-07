@@ -7,7 +7,21 @@ $(document).on('scroll', function(){
 	}
 })
 
-
+$(document).on('mousedown','a',function(e){
+	if ($(this).attr('href') != undefined && $(this).attr('href') != '' && /(#\w+$)/.test($(this).attr('href'))){
+		var samePage = /(\w)+(?=#\w+$)/.exec($(this).attr('href'))
+		samePage = samePage[0]
+		if (samePage === pageClass){
+			e.preventDefault();
+			var element = /(#\w+$)/.exec($(this).attr('href'))
+			element = element[0]
+			$('html,body').stop().animate({
+				scrollTop:$(element).offset().top - 100,
+				easing: 'swing',
+			},500)
+		}
+	}
+})
 	// Set the date we're counting down to
 	var countDownDate = ''
 
@@ -45,5 +59,11 @@ $(document).on('scroll', function(){
 $(document).ready(function(){
 	if ($('#date-container').attr('data-date') != undefined){
 		countDownDate = new Date($('#date-container').attr('data-date'))
+	}
+	if (window.location.hash){
+		$('html, body').stop().animate({
+			scrollTop: $(window.location.hash).offset().top -100,
+			easing: 'swing'
+		},500)
 	}
 })
