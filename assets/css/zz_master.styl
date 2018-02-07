@@ -74,14 +74,20 @@ p, .md ul li
 		background-position center center
 .bg-pink
 	background-color $pink
+	&.bg-t5
+		background-color $pinkt5
 .bg-blue
 	background-color $blue
 	&.bg-t5
 		background-color $bluet5
 .bg-maroon
 	background-color $maroon
+	&.bg-t5
+		background-color $maroont5
 .bg-purple
 	background-color $purple
+	&.bg-t5
+		background-color $purplet5
 .bg-ct > .background-image-holder
 	background-position center top
 .bg-cb > .background-image-holder
@@ -193,13 +199,26 @@ p, .md ul li
 			// 	color $lightblue
 
 // -- angle classes
+imgAnglesOdd()
+	clip-path: polygon(0 0, calc(100% - 50px) 0, 100% 100%, 50px 100%);
+	@media(max-width:992px)
+		clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 100%, 25px 100%);
+	@media(max-width:767px)
+		clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+imgAnglesEven()
+	clip-path: polygon(50px 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
+	@media(max-width:992px)
+		clip-path: polygon(25px 0, 100% 0, calc(100% - 25px) 100%, 0 100%);
+	@media(max-width:767px)
+		clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+
 #first-section
 	padding-bottom 200px
 	@media(max-width:992px)
 		padding-bottom -100px
 	@media(max-width:767px)
 		padding-bottom -50px
-.angle:not(.btn):not(img):not(.artist)
+.angle:not(.btn):not(img):not(.artist):not([class*="col-"])
 	clip-path: polygon(0 0, 100% 200px, 100% 100%, 0 100%);
 	margin-top -200px
 	padding 200px 0
@@ -241,19 +260,45 @@ img.angle
 		clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 100%, 25px 100%);
 	@media(max-width:767px)
 		clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
-.artist.angle:nth-child(odd) img.artist-photo, .artist.angle:nth-child(odd) > a:before
-	clip-path: polygon(0 0, calc(100% - 100px) 0, 100% 100%, 50px 100%);
-	@media(max-width:992px)
-		clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 100%, 25px 100%);
-	@media(max-width:767px)
-		clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
-.artist.angle:nth-child(even) img.artist-photo, .artist.angle:nth-child(even) > a:before
-	clip-path: polygon(50px 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
-	@media(max-width:992px)
-		clip-path: polygon(25px 0, 100% 0, calc(100% - 25px) 100%, 0 100%);
-	@media(max-width:767px)
-		clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
 
+
+.artist.angle:nth-child(odd) 
+	img.artist-photo, & > a:before
+		imgAnglesOdd()
+		transition 0.5s
+	&:hover
+		img.artist-photo, & > a:before
+			clip-path: polygon(0 0, calc(100% - 35px) 0, 100% 100%, 35px 100%);
+			transition 0.5s
+			@media(max-width:992px)
+				clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 100%, 15px 100%);
+			@media(max-width:767px)
+				clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 100%, 5px 100%);
+
+.artist.angle:nth-child(even) 
+	img.artist-photo, & > a:before
+		imgAnglesEven()
+		transition 0.5s
+	&:hover
+		img.artist-photo, & > a:before
+			clip-path: polygon(35px 0, 100% 0, calc(100% - 35px) 100%, 0 100%);
+			@media(max-width:992px)
+				clip-path: polygon(15px 0, 100% 0, calc(100% - 15px) 100%, 0 100%);
+			@media(max-width:767px)
+				clip-path: polygon(5px 0, 100% 0, calc(100% - 5px) 100%, 0 100%);
+[class*="col-"].info-box
+	&.angle
+		padding 25px 60px
+		margin-top 30px
+		margin-bottom 30px
+		@media(max-width:992px)
+			padding 25px 30px
+		@media(max-width:767px)
+			display inline-block
+	&.angle:nth-child(odd)
+		imgAnglesOdd()
+	&.angle:nth-child(even)
+		imgAnglesEven()
 
 // --- misc
 .map-container
