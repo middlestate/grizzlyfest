@@ -20,7 +20,7 @@ p,a,li,span,h1,h2,h3,h4,h5,h6,input,textarea
 h1,h2,h3,h4,h5,h6,p,span
 	margin-bottom 25px
 h2
-	font-family 'shenandoahregular'
+	font-family $shen
 	font-size 62px
 	line-height 78px
 	font-weight 900
@@ -50,6 +50,12 @@ p, .md ul li
 		li
 			list-style-type disc
 			margin 15px 0
+	p
+		line-height 28px
+		strong
+			color inherit
+			font-weight 700
+			text-decoration underline
 .subHeadRow:not(:first-child)
 	margin-top 60px
 .footer
@@ -171,6 +177,7 @@ p, .md ul li
 			font-weight 600
 			color $white
 			&.countdown-amount
+				font-family $shen
 				margin-bottom 25px
 				font-size 60px
 			// &.countdown-days
@@ -505,6 +512,7 @@ header
 			position relative
 			//top 20px
 			a, span.dropdown__trigger
+				text-decoration none
 				text-transform uppercase
 				opacity 1
 				color $white
@@ -513,7 +521,7 @@ header
 				line-height inherit
 				font-weight 600
 				&:hover
-					color $blue
+					// color $blue
 					transition .2s
 			h1,h2,h3,h4,h5,h6,p
 				a
