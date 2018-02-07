@@ -2,13 +2,13 @@ extends layout
 
 block content
 	//-p= JSON.stringify(contentful.artists)
-	section.imagebg.parallax.pink.height-100(data-overlay)
+	section#first-section.imagebg.parallax.pink.height-100(data-overlay)
 		.background-image-holder
 			img(src="/img/bg/home-header.jpg")
 		.container.pos-vertical-center
 			.row.text-center
 				.col-sm-12
-					img(src="/img/logo/logo-blue.png")
+					img#big-logo(src="/img/logo/logo-blue.png")
 					#date-container.counter-class(data-date='2018/05/18 14:00:00')
 						#countdown-timer
 							.countdown-section
@@ -84,7 +84,7 @@ block content
 					h2 THE EVENTS
 					.separator
 				.col-sm-12
-					a.btn.white.angle(href="/artists")
+					a.btn.white.angle(href="#")
 						span.btn__text.color-blue View the schedule
 	section.angle.imagebg.maroon(data-overlay)
 		.background-image-holder
@@ -95,7 +95,7 @@ block content
 					h2 THE SPONSORS
 					.separator
 				.col-sm-12
-					a.btn.white.angle(href="/artists")
+					a.btn.white.angle(href="#")
 						span.btn__text.color-maroon View all sponsors
 	section.angle.imagebg.lightblue(data-overlay)
 		.background-image-holder
@@ -106,7 +106,7 @@ block content
 					h2 THE AREA
 					.separator
 				.col-sm-12
-					a.btn.white.angle(href="/artists")
+					a.btn.white.angle(href="#")
 						span.btn__text.color-lightblue View the area
 	section.angle.imagebg.pink(data-overlay)
 		.background-image-holder
@@ -117,7 +117,7 @@ block content
 					h2 THE BLOG
 					.separator
 				.col-sm-12
-					a.btn.white.angle(href="/artists")
+					a.btn.white.angle(href="#")
 						span.btn__text.color-pink View all posts
 	section.angle#map.unpad
 		.map-container.border--round.gmaps-active.height-50(
