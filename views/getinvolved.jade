@@ -1,0 +1,113 @@
+extends /layout
+
+block content
+	section.imagebg.parallax.pink.height-50.hero(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/home-header.jpg")
+		//-p= JSON.stringify(subPages)
+	if subPages.getinvolved != undefined
+		if subPages.getinvolved.sections != undefined
+			for section in subPages.getinvolved.sections
+				- var heavy = section.fields.heavyColor ? 'heavy' : ''
+				- var color = section.fields.overlayColor == undefined ? '' : section.fields.overlayColor
+				- var bgpos = section.fields.bgPosition == undefined ? '' : section.fields.bgPosition
+				section.angle.imagebg(class="#{heavy+' '+color+' '+bgpos}", data-overlay)
+					.background-image-holder
+						img(src="#{asset(section.fields.backgroundImage)}")
+					.container
+						if section.fields.textBlocks != undefined
+							for textBlock in section.fields.textBlocks
+								- var blockId = textBlock.fields.id == undefined ? '' : textBlock.fields.id
+								if textBlock.fields.subhead != undefined
+									.row.text-center.subHeadRow(id="#{blockId}")
+										.col-sm-12
+											h2= textBlock.fields.subhead
+											.separator
+								if textBlock.fields.body != undefined
+									- var align = textBlock.fields.align == undefined ? '' : 'text-'+textBlock.fields.align
+									.row(class="#{align}")
+										.col-sm-12
+											.md!= md(textBlock.fields.body)
+
+
+
+	//-section.angle.imagebg.blue.heavy(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/bg1.jpg")
+		.container
+			.row.text-center
+				.col-sm-12
+					h2 FESTIVAL HOURS
+					.separator
+			.row
+				.col-sm-12
+					h4 Friday, MAY 18
+					p.
+						Festival Gates Open - 2:00PM
+					p.
+						Music Starts - 3:00PM
+					p.
+						Music Ends - 12:00AM
+					h4 Saturday, MAY 19
+					p.
+						Festival Gates Open - 2:00PM
+					p.
+						Music Starts - 3:00PM
+					p.
+						Music Ends - 12:00AM
+
+
+			.row.text-center
+				.col-sm-12
+					h2 DON'T BRING
+					.separator
+			.row
+				.col-sm-12
+					p.
+						Weapons of any kind
+					p.
+						Illegal substances
+					p.
+						Large or framed backpacks
+					p.
+						Alcohol (alcohol will be sold at the festival)
+					p.
+						Glass containers of ANY kind
+					p.
+						Cans of ANY kind
+					p.
+						Skateboards, scooters, or personal motorized vehicles
+					p.
+						Bicycles inside Festival grounds (bike racks and bike valet are available along northside of Box Office)
+					p.
+						Strollers
+					p.
+						Fireworks and explosives
+					p.
+						Instruments and laser pointers
+					p.
+						Umbrellas
+					p.
+						Selfie sticks
+					p.
+						Spray paint, large markers
+					p.
+						Picnic baskets
+					p.
+						Lawn furniture or any chairs with legs - Blankets are OK
+					p.
+						Large or hard-sided coolers
+					p.
+						Tents
+					p.
+						Pets (Except animals that assist people with disabilities. Important to read Service and Support Animal Policy & Procedures.)
+					p.
+						Video equipment (no video recording will be allowed)
+					p.
+						Professional still camera equipment with a detachable lens longer than 2 inches, tripods, big zooms, or commercial use rigs
+					p.
+						Audio recording equipment
+					p.
+						No illegal vending is permitted (no unauthorized or unlicensed vendors allowed)
+					p.
+						Drones
