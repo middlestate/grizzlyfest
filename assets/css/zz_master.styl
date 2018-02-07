@@ -24,6 +24,11 @@ h2
 	line-height 78px
 	font-weight 900
 	color $white
+	@media(max-width:992px)
+		font-size 55px
+	@media(max-width:767px)
+		font-size 45px
+		line-height 55px
 h3
 	font-size 50px
 	line-height 62px
@@ -37,6 +42,13 @@ h5
 	line-height 46px
 	font-weight 900
 
+.footer
+	h1,h2,h3,h4,h5,h6,p,span
+		&>a
+			color inherit !important
+			font-weight inherit
+			font-size inherit
+			font-family inherit
 
 .imagebg
 	.background-image-holder
@@ -157,6 +169,12 @@ h5
 			// 	color $lightblue
 
 // -- angle classes
+#first-section
+	padding-bottom 200px
+	@media(max-width:992px)
+		padding-bottom -100px
+	@media(max-width:767px)
+		padding-bottom -50px
 .angle:not(.btn):not(img)
 	clip-path: polygon(0 0, 100% 200px, 100% 100%, 0 100%);
 	margin-top -200px
@@ -213,8 +231,23 @@ img.angle
 
 
 // --- misc
-[class*="height-"]:not(.artist-hero)
+.map-container
+	min-height 500px
+#big-logo
+	max-width 75%
+.pos-vertical-center
 	@media(max-width:992px)
+		top auto
+		transform none
+		-webkit-transform none
+	@media(max-height:900px)
+		top auto
+		transform none
+		-webkit-transform none
+[class*="height-"]:not(.artist-hero):not(.map-container)
+	@media(max-width:992px)
+		height auto
+	@media(max-height:900px)
 		height auto
 .separator
 	height 50px
