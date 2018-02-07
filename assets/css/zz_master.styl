@@ -429,9 +429,9 @@ body.index
 	border-radius 0 !important
 	//box-shadow none !important
 	li
-		padding 10px 20px
-	a
-		padding 10px 20px
+		//padding 10px 20px
+		a
+			padding 20px 40px
 #menu1
 	width auto
 	float none !important
@@ -552,17 +552,11 @@ header
 					display block
 					opacity 1
 					margin 0
-					&:not(:first-child)
-						a
-							padding 10px 10px 10px 10px
-					&:first-child
-						a
-							padding 20px 10px 10px 10px
-					&:last-child
-						a
-							padding 10px 10px 20px 10px
-					&:hover
-						background $blue
+					a
+						display block
+						padding 10px
+						&:hover
+							background $blue
 			.dropdown
 				@media (max-width:992px)
 					line-height 25px
