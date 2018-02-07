@@ -8,14 +8,17 @@ block content
 	if subPages.info != undefined
 		if subPages.info.sections != undefined
 			for section in subPages.info.sections
-				section.angle.imagebg.maroon.heavy(data-overlay)
+				- var heavy = section.fields.heavyColor ? 'heavy' : ''
+				- var color = section.fields.overlayColor == undefined ? '' : section.fields.overlayColor
+				section.angle.imagebg(class="#{heavy+' '+color}", data-overlay)
 					.background-image-holder
 						img(src="#{asset(section.fields.backgroundImage)}")
 					.container
 						if section.fields.textBlocks != undefined
 							for textBlock in section.fields.textBlocks
+								- var blockId = textBlock.fields.id == undefined ? '' : textBlock.fields.id
 								if textBlock.fields.subhead != undefined
-									.row.text-center.subHeadRow
+									.row.text-center.subHeadRow(id="#{blockId}")
 										.col-sm-12
 											h2= textBlock.fields.subhead
 											.separator
@@ -27,7 +30,7 @@ block content
 
 
 
-	section.angle.imagebg.blue.heavy(data-overlay)
+	//-section.angle.imagebg.blue.heavy(data-overlay)
 		.background-image-holder
 			img(src="/img/bg/bg1.jpg")
 		.container
