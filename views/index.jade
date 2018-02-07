@@ -47,13 +47,13 @@ block content
 					.separator
 			.row.masonry__container.text-center
 				if contentful.artists != undefined
-					- var max = 8
+					- var max = 9
 					for item in contentful.artists
 						- max--
 						if max >= 0
-							.artist.col-sm-4.col-xs-6.masonry__item
+							.artist.angle.col-sm-4.col-xs-6.masonry__item
 								a(href="#{item._url}")
-									img.angle.artist-photo(src="#{asset(item.artistPhoto)}")
+									img.artist-photo(src="#{asset(item.artistPhoto)}")
 									span.artist-name= item.artistName
 									if item.socialLinks != undefined
 										ul.social-media
