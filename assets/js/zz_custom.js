@@ -12,7 +12,7 @@ $(document).on('mousedown','a',function(e){
 		var samePage = /(\w)+(?=#\w+$)/.exec($(this).attr('href'))
 		samePage = samePage[0]
 		if (samePage === pageClass){
-			e.preventDefault();
+			//e.preventDefault();
 			var element = /(#\w+$)/.exec($(this).attr('href'))
 			element = element[0]
 			$('html,body').stop().animate({
