@@ -14,16 +14,20 @@ html(xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#")
 		
 		//- load jquery first
 		script(src="/customjs/01jquery-3.1.1.min.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js")
 		//- load google font
 		link(href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet")
+		//- run some logic to give the body tag a class of either: 1. the page name or 2. if the page is generated, get the content type (artist, sponsor, etc)
+		- var pageClass = /((?!\/)\w+(?=\.))/.exec(_path) == null ? '' : /((?!\/)\w+(?=\.))/.exec(_path)
+		- if(pageClass[0] === undefined && entry != null & entry.sys.contentType.sys.id != undefined){pageClass = entry.sys.contentType.sys.id}
+		- else{pageClass = pageClass[0]}
+		- console.log('loading a page type: ' + pageClass)
+		script.
+			var pageClass = '#{pageClass}'
 		block head
-
 		!= css("/")
-	//- run some logic to give the body tag a class of either: 1. the page name or 2. if the page is generated, get the content type (artist, sponsor, etc)
-	- var pageClass = /((?!\/)\w+(?=\.))/.exec(_path) == null ? '' : /((?!\/)\w+(?=\.))/.exec(_path)
-	- if(pageClass[0] === undefined && entry != null & entry.sys.contentType.sys.id != undefined){pageClass = entry.sys.contentType.sys.id}
-	- else{pageClass = pageClass[0]}
-	- console.log('loading a page type: ' + pageClass)
+	
+	
 	//-- console.log(pageClass)
 	body.dropdowns--hover(class="#{pageClass}")
 		include /partials/_header
