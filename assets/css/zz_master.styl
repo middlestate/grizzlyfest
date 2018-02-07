@@ -175,7 +175,7 @@ h5
 		padding-bottom -100px
 	@media(max-width:767px)
 		padding-bottom -50px
-.angle:not(.btn):not(img)
+.angle:not(.btn):not(img):not(.artist)
 	clip-path: polygon(0 0, 100% 200px, 100% 100%, 0 100%);
 	margin-top -200px
 	padding 200px 0
@@ -209,6 +209,7 @@ a.btn.angle
 		clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
 #map.angle
 	padding 0
+
 img.angle
 	clip-path: polygon(0 0, calc(100% - 100px) 0, 100% 100%, 100px 100%);
 	padding 0 !important
@@ -216,13 +217,13 @@ img.angle
 		clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 100%, 25px 100%);
 	@media(max-width:767px)
 		clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
-.artist:nth-child(odd) img.angle.artist-photo, .artist:nth-child(odd) > a:before
+.artist.angle:nth-child(odd) img.artist-photo, .artist.angle:nth-child(odd) > a:before
 	clip-path: polygon(0 0, calc(100% - 100px) 0, 100% 100%, 50px 100%);
 	@media(max-width:992px)
 		clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 100%, 25px 100%);
 	@media(max-width:767px)
 		clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
-.artist:nth-child(even) img.angle.artist-photo, .artist:nth-child(even) > a:before
+.artist.angle:nth-child(even) img.artist-photo, .artist.angle:nth-child(even) > a:before
 	clip-path: polygon(50px 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
 	@media(max-width:992px)
 		clip-path: polygon(25px 0, 100% 0, calc(100% - 25px) 100%, 0 100%);
@@ -342,6 +343,8 @@ section
 				margin 0 10px
 				position relative
 				z-index 1
+				@media (max-width:767px)
+					margin 0 7px
 				a
 					display block
 					i
