@@ -20,6 +20,7 @@ p,a,li,span,h1,h2,h3,h4,h5,h6,input,textarea
 h1,h2,h3,h4,h5,h6,p,span
 	margin-bottom 25px
 h2
+	font-family 'shenandoahregular'
 	font-size 62px
 	line-height 78px
 	font-weight 900
@@ -41,7 +42,16 @@ h5
 	font-size 32px
 	line-height 46px
 	font-weight 900
-
+p, .md ul li
+	font-size 18px
+.md
+	ul
+		padding-left 22px
+		li
+			list-style-type disc
+			margin 15px 0
+.subHeadRow:not(:first-child)
+	margin-top 60px
 .footer
 	h1,h2,h3,h4,h5,h6,p,span
 		&>a
@@ -118,6 +128,10 @@ h5
 		background $maroon
 	&.purple::before
 		background $purple
+	&.black::before
+		background $black
+	&.white::before
+		background $white
 	.container
 		z-index 1
 
@@ -554,6 +568,22 @@ header
 					width auto
 					padding 0
 						
+
+
+
+
+
+// --- footer
+ul.footer-social-icons
+	li
+		display inline-block
+		margin 0 15px
+		a
+			display block
+			i
+				color $white
+				font-size 30px
+
 
 
 // --- queries
