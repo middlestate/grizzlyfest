@@ -19,7 +19,15 @@ $(document).on('mousedown','a',function(e){
 				scrollTop:$(element).offset().top - 100,
 				easing: 'swing',
 			},500)
+			if ($(window).width() <= 992){
+				$('#menu-overlay-toggle,#menu1,body').toggleClass('custom-toggled-class')
+			}
 		}
+	}
+})
+$(window).on('resize',function(){
+	if($('body').hasClass('custom-toggled-class')){
+		$('#menu-overlay-toggle,#menu1,body').toggleClass('custom-toggled-class')
 	}
 })
 	// Set the date we're counting down to
