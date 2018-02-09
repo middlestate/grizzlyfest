@@ -112,17 +112,30 @@ block content
 				.col-sm-12
 					a.btn.white.angle(href="#")
 						span.btn__text.color-lightblue View the area
-	section.angle.imagebg.pink(data-overlay)
+	section.angle.imagebg.purple.heavy(data-overlay)
 		.background-image-holder
 			img(src="/img/bg/home-img7.jpg")
-		.container
+		.container.masonry
 			.row.text-center
 				.col-sm-12
 					h2 THE BLOG
 					.separator
+			.row.masonry__container.text-center
+				if contentful.blog != undefined
+					- var max = 3
+					for item in contentful.blog
+						- max--
+						if max >= 0
+							.blogPost.angle.col-sm-4.col-xs-6.masonry__item
+								a(href="#{item._url}")
+									img.blog-photo(src="#{asset(item.featuredImage)}")
+									span.blog-name= item.title
+									p.featuredText.md!= md(item.featuredText)
+									
+			.row.text-center
 				.col-sm-12
 					a.btn.white.angle(href="#")
-						span.btn__text.color-pink View all posts
+						span.btn__text.color-purple View all posts
 	section.angle#map.unpad
 		.map-container.border--round.gmaps-active.height-50(
 		data-maps-api-key='AIzaSyBFxlargzJc2CmgNeXHpnAeXJ1y4C5n64U', 
