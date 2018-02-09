@@ -1,0 +1,45 @@
+extends /layout
+
+block content
+	section.imagebg.parallax.pink.height-50.hero(data-overlay)
+		.background-image-holder
+			img(src="#{asset(entry.featuredImage)}")
+		//-p= JSON.stringify(subPages)
+	if entry != undefined
+		if entry.sections != undefined
+			for section in entry.sections
+				- var heavy = section.fields.heavyColor ? 'heavy' : ''
+				- var color = section.fields.overlayColor == undefined ? '' : section.fields.overlayColor
+				- var bgpos = section.fields.bgPosition == undefined ? '' : section.fields.bgPosition
+				section.angle.imagebg(class="#{heavy+' '+color+' '+bgpos}", data-overlay)
+					.background-image-holder
+						img(src="#{asset(section.fields.backgroundImage)}")
+					.container
+						if section.fields.textBlocks != undefined
+							for block in section.fields.textBlocks
+								if block.sys.contentType.sys.id === 'textSection'
+									- var blockId = block.fields.id == undefined ? '' : block.fields.id
+									if block.fields.subhead != undefined
+										.row.text-center.subHeadRow(id="#{blockId}")
+											.col-sm-12
+												h2= block.fields.subhead
+												.separator
+									if block.fields.body != undefined
+										- var align = block.fields.align == undefined ? '' : 'text-'+block.fields.align
+										.row(class="#{align}")
+											.col-sm-12
+												.md!= md(block.fields.body)
+								else if block.sys.contentType.sys.id === 'photoGallery'
+									if block.fields.gallery != undefined
+										.masonry
+											.row.masonry__container.text-center
+												for image in block.fields.gallery
+													.gallery-image.angle.col-sm-4.col-xs-6.masonry__item
+														a(href="#{asset(image)}" data-lightbox="true")
+															img.blog-photo(src="#{asset(image)}")
+											
+								else if block.sys.contentType.sys.id === 'videoSection'
+									if block.fields.iframe != undefined
+										.md!= block.fields.iframe
+								else
+									- console.log('unrecognized block section')
