@@ -262,12 +262,12 @@ img.angle
 		clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
 
 
-.artist.angle:nth-child(odd) 
-	img.artist-photo, & > a:before
+.artist.angle:nth-child(odd), .masonry__item.angle:nth-child(odd)
+	img.artist-photo, & > a:before, img
 		imgAnglesOdd()
 		transition 0.5s
 	&:hover
-		img.artist-photo, & > a:before
+		img.artist-photo, & > a:before, img.blog-photo
 			clip-path: polygon(0 0, calc(100% - 35px) 0, 100% 100%, 35px 100%);
 			transition 0.5s
 			@media(max-width:992px)
@@ -275,12 +275,12 @@ img.angle
 			@media(max-width:767px)
 				clip-path: polygon(0 0, calc(100% - 5px) 0, 100% 100%, 5px 100%);
 
-.artist.angle:nth-child(even) 
-	img.artist-photo, & > a:before
+.artist.angle:nth-child(even), .masonry__item.angle:nth-child(even)
+	img.artist-photo, & > a:before, img
 		imgAnglesEven()
 		transition 0.5s
 	&:hover
-		img.artist-photo, & > a:before
+		img.artist-photo, & > a:before, img.blog-photo
 			clip-path: polygon(35px 0, 100% 0, calc(100% - 35px) 100%, 0 100%);
 			@media(max-width:992px)
 				clip-path: polygon(15px 0, 100% 0, calc(100% - 15px) 100%, 0 100%);
@@ -299,6 +299,28 @@ img.angle
 		imgAnglesOdd()
 	&.angle:nth-child(even)
 		imgAnglesEven()
+
+
+
+
+
+
+
+//--- blog posts
+.blogPost
+	a
+		text-decoration none
+	.blog-name
+		font-size 30px
+		font-weight 600
+		letter-spacing 2px
+		@media (max-width:767px)
+			font-size 24px
+
+
+
+
+
 
 // --- misc
 .map-container
