@@ -36,6 +36,14 @@ module.exports =
 				subPages:
 					id:'subPage'
 					transform:transformFunction
+					template: '/views/partials/_subPage.jade'
+					path: (e) -> "/#{e.id}"
+				blog:
+					id:"blog"
+					filters:{
+						'order':'-fields.date'
+					}
+					template: '/views/partials/_blog-post.jade'
 	]
 
 	stylus:
