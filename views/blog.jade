@@ -1,0 +1,22 @@
+extends /layout
+
+block content
+	section.imagebg.parallax.pink.height-50(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/home-header.jpg")
+	section.angle.imagebg.purple.heavy(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/home-img7.jpg")
+		.container.masonry
+			.row.text-center
+				.col-sm-12
+					h2 THE BLOG
+					.separator
+			.row.masonry__container.text-center
+				if contentful.blog != undefined
+					for item in contentful.blog
+						.blogPost.angle.col-sm-4.col-xs-6.masonry__item
+							a(href="#{item._url}")
+								img.blog-photo(src="#{asset(item.featuredImage)}")
+								span.blog-name= item.title
+								p.featuredText.md!= md(item.featuredText)
