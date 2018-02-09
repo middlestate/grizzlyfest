@@ -44,6 +44,17 @@ module.exports =
 						'order':'-fields.date'
 					}
 					template: '/views/partials/_blog-post.jade'
+				events:
+					id:"event"
+					filters:{
+						'order':'fields.tempOrder'
+					}
+					#template: '/views/partials/_blog-post.jade'
+				eventCategories:
+					id:"eventCategory"
+					filters:{
+						'order':'fields.text'
+					}
 	]
 
 	stylus:
