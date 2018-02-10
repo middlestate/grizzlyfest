@@ -35,10 +35,22 @@ html(xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#")
 			block content
 		include /partials/_footer
 		!= js("/")
-		//- Google Analytics
-		//- script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-106330513-6')
-		//- script.
-		//- 	window.dataLayer = window.dataLayer || [];
-		//- 	function gtag(){dataLayer.push(arguments);}
-		//- 	gtag('js', new Date());
-		//- 	gtag('config', 'UA-106330513-6');
+		//-
+			Start of Orbit Interactive Tag: Please do not remove
+			Activity name of this tag: Grizzly Festival Retargeting Code
+			Creation Date: 02/02/2018
+		script(type='text/javascript').
+			var axel = Math.random() + "";
+			var a = axel * 10000000000000;
+			document.write('<iframe src="https://8360066.fls.doubleclick.net/activityi;src=8360066;type=invmedia;cat=wopwcst8;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+		noscript
+			iframe(src='https://8360066.fls.doubleclick.net/activityi;src=8360066;type=invmedia;cat=wopwcst8;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?', width='1', height='1', frameborder='0', style='display:none')
+		//- End of Orbit Interactive Tag: Please do not remove
+
+		//-Google Analytics
+		script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-106330513-7')
+		script.
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-106330513-7');
