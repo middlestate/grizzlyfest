@@ -1,7 +1,7 @@
 extends /layout
 
 block content
-	section.imagebg.parallax.pink.height-50(data-overlay)
+	section.imagebg.parallax.pink.height-50.hero(data-overlay)
 		.background-image-holder
 			img(src="/img/bg/home-header.jpg")
 	if contentful.events != undefined
@@ -14,24 +14,36 @@ block content
 						h2 THE EVENTS
 						.separator
 				if contentful.eventCategories != undefined
-					.masonry-filter-holder
-						.masonry__filters
-							ul
-								li(data-masonry-filter="*") All Events
-								for category in contentful.eventCategories
-									li(data-masonry-filter="#{category.id}")= category.text
+					.row.text-center
+						.masonry-filter-holder.masonry-filters--horizontal
+							.masonry__filters
+								ul
+									li.color-purple.active(data-masonry-filter="*") All Events
+									for category in contentful.eventCategories
+										li.color-purple(data-masonry-filter="#{category.id}")= category.text
 					
-				.masonry__container
+				#events.masonry__container
 					for event in contentful.events
 						- var cats = ''
 						if event.categories != undefined
 							for item in event.categories
-								- cats+= "filter-"+item.fields.id
-						.row.text-center.masonry__item(class="#{cats}")
-							a(href="#{event._url}")
-								.col-sm-6.col-xs-6
+								- cats+= " filter-"+item.fields.id
+						.event.angle.row.text-center.masonry__item(class="#{cats}")
+							//-#{event._url}
+							a(href="#")
+								.col-sm-4.col-xs-6
 									img.blog-photo(src="#{asset(event.featuredImage)}")
-								.col-sm-6.col-xs-6
-									span.blog-name= event.title
+								.event-info.col-sm-8.col-xs-6
+									h5.blog-name= event.title
 									if event.featuredText != undefined
 										p.featuredText.md!= md(event.featuredText)
+									if event.timeSlot != undefined
+										- var date = new Date(event.timeSlot)
+										- var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+										- var days = ["Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday", "Sunday"]
+										- var ampm = date.getHours() >= 12 ? 'PM' : 'AM'
+										- var minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
+										if date.getHours() != 9
+											h6= days[date.getDay()-1] + ', ' + months[date.getMonth()] + ' ' + date.getDate() + ' - ' + date.getHours() + ':' + minutes + ' ' + ampm
+										else
+											h6= days[date.getDay()-1] + ', ' + months[date.getMonth()] + ' ' + date.getDate() + ' - time TBA'

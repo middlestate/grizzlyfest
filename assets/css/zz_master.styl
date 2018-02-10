@@ -94,7 +94,7 @@ p, .md ul li
 	background-position center bottom
 .bg-cc > .background-image-holder
 	background-position center center
-	
+
 .color-pink
 	color $pink
 .color-blue
@@ -218,7 +218,7 @@ imgAnglesEven()
 		padding-bottom -100px
 	@media(max-width:767px)
 		padding-bottom -50px
-.angle:not(.btn):not(img):not(.artist):not([class*="col-"])
+.angle:not(.btn):not(img):not(.masonry__item):not([class*="col-"])
 	clip-path: polygon(0 0, 100% 200px, 100% 100%, 0 100%);
 	margin-top -200px
 	padding 200px 0
@@ -261,7 +261,9 @@ img.angle
 	@media(max-width:767px)
 		clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
 
-
+.masonry__item.angle
+	img
+		padding 0px
 .artist.angle:nth-child(odd), .masonry__item.angle:nth-child(odd)
 	img.artist-photo, & > a:before, img
 		imgAnglesOdd()
@@ -319,10 +321,32 @@ img.angle
 
 
 
+// --- EVENTS
+#events
+	.event
+		.event-info
+			text-align left
+			h1,h2,h3,h4,h5,h6
+				margin-bottom 0
+
+
+
+
+
 
 
 
 // --- misc
+.masonry-filter-holder
+	z-index 4 !important
+	margin-bottom 50px
+	.masonry__filters
+		ul
+			li
+				color $white !important
+				font-weight 700
+				&:active
+					color $blue
 .map-container
 	min-height 500px
 #big-logo
@@ -427,7 +451,7 @@ section
 				position absolute
 			@media (max-width:767px)
 				font-size 24px
-				
+
 		.social-media
 			li
 				display inline-block
@@ -449,7 +473,7 @@ section
 					li:nth-child({i})
 						top -90px - ((i*10)/2)
 						transition 0.5s + (i/10)
-			
+
 		&:hover
 			@media (min-width:992px)
 				&>a
@@ -642,7 +666,7 @@ header
 					width auto
 					padding 0
 					z-index 10
-						
+
 
 
 
