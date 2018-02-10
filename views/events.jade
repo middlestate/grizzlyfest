@@ -43,6 +43,7 @@ block content
 										- var days = ["Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday", "Sunday"]
 										- var ampm = date.getHours() >= 12 ? 'PM' : 'AM'
 										- var minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
+										- console.log(date.getHours())
 										if date.getHours() != 9
 											h6= days[date.getDay()-1] + ', ' + months[date.getMonth()] + ' ' + date.getDate() + ' - ' + date.getHours() + ':' + minutes + ' ' + ampm
 										else
