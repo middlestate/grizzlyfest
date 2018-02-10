@@ -38,13 +38,14 @@ block content
 									if event.featuredText != undefined
 										p.featuredText.md!= md(event.featuredText)
 									if event.timeSlot != undefined
+										- var UTCoffset = -7
 										- var date = new Date(event.timeSlot)
 										- var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-										- var days = ["Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday", "Sunday"]
-										- var ampm = date.getHours() >= 12 ? 'PM' : 'AM'
-										- var minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
-										- console.log(date.getHours())
-										if date.getHours() != 9
-											h6= days[date.getDay()-1] + ', ' + months[date.getMonth()] + ' ' + date.getDate() + ' - ' + date.getHours() + ':' + minutes + ' ' + ampm
+										- var days = ['',"Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday", "Sunday"]
+										- var ampm = date.getUTCHours() + UTCoffset >= 12 ? 'PM' : 'AM'
+										- var minutes = date.getUTCMinutes() < 10 ? '0' + date.getUTCMinutes() : date.getUTCMinutes()
+										- console.log(date.getUTCHours() + UTCoffset)
+										if (date.getUTCHours() + UTCoffset) != 9
+											h6= days[date.getUTCDay()] + ', ' + months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - ' + (date.getUTCHours()+ UTCoffset) + ':' + minutes + ' ' + ampm
 										else
-											h6= days[date.getDay()-1] + ', ' + months[date.getMonth()] + ' ' + date.getDate() + ' - time TBA'
+											h6= days[date.getUTCDay()] + ', ' + months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - time TBA'
