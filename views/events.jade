@@ -30,7 +30,7 @@ block content
 								- cats+= " filter-"+item.fields.id
 						.event.angle.row.text-center.masonry__item(class="#{cats}")
 							//-#{event._url}
-							a(href="#")
+							a(href="#{event._url}")
 								.col-sm-4.col-xs-6
 									img.blog-photo(src="#{asset(event.featuredImage)}")
 								.event-info.col-sm-8.col-xs-6
@@ -44,7 +44,7 @@ block content
 										- var days = ['',"Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday", "Sunday"]
 										- var ampm = date.getUTCHours() + UTCoffset >= 12 ? 'PM' : 'AM'
 										- var minutes = date.getUTCMinutes() < 10 ? '0' + date.getUTCMinutes() : date.getUTCMinutes()
-										- console.log(date.getUTCHours() + UTCoffset)
+										//-- console.log(date.getUTCHours() + UTCoffset)
 										if (date.getUTCHours() + UTCoffset) != 9
 											h6= days[date.getUTCDay()] + ', ' + months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - ' + (date.getUTCHours()+ UTCoffset) + ':' + minutes + ' ' + ampm
 										else

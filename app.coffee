@@ -16,7 +16,7 @@ module.exports =
 		basedir: 'views'
 		md: require 'marked'
 		subPages:subPages
-	
+
 	ignores: ['readme.md', '**/layout.*', '**/_*', '.gitignore', 'ship.*conf']
 
 	extensions: [
@@ -44,12 +44,14 @@ module.exports =
 						'order':'-fields.date'
 					}
 					template: '/views/partials/_blog-post.jade'
+					path: (e) -> "blog/#{e.id}"
 				events:
 					id:"event"
 					filters:{
 						'order':'fields.tempOrder'
 					}
-					#template: '/views/partials/_blog-post.jade'
+					template: '/views/partials/_event.jade'
+					path: (e) -> "event/#{e.id}"
 				eventCategories:
 					id:"eventCategory"
 					filters:{
