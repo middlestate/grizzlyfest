@@ -1,5 +1,7 @@
 extends /layout
-
+block head
+	script.
+		pageClass = '#{entry.id}'
 block content
 	section.imagebg.parallax.pink.height-50.hero(data-overlay)
 		.background-image-holder

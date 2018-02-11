@@ -12,7 +12,7 @@ $(document).on('mousedown','a',function(e){
 		var samePage = /(\w)+(?=#\w+$)/.exec($(this).attr('href'))
 		samePage = samePage[0]
 		if (samePage === pageClass){
-			//e.preventDefault();
+			e.preventDefault();
 			var element = /(#\w+$)/.exec($(this).attr('href'))
 			element = element[0]
 			$('html,body').stop().animate({
@@ -56,7 +56,7 @@ $(window).on('resize',function(){
 	  $('#countdown-timer .countdown-seconds').html(seconds)
 	  //document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
-	  // If the count down is finished, write some text 
+	  // If the count down is finished, write some text
 	  if (distance < 0) {
 	    clearInterval(x);
 	    //document.getElementById("demo").innerHTML = "EXPIRED";
