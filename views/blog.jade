@@ -15,7 +15,7 @@ block content
 			.row.masonry__container.text-center
 				if contentful.blog != undefined
 					for item in contentful.blog
-						.blogPost.angle.col-sm-4.col-xs-6.masonry__item
+						.blogPost.angle.col-sm-4.masonry__item
 							a(href="#{item._url}")
 								img.blog-photo(src="#{asset(item.featuredImage)}")
 								span.blog-name= item.title
