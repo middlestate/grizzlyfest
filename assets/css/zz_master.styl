@@ -197,7 +197,14 @@ p, .md ul li
 			// 	color $pink
 			// &.countdown-seconds
 			// 	color $lightblue
-
+	@media (max-width:767px)
+		.countdown-section
+			margin 10px 5px
+			&>span
+				font-size 18px
+				&.countdown-amount
+					margin-bottom 5px
+					font-size 30px
 // -- angle classes
 imgAnglesOdd()
 	clip-path: polygon(0 0, calc(100% - 50px) 0, 100% 100%, 50px 100%);
@@ -707,6 +714,7 @@ ul.footer-social-icons
 			right -80vw !important
 			//display none
 		.container
+			width auto
 			padding 50px 25px 50px 0
 	#menu-overlay-toggle
 		display block !important
@@ -736,6 +744,7 @@ ul.footer-social-icons
 		.stack-interface
 			margin-top 5px
 		#mega-menu
+			margin 0
 			top 0 !important
 			li
 				font-size 22px

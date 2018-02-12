@@ -1459,7 +1459,7 @@ ul:last-child {
     }
 }
 
-@media all and (max-width: 767px) {
+@media all and (max-width: 992px) {
     .dropdown .dropdown__container {
         min-width: 100%;
         position: relative;
