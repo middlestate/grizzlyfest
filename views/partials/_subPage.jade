@@ -32,6 +32,13 @@ block content
 											.col-sm-12
 												.md!= md(block.fields.body)
 								else if block.sys.contentType.sys.id === 'photoGallery'
+									if block.fields.gallery != undefined
+										.masonry
+											.row.masonry__container.text-center
+												for image in block.fields.gallery
+													.gallery-image.angle.col-sm-4.col-xs-6.masonry__item
+														a(href="#{asset(image)}" data-lightbox="true")
+															img.blog-photo(src="#{asset(image)}")
 								else if block.sys.contentType.sys.id === 'videoSection'
 									if block.fields.iframe != undefined
 										.md!= block.fields.iframe
