@@ -46,6 +46,8 @@ block content
 										- var minutes = date.getUTCMinutes() < 10 ? '0' + date.getUTCMinutes() : date.getUTCMinutes()
 										//-- console.log(date.getUTCHours() + UTCoffset)
 										if (date.getUTCHours() + UTCoffset) != 9
-											h6= days[date.getUTCDay()] + ', ' + months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - ' + (date.getUTCHours()+ UTCoffset) + ':' + minutes + ' ' + ampm
+											h5= days[date.getUTCDay()]
+											h6= months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - ' + (date.getUTCHours()+ UTCoffset) + ':' + minutes + ' ' + ampm
 										else
-											h6= days[date.getUTCDay()] + ', ' + months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - time TBA'
+											h5= days[date.getUTCDay()]
+											h6= months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - time TBA'
