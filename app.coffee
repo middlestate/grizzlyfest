@@ -57,6 +57,8 @@ module.exports =
 					filters:{
 						'order':'fields.text'
 					}
+				home:
+					id:"homePage"
 	]
 
 	stylus:
