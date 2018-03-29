@@ -12,16 +12,28 @@ block content
 				.col-sm-12
 					h2 THE LINEUP
 					.separator
+			if contentful.eventCategories != undefined
+				.row.text-center
+					.masonry-filter-holder.masonry-filters--horizontal
+						.masonry__filters
+							ul
+								li.color-purple.active(data-masonry-filter="*") All Events
+								li.color-purple.active(data-masonry-filter="day1") Day One
+								li.color-purple.active(data-masonry-filter="day2") Day Two
 			.row.masonry__container.text-center
 				if contentful.artists != undefined
-					for item in contentful.artists
-						.artist.angle.col-sm-4.col-xs-6.masonry__item
-							a(href="#{item._url}")
-								img.artist-photo(src="#{asset(item.artistPhoto)}")
-								span.artist-name= item.artistName
-								if item.socialLinks != undefined
+					for artist in contentful.artists
+						- var cats = ''
+						if artist.playing != undefined
+							for cat in artist.playing.fields.categories
+								- cats+= " filter-" + cat.fields.id
+						.artist.angle.col-sm-4.col-xs-6.masonry__item(class="#{cats}")
+							a(href="#{artist._url}")
+								img.artist-photo(src="#{asset(artist.artistPhoto)}")
+								span.artist-name= artist.artistName
+								if artist.socialLinks != undefined
 									ul.social-media
-										for link in item.socialLinks
+										for link in artist.socialLinks
 											li
 												a(href="#{link.fields.url}" target="_blank")
 													i.fa(class="fa-#{link.fields.site}")

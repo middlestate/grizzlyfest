@@ -10,7 +10,7 @@ block content
 			.row.text-center
 				.col-sm-12
 					img.artist-img.angle(src="#{asset(entry.artistPhoto)}")
-				.col-sm-12
+				.col-sm-12.mt--1
 					h3= entry.artistName
 				.col-sm-12
 					if entry.socialLinks != undefined
@@ -19,6 +19,25 @@ block content
 								li
 									a(href="#{item.fields.url}" target="_blank")
 										i.fa(class="fa-#{item.fields.site}")
+			.row.text-center
+					.col-sm-12.mt--1
+						if entry.playing != undefined
+							//-p= entry.playing.fields.timeSlot
+							if entry.playing.fields.timeSlot != undefined
+								- var UTCoffset = -7
+								- var date = new Date(entry.playing.fields.timeSlot)
+								- var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+								- var days = ['',"Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday", "Sunday"]
+								- var ampm = date.getUTCHours() + UTCoffset >= 12 ? 'PM' : 'AM'
+								- var minutes = date.getUTCMinutes() < 10 ? '0' + date.getUTCMinutes() : date.getUTCMinutes()
+								//-- console.log(date.getUTCHours() + UTCoffset)
+								if (date.getUTCHours() + UTCoffset) != 9
+									h4= days[date.getUTCDay()]
+									h5= months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - ' + (date.getUTCHours()+ UTCoffset) + ':' + minutes + ' ' + ampm
+								else
+									h4= days[date.getUTCDay()]
+									h5= months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - time TBA'
 				if entry.bio != undefined
 					.col-sm-12
 						.md!= md(entry.bio)
+		
