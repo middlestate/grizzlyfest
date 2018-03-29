@@ -64,7 +64,7 @@ module.exports =
 				eventCategories:
 					id:"eventCategory"
 					filters:{
-						'order':'fields.text'
+						'order':'fields.order'
 					}
 				home:
 					id:"homePage"
