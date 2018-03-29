@@ -10,8 +10,11 @@ block content
 		#artists.container.masonry
 			.row.text-center
 				.col-sm-12
-					h2 THE LINEUP
+					h2 THE ARTISTS
 					.separator
+				.col-sm-12.mb--1
+					a.btn.white.angle(href="/schedule")
+						.btn__text.color-maroon See the Schedule
 			if contentful.eventCategories != undefined
 				.row.text-center
 					.masonry-filter-holder.masonry-filters--horizontal

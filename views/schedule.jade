@@ -45,9 +45,9 @@ block content
 										- var ampm = date.getUTCHours() + UTCoffset >= 12 ? 'PM' : 'AM'
 										- var minutes = date.getUTCMinutes() < 10 ? '0' + date.getUTCMinutes() : date.getUTCMinutes()
 										//-- console.log(date.getUTCHours() + UTCoffset)
-										if (date.getUTCHours() + UTCoffset) != 9
-											h5= days[date.getUTCDay()]
-											h6= months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - ' + (date.getUTCHours()+ UTCoffset) + ':' + minutes + ' ' + ampm
-										else
-											h5= days[date.getUTCDay()]
-											h6= months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - time TBA'
+										//- if (date.getUTCHours() + UTCoffset) != 9
+										//- 	h5= days[date.getUTCDay()]
+										//- 	h6= months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - ' + (date.getUTCHours()+ UTCoffset) + ':' + minutes + ' ' + ampm
+										//- else
+										h5= days[date.getUTCDay()]
+										h6= months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - time TBA'
