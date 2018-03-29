@@ -51,9 +51,9 @@ block content
 					h2 THE LINEUP
 					.separator
 			.row.masonry__container.text-center
-				if contentful.artists != undefined
+				if contentful.featuredArtists != undefined
 					- var max = 9
-					for item in contentful.artists
+					for item in contentful.featuredArtists
 						- max--
 						if max >= 0
 							.artist.angle.col-sm-4.col-xs-6.masonry__item

@@ -5,9 +5,10 @@ js_pipeline  = require 'js-pipeline'
 css_pipeline = require 'css-pipeline'
 contentful   = require 'roots-contentful'
 subPages     = {}
-
+featuredArtists = []
 transformFunction = (entry) ->
 	subPages[entry.id] = entry
+	
 module.exports =
 	output: 'public'
 	env: 'en'
@@ -30,6 +31,14 @@ module.exports =
 					id:'artist'
 					filters:{
 						'order':'fields.order'
+					}
+					template: '/views/partials/_artist.jade'
+					path: (e) -> "artist/#{e.url}"
+				featuredArtists:
+					id:"artist"
+					filters:{
+						"fields.featured[exists]":"true"
+						"order":"fields.featured"
 					}
 					template: '/views/partials/_artist.jade'
 					path: (e) -> "artist/#{e.url}"
