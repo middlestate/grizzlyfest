@@ -16,15 +16,15 @@ getDateVars = (entry) ->
 		entry.dateFormatted = {}
 		entry.dateFormatted.test = entry.artistName
 		entry.dateFormatted.default = dateoo
-		entry.dateFormatted.UTCday = dateoo.getUTCDate()
-		entry.dateFormatted.UTCdayName = days[dateoo.getUTCDay()]
-		entry.dateFormatted.UTCmonth = months[dateoo.getUTCMonth()]
-		entry.dateFormatted.UTCyear = dateoo.getUTCFullYear()
-		entry.dateFormatted.UTChour = if dateoo.getUTCHours() >= 12 then dateoo.getUTCHours() - 12 else dateoo.getUTCHours()
-		if entry.dateFormatted.UTChour == 0
-			entry.dateFormatted.UTChour = 12
-		entry.dateFormatted.UTCampm = if dateoo.getUTCHours() >= 12 then "PM" else "AM"
-		entry.dateFormatted.UTCminutes = if dateoo.getUTCMinutes() < 10 then '0' + dateoo.getUTCMinutes() else dateoo.getUTCMinutes()
+		# entry.dateFormatted.UTCday = dateoo.getUTCDate()
+		# entry.dateFormatted.UTCdayName = days[dateoo.getUTCDay()]
+		# entry.dateFormatted.UTCmonth = months[dateoo.getUTCMonth()]
+		# entry.dateFormatted.UTCyear = dateoo.getUTCFullYear()
+		# entry.dateFormatted.UTChour = if dateoo.getUTCHours() >= 12 then dateoo.getUTCHours() - 12 else dateoo.getUTCHours()
+		# if entry.dateFormatted.UTChour == 0
+		# 	entry.dateFormatted.UTChour = 12
+		# entry.dateFormatted.UTCampm = if dateoo.getUTCHours() >= 12 then "PM" else "AM"
+		# entry.dateFormatted.UTCminutes = if dateoo.getUTCMinutes() < 10 then '0' + dateoo.getUTCMinutes() else dateoo.getUTCMinutes()
 
 		entry.dateFormatted.day = dateoo.getDate()
 		entry.dateFormatted.dayName = days[dateoo.getDay()]
