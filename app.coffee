@@ -12,17 +12,17 @@ getDateVars = (entry) ->
 	if entry.playing.fields.timeSlot != undefined
 		days = ["","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
 		months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-		date = new Date(entry.playing.fields.timeSlot)
+		dateoo = new Date(entry.playing.fields.timeSlot)
 		entry.dateFormatted = {}
-		entry.dateFormatted.day = date.getDate()
-		entry.dateFormatted.dayName = days[date.getDay()]
-		entry.dateFormatted.month = months[date.getMonth()]
-		entry.dateFormatted.year = date.getFullYear()
-		entry.dateFormatted.hour = if date.getHours() >= 12 then date.getHours() - 12 else date.getHours()
+		entry.dateFormatted.day = dateoo.getDate()
+		entry.dateFormatted.dayName = days[dateoo.getDay()]
+		entry.dateFormatted.month = months[dateoo.getMonth()]
+		entry.dateFormatted.year = dateoo.getFullYear()
+		entry.dateFormatted.hour = if dateoo.getHours() >= 12 then dateoo.getHours() - 12 else dateoo.getHours()
 		if entry.dateFormatted.hour == 0
 			entry.dateFormatted.hour = 12
-		entry.dateFormatted.ampm = if date.getHours() >= 12 then "PM" else "AM"
-		entry.dateFormatted.minutes = if date.getMinutes() < 10 then '0' + date.getMinutes() else date.getMinutes
+		entry.dateFormatted.ampm = if dateoo.getHours() >= 12 then "PM" else "AM"
+		entry.dateFormatted.minutes = if dateoo.getMinutes() < 10 then '0' + dateoo.getMinutes() else dateoo.getMinutes
 		console.log(JSON.stringify(entry.dateFormatted))
 module.exports =
 	output: 'public'
