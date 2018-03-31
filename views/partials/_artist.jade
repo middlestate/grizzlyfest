@@ -21,16 +21,12 @@ block content
 										i.fa(class="fa-#{item.fields.site}")
 			.row.text-center
 					.col-sm-12.mt--1
-						if entry.playing != undefined
-							//-p= entry.playing.fields.timeSlot
-							if entry.playing.fields.timeSlot != undefined
-								- var date = new Date(entry.playing.fields.timeSlot)
-								- var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-								- var days = ['',"Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday", "Sunday"]
-								- var ampm = date.getHours() >= 12 ? 'PM' : 'AM'
-								- var hours = date.getHours() >= 12 ? date.getHours() - 12 : date.getHours()
-								- if (hours === 0){hours=12}
-								- var minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
+							//-p= JSON.stringify(entry.dateFormatted)
+							if entry.dateFormatted != undefined
+								- var d = entry.dateFormatted
+								//-p= entry.dateFormatted.dayName + " " + d.month + " " + d.day + " " + d.hour + " " + d.minutes + " " + d.ampm
+								script.
+									console.log("#{d.dayName} #{d.month} #{d.day} #{d.hour}:#{d.minutes} #{d.ampm}")
 								//-- console.log(date.getUTCHours())
 								//-if (date.getUTCHours()) != 9
 									h4= days[date.getDay()]

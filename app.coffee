@@ -8,7 +8,22 @@ subPages     = {}
 featuredArtists = []
 transformFunction = (entry) ->
 	subPages[entry.id] = entry
-	
+getDateVars = (entry) ->
+	console.log(entry.playing.fields.timeSlot != undefined)
+	if entry.playing.fields.timeSlot != undefined
+		days = ["","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
+		months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+		date = new Date(entry.playing.fields.timeSlot)
+		entry.dateFormatted = {}
+		entry.dateFormatted.day = date.getDate()
+		entry.dateFormatted.dayName = days[date.getDay()]
+		entry.dateFormatted.month = months[date.getMonth()]
+		entry.dateFormatted.year = date.getFullYear()
+		entry.dateFormatted.hour = if date.getHours() >= 12 then date.getHours() - 12 else date.getHours()
+		if entry.dateFormatted.hour == 0
+			entry.dateFormatted.hour = 12
+		entry.dateFormatted.ampm = if date.getHours() >= 12 then "PM" else "AM"
+		entry.dateFormatted.minutes = if date.getMinutes() < 10 then '0' + date.getMinutes() else date.getMinutes()
 module.exports =
 	output: 'public'
 	env: 'en'
@@ -32,6 +47,7 @@ module.exports =
 					filters:{
 						'order':'fields.order'
 					}
+					transform: getDateVars
 					template: '/views/partials/_artist.jade'
 					path: (e) -> "artist/#{e.url}"
 				featuredArtists:
@@ -42,6 +58,7 @@ module.exports =
 					}
 					template: '/views/partials/_artist.jade'
 					path: (e) -> "artist/#{e.url}"
+					transform: getDateVars
 				subPages:
 					id:'subPage'
 					transform:transformFunction
