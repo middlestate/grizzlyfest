@@ -14,6 +14,17 @@ getDateVars = (entry) ->
 		months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 		dateoo = new Date(entry.playing.fields.timeSlot)
 		entry.dateFormatted = {}
+		entry.dateFormatted.default = dateoo
+		entry.dateFormatted.UTCday = dateoo.getUTCDate()
+		entry.dateFormatted.UTCdayName = days[dateoo.getUTCDay()]
+		entry.dateFormatted.UTCmonth = months[dateoo.getUTCMonth()]
+		entry.dateFormatted.UTCyear = dateoo.getUTCFullYear()
+		entry.dateFormatted.UTChour = if dateoo.getUTCHours() >= 12 then dateoo.getUTCHours() - 12 else dateoo.getUTCHours()
+		if entry.dateFormatted.UTChour == 0
+			entry.dateFormatted.UTChour = 12
+		entry.dateFormatted.UTCampm = if dateoo.getUTCHours() >= 12 then "PM" else "AM"
+		entry.dateFormatted.UTCminutes = if dateoo.getUTCMinutes() < 10 then '0' + dateoo.getUTCMinutes() else dateoo.getUTCMinutes()
+
 		entry.dateFormatted.day = dateoo.getDate()
 		entry.dateFormatted.dayName = days[dateoo.getDay()]
 		entry.dateFormatted.month = months[dateoo.getMonth()]
@@ -22,7 +33,7 @@ getDateVars = (entry) ->
 		if entry.dateFormatted.hour == 0
 			entry.dateFormatted.hour = 12
 		entry.dateFormatted.ampm = if dateoo.getHours() >= 12 then "PM" else "AM"
-		entry.dateFormatted.minutes = if dateoo.getMinutes() < 10 then '0' + dateoo.getMinutes() else dateoo.getMinutes
+		entry.dateFormatted.minutes = if dateoo.getMinutes() < 10 then '0' + dateoo.getMinutes() else dateoo.getMinutes()
 		console.log(JSON.stringify(entry.dateFormatted))
 module.exports =
 	output: 'public'
