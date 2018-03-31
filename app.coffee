@@ -9,7 +9,6 @@ featuredArtists = []
 transformFunction = (entry) ->
 	subPages[entry.id] = entry
 getDateVars = (entry) ->
-	console.log(entry.playing.fields.timeSlot != undefined)
 	if entry.playing.fields.timeSlot != undefined
 		days = ["","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
 		months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -23,7 +22,8 @@ getDateVars = (entry) ->
 		if entry.dateFormatted.hour == 0
 			entry.dateFormatted.hour = 12
 		entry.dateFormatted.ampm = if date.getHours() >= 12 then "PM" else "AM"
-		entry.dateFormatted.minutes = if date.getMinutes() < 10 then '0' + date.getMinutes() else date.getMinutes()
+		entry.dateFormatted.minutes = if date.getMinutes() < 10 then '0' + date.getMinutes() else date.getMinutes
+		console.log(JSON.stringify(entry.dateFormatted))
 module.exports =
 	output: 'public'
 	env: 'en'
