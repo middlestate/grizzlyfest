@@ -38,7 +38,7 @@ block content
 									if event.featuredText != undefined
 										p.featuredText.md!= md(event.featuredText)
 									if event.dateFormatted != undefined
-										- var d = entry.dateFormatted
+										- var d = event.dateFormatted
 										//-script.
 											console.log("#{d.dayName} #{d.month} #{d.day} #{d.hour}:#{d.minutes} #{d.ampm}")
 										//-- console.log(date.getUTCHours())
