@@ -14,6 +14,7 @@ getDateVars = (entry) ->
 		months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 		dateoo = new Date(entry.playing.fields.timeSlot)
 		entry.dateFormatted = {}
+		entry.dateFormatted.test = entry.artistName
 		entry.dateFormatted.default = dateoo
 		entry.dateFormatted.UTCday = dateoo.getUTCDate()
 		entry.dateFormatted.UTCdayName = days[dateoo.getUTCDay()]
