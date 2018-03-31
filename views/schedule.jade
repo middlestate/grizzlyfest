@@ -37,18 +37,16 @@ block content
 									h5.blog-name= event.title
 									if event.featuredText != undefined
 										p.featuredText.md!= md(event.featuredText)
-									if event.timeSlot != undefined
-										- var date = new Date(event.timeSlot)
-										- var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-										- var days = ['',"Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday", "Sunday"]
-										- var ampm = date.getHours() >= 12 ? 'PM' : 'AM'
-										- var hours = date.getHours() >= 12 ? date.getHours() -12 : date.getHours()
-										- if(hours == 0){hours = 12}
-										- var minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
-										//-- console.log(date.getHours())
-										//- if (date.getHours()) != 9
-										//- 	h5= days[date.getDay()]
-										//- 	h6= months[date.getMonth()] + ' ' + date.getDate() + ' - ' + hours + ':' + minutes + ' ' + ampm
-										//- else
-										h5= days[date.getDay()]
-										h6= months[date.getMonth()] + ' ' + date.getDate() + ' - time TBA'
+									if event.dateFormatted != undefined
+										- var d = entry.dateFormatted
+										//-script.
+											console.log("#{d.dayName} #{d.month} #{d.day} #{d.hour}:#{d.minutes} #{d.ampm}")
+										//-- console.log(date.getUTCHours())
+										//-if (date.getUTCHours()) != 9
+											h4= days[date.getDay()]
+											h5= months[date.getMonth()] + ' ' + date.getDate() + ' - ' + hours + ':' + minutes + ' ' + ampm
+										//-else
+										h4= d.dayName
+										h5= d.month + ' ' + d.day + ' - time TBA'
+										//-if entry.playing.fields.location != undefined
+											h5= entry.playing.fields.location

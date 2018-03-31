@@ -10,22 +10,16 @@ transformFunction = (entry) ->
 	subPages[entry.id] = entry
 getDateVars = (entry) ->
 	if entry.playing.fields.timeSlot != undefined
+		dateToFormat = entry.playing.fields.timeSlot
+	else if entry.timeSlot != undefined
+		dateToFormat = entry.timeSlot
+	if dateToFormat != undefined
 		days = ["","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"]
 		months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-		dateoo = new Date(entry.playing.fields.timeSlot)
+		dateoo = new Date(dateToFormat)
 		entry.dateFormatted = {}
 		entry.dateFormatted.test = entry.artistName
 		entry.dateFormatted.default = dateoo
-		# entry.dateFormatted.UTCday = dateoo.getUTCDate()
-		# entry.dateFormatted.UTCdayName = days[dateoo.getUTCDay()]
-		# entry.dateFormatted.UTCmonth = months[dateoo.getUTCMonth()]
-		# entry.dateFormatted.UTCyear = dateoo.getUTCFullYear()
-		# entry.dateFormatted.UTChour = if dateoo.getUTCHours() >= 12 then dateoo.getUTCHours() - 12 else dateoo.getUTCHours()
-		# if entry.dateFormatted.UTChour == 0
-		# 	entry.dateFormatted.UTChour = 12
-		# entry.dateFormatted.UTCampm = if dateoo.getUTCHours() >= 12 then "PM" else "AM"
-		# entry.dateFormatted.UTCminutes = if dateoo.getUTCMinutes() < 10 then '0' + dateoo.getUTCMinutes() else dateoo.getUTCMinutes()
-
 		entry.dateFormatted.day = dateoo.getDate()
 		entry.dateFormatted.dayName = days[dateoo.getDay()]
 		entry.dateFormatted.month = months[dateoo.getMonth()]
@@ -90,6 +84,7 @@ module.exports =
 					}
 					template: '/views/partials/_event.jade'
 					path: (e) -> "event/#{e.id}"
+					transform: getDateVars
 				eventCategories:
 					id:"eventCategory"
 					filters:{

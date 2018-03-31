@@ -15,20 +15,19 @@ block content
 					.separator
 					if entry.featuredText != undefined
 						.md!=md(entry.featuredText)
-					if entry.timeSlot != undefined
-						- var UTCoffset = -7
-						- var date = new Date(entry.timeSlot)
-						- var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-						- var days = ['',"Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday", "Sunday"]
-						- var ampm = date.getUTCHours() + UTCoffset >= 12 ? 'PM' : 'AM'
-						- var minutes = date.getUTCMinutes() < 10 ? '0' + date.getUTCMinutes() : date.getUTCMinutes()
-						//-- console.log(date.getUTCHours() + UTCoffset)
-						//- if (date.getUTCHours() + UTCoffset) != 9
-						//- 	h4= days[date.getUTCDay()]
-						//- 	h5= months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - ' + (date.getUTCHours()+ UTCoffset) + ':' + minutes + ' ' + ampm
-						//- else
-						//- 	h4= days[date.getUTCDay()]
-						//- 	h5= months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - time TBA'
+					if entry.dateFormatted != undefined
+						- var d = entry.dateFormatted
+						//-script.
+							console.log("#{d.dayName} #{d.month} #{d.day} #{d.hour}:#{d.minutes} #{d.ampm}")
+						//-- console.log(date.getUTCHours())
+						//-if (date.getUTCHours()) != 9
+							h4= days[date.getDay()]
+							h5= months[date.getMonth()] + ' ' + date.getDate() + ' - ' + hours + ':' + minutes + ' ' + ampm
+						//-else
+						h4= d.dayName
+						h5= d.month + ' ' + d.day + ' - time TBA'
+						//-if entry.playing.fields.location != undefined
+							h5= entry.playing.fields.location
 
 	if entry != undefined
 		if entry.sections != undefined

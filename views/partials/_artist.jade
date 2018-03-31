@@ -24,16 +24,15 @@ block content
 							//-p= JSON.stringify(entry.dateFormatted)
 							if entry.dateFormatted != undefined
 								- var d = entry.dateFormatted
-								//-p= entry.dateFormatted.dayName + " " + d.month + " " + d.day + " " + d.hour + " " + d.minutes + " " + d.ampm
-								script.
+								//-script.
 									console.log("#{d.dayName} #{d.month} #{d.day} #{d.hour}:#{d.minutes} #{d.ampm}")
 								//-- console.log(date.getUTCHours())
 								//-if (date.getUTCHours()) != 9
 									h4= days[date.getDay()]
 									h5= months[date.getMonth()] + ' ' + date.getDate() + ' - ' + hours + ':' + minutes + ' ' + ampm
 								//-else
-								//- h4= days[date.getUTCDay()]
-								//- h5= months[date.getMonth()] + ' ' + date.getUTCDate() + ' - time TBA'
+								h4= d.dayName
+								h5= d.month + ' ' + d.day + ' - time TBA'
 								//-if entry.playing.fields.location != undefined
 									h5= entry.playing.fields.location
 				if entry.bio != undefined
