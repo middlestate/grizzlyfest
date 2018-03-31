@@ -31,8 +31,8 @@ block content
 								- var hours = date.getHours() >= 12 ? date.getHours() - 12 : date.getHours()
 								- if (hours === 0){hours=12}
 								- var minutes = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()
-								//-- console.log(date.getUTCHours())
-								//-if (date.getUTCHours()) != 9
+								//-- console.log(hours)
+								//-if (date.getHours()) != 9
 									h4= days[date.getDay()]
 									h5= months[date.getMonth()] + ' ' + date.getDate() + ' - ' + hours + ':' + minutes + ' ' + ampm
 								//-else
