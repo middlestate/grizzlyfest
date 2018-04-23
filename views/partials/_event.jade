@@ -26,9 +26,8 @@ block content
 						//- else
 						h4= d.dayName
 						h5= d.month + ' ' + d.day + ' ' + d.hour + ':' + d.minutes + d.ampm
-						if entry.playing != undefined
-							if entry.playing.fields.location != undefined
-								h5= entry.playing.fields.location
+						if entry.location != undefined
+							h5= entry.location
 
 	if entry != undefined
 		if entry.sections != undefined

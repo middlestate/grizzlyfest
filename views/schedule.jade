@@ -48,6 +48,5 @@ block content
 										//-else
 										h4= d.dayName
 										h5= d.month + ' ' + d.day + ' ' + d.hour + ':' + d.minutes + d.ampm
-										if event.playing != undefined
-											if event.playing.fields.location != undefined
-												h5= entry.playing.fields.location
+										if event.location != undefined
+											h5= event.location
