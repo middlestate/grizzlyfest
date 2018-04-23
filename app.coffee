@@ -80,7 +80,7 @@ module.exports =
 				events:
 					id:"event"
 					filters:{
-						'order':'fields.tempOrder'
+						'order':'fields.timeSlot'
 					}
 					template: '/views/partials/_event.jade'
 					path: (e) -> "event/#{e.id}"
