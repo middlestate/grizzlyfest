@@ -29,7 +29,7 @@ getDateVars = (entry) ->
 			entry.dateFormatted.hour = 12
 		entry.dateFormatted.ampm = if dateoo.getHours() >= 12 then "PM" else "AM"
 		entry.dateFormatted.minutes = if dateoo.getMinutes() < 10 then '0' + dateoo.getMinutes() else dateoo.getMinutes()
-		console.log(JSON.stringify(entry.dateFormatted))
+		#console.log(JSON.stringify(entry.dateFormatted))
 module.exports =
 	output: 'public'
 	env: 'en'
