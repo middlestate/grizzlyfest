@@ -49,18 +49,22 @@ $(window).on('resize',function(){
 	  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 	  // Display the result in the element with id="demo"
-	  console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s ")
+	  //console.log(days + "d " + hours + "h " + minutes + "m " + seconds + "s ")
 	  $('#countdown-timer .countdown-days').html(days)
 	  $('#countdown-timer .countdown-hours').html(hours)
 	  $('#countdown-timer .countdown-minutes').html(minutes)
 	  $('#countdown-timer .countdown-seconds').html(seconds)
 	  //document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
-	  // If the count down is finished, write some text
-	  if (distance < 0) {
-	    clearInterval(x);
-	    //document.getElementById("demo").innerHTML = "EXPIRED";
-	  }
+	// If the count down is finished, write some text
+	if (distance < 0) {
+		clearInterval(x);
+		$('#countdown-timer .countdown-days').html("0")
+		$('#countdown-timer .countdown-hours').html("0")
+		$('#countdown-timer .countdown-minutes').html("0")
+		$('#countdown-timer .countdown-seconds').html("0")
+		//document.getElementById("demo").innerHTML = "EXPIRED";
+		}
 	}, 1000);
 
 
