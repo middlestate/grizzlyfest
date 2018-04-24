@@ -1,0 +1,29 @@
+extends /layout
+
+block content
+	section.imagebg.parallax.pink.height-50.hero(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/home-header.jpg")
+	section.angle.imagebg.maroon.heavy(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/home-img2.jpg")
+		#artists.container.masonry
+			.row.text-center
+				.col-sm-12
+					h2 THE SPONSORS
+					.separator
+			.row.text-center
+				.col-sm-6.col-center
+					a(href="http://www.805beer.com/" target="_blank")
+						img(src="/img/sponsors/805-white.png")
+			.row.masonry__container.text-center
+				if contentful.sponsors != undefined
+					for sponsor in contentful.sponsors
+						.col-sm-4.col-xs-6.masonry__item
+							if sponsor.website != undefined
+								a(href="#{sponsor.website}" target="_blank")
+									img(src="#{asset(sponsor.logo)}")
+									//-span.artist-name= sponsor.name
+							else
+								img(src="#{asset(sponsor.logo)}")
+								//-span.artist-name= sponsor.name

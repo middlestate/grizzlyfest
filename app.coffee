@@ -90,6 +90,11 @@ module.exports =
 					filters:{
 						'order':'fields.order'
 					}
+				sponsors:
+					id:"sponsor"
+					filters:{
+						'order':'fields.order'
+					}
 				home:
 					id:"homePage"
 	]

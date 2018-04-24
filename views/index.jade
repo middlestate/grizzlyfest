@@ -142,9 +142,28 @@ block content
 				.col-sm-12
 					h2 THE SPONSORS
 					.separator
+			.row.text-center
+				.col-sm-6.col-center
+					a(href="http://www.805beer.com/" target="_blank")
+						img(src="/img/sponsors/805-white.png")
+			.masonry
+				.row.masonry__container.text-center
+					if contentful.sponsors != undefined
+						- var maxSponsors = 3
+						for sponsor in contentful.sponsors
+							if maxSponsors > 0
+								- maxSponsors --
+								.col-sm-4.col-xs-6.masonry__item
+									if sponsor.website != undefined
+										a(href="#{sponsor.website}" target="_blank")
+											img(src="#{asset(sponsor.logo)}")
+											//-span.artist-name= sponsor.name
+									else
+										img(src="#{asset(sponsor.logo)}")
+										//-span.artist-name= sponsor.name
+			.row.text-center
 				.col-sm-12
-					h4 Sponsors TBA
-					//-a.btn.white.angle(href="#")
+					a.btn.white.angle(href="/sponsors")
 						span.btn__text.color-maroon View all sponsors
 	//-section.angle.imagebg.lightblue(data-overlay)
 		.background-image-holder
