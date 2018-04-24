@@ -151,16 +151,16 @@ block content
 					if contentful.sponsors != undefined
 						//-- var maxSponsors = 3
 						for sponsor in contentful.sponsors
-							if maxSponsors > 0
+							//-if maxSponsors > 0
 								//-- maxSponsors --
-								.col-sm-4.col-xs-6.masonry__item
-									if sponsor.website != undefined
-										a(href="#{sponsor.website}" target="_blank")
-											img(src="#{asset(sponsor.logo)}")
-											//-span.artist-name= sponsor.name
-									else
+							.col-sm-4.col-xs-6.masonry__item
+								if sponsor.website != undefined
+									a(href="#{sponsor.website}" target="_blank")
 										img(src="#{asset(sponsor.logo)}")
 										//-span.artist-name= sponsor.name
+								else
+									img(src="#{asset(sponsor.logo)}")
+									//-span.artist-name= sponsor.name
 			//-.row.text-center
 				.col-sm-12
 					a.btn.white.angle(href="/sponsors")
