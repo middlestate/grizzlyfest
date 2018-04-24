@@ -149,10 +149,10 @@ block content
 			.masonry
 				.row.masonry__container.text-center
 					if contentful.sponsors != undefined
-						- var maxSponsors = 3
+						//-- var maxSponsors = 3
 						for sponsor in contentful.sponsors
 							if maxSponsors > 0
-								- maxSponsors --
+								//-- maxSponsors --
 								.col-sm-4.col-xs-6.masonry__item
 									if sponsor.website != undefined
 										a(href="#{sponsor.website}" target="_blank")
@@ -161,7 +161,7 @@ block content
 									else
 										img(src="#{asset(sponsor.logo)}")
 										//-span.artist-name= sponsor.name
-			.row.text-center
+			//-.row.text-center
 				.col-sm-12
 					a.btn.white.angle(href="/sponsors")
 						span.btn__text.color-blue View all sponsors
