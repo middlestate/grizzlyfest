@@ -46,6 +46,8 @@ module.exports =
 		css_pipeline(files: ['assets/css/*.css','assets/css/*.styl'])
 		contentful
 			access_token:'74cacbafcaa3ea5e845b748967be91f6697e813b0e51272726505dc47d292a8c'
+			# access_token:'54d3406ca2d8cafe6cf0fe9e85d8c450e8a8f9134f22ec1a734a6f78516cb2ba'
+			# preview: true
 			space_id:'iqajn39axb7g'
 			content_types:
 				artists:
