@@ -29,6 +29,7 @@ block content
 							for item in event.categories
 								- cats+= " filter-"+item.fields.id
 						.event.angle.row.text-center.masonry__item(class="#{cats}")
+							p.event-date.hidden= new Date(event.timeSlot)
 							//-#{event._url}
 							a(href="#{event._url}")
 								.col-sm-4.col-xs-6
@@ -50,3 +51,43 @@ block content
 										h5= d.month + ' ' + d.day + ' ' + d.hour + ':' + d.minutes + d.ampm
 										if event.location != undefined
 											h5= event.location
+				//-#events.masonry__container
+					for event in contentful.events
+						- var cats = ''
+						if event.categories != undefined
+							for item in event.categories
+								- cats+= " filter-"+item.fields.id
+						- var now = new Date()
+						- var timeSlot = new Date(event.timeSlot)
+						if timeSlot < now
+							.event.angle.row.text-center.masonry__item(class="#{cats}")
+								//-#{event._url}
+								a(href="#{event._url}")
+									.col-sm-4.col-xs-6
+										img.blog-photo(src="#{asset(event.featuredImage)}")
+									.event-info.col-sm-8.col-xs-6
+										h5.strike.blog-name= event.title
+										if event.featuredText != undefined
+											p.strike.featuredText.md!= md(event.featuredText)
+										if event.dateFormatted != undefined
+											- var d = event.dateFormatted
+											//-script.
+												console.log("#{d.dayName} #{d.month} #{d.day} #{d.hour}:#{d.minutes} #{d.ampm}")
+											//-- console.log(date.getUTCHours())
+											//-if (date.getUTCHours()) != 9
+												h4= days[date.getDay()]
+												h5= months[date.getMonth()] + ' ' + date.getDate() + ' - ' + hours + ':' + minutes + ' ' + ampm
+											//-else
+											h4.strike= d.dayName
+											h5.strike= d.month + ' ' + d.day + ' ' + d.hour + ':' + d.minutes + d.ampm
+											if event.location != undefined
+												h5.strike= event.location
+	script.
+		$('.event').each(function(i,val){
+			var eventDate = new Date($(val).find('.event-date').html())
+			var now = new Date()
+			if(eventDate < now){
+				$('#events').append($(val))
+				$(val).find('h4,h5').addClass('strike')
+			}
+		})
