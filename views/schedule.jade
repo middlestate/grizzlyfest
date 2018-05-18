@@ -49,6 +49,7 @@ block content
 	script.
 		$('.event').each(function(i,val){
 			var eventDate = new Date($(val).find('.event-date').html())
+			eventDate.setHours(eventDate.getHours()+7)
 			console.log("event: " + eventDate)
 			var now = new Date()
 			console.log("now: " + now)
