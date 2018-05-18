@@ -49,9 +49,9 @@ block content
 	script.
 		$('.event').each(function(i,val){
 			var eventDate = new Date($(val).find('.event-date').html())
-			console.log(eventDate)
+			console.log("event: " + eventDate)
 			var now = new Date()
-			console.log(now)
+			console.log("now: " + now)
 			//- if(eventDate < now){
 			//- 	$('#events').append($(val))
 			//- 	$(val).find('h4,h5').addClass('strike')
