@@ -46,12 +46,14 @@ block content
 											h5= event.location
 
 	//- Script to hide events that have passed (without re-compiliing the whole site)
-	//-script.
+	script.
 		$('.event').each(function(i,val){
 			var eventDate = new Date($(val).find('.event-date').html())
+			console.log(eventDate)
 			var now = new Date()
-			if(eventDate < now){
-				$('#events').append($(val))
-				$(val).find('h4,h5').addClass('strike')
-			}
+			console.log(now)
+			//- if(eventDate < now){
+			//- 	$('#events').append($(val))
+			//- 	$(val).find('h4,h5').addClass('strike')
+			//- }
 		})
