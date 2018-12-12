@@ -1,0 +1,37 @@
+{
+  "name": "griz2019",
+  "description": "Grizzlyfest2019",
+  "version": "0.0.1",
+  "author": "datahavest",
+  "ava": {
+    "verbose": "true"
+  },
+  "bugs": "https://github.com/datahavest/griz2019/issues",
+  "dependencies": {
+    "reshape-standard": "^3.3.0",
+    "spike-css-standards": "^4.0.0",
+    "spike-js-standards": "^2.1.0",
+    "spike-optimize": "^0.1.2",
+    "spike-page-id": "^1.1.0",
+    "spike": "^2.3.0"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "rimraf": "^2.6.1",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.2"
+  },
+  "homepage": "https://github.com/datahavest/griz2019",
+  "main": "app.js",
+  "private": true,
+  "repository": "https://github.com/datahavest/griz2019",
+  "scripts": {
+    "lint": "standard | snazzy",
+    "precommit": "npm run lint -s",
+    "pretest": "npm run lint -s",
+    "test": "NODE_ENV=test ava",
+    "start": "spike watch",
+    "build": "spike compile",
+    "prod": "NODE_ENV=production spike compile -e production"
+  }
+}
