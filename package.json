@@ -4,8 +4,7 @@
   "dependencies": {
     "autoprefixer-stylus": "0.9.x",
     "axis": "0.6.x",
-    "coffee-script": "1.x",
-    "contentful": "^7.0.6",
+    "contentful": "^7.0.5",
     "css-pipeline": "0.3.x",
     "jade": "1.x",
     "js-pipeline": "0.2.x",
@@ -15,6 +14,7 @@
     "roots-contentful": "0.0.9",
     "rupture": "0.6.x",
     "slugify": "^1.2.1",
-    "stylus": "0.54.x"
+    "stylus": "0.54.x",
+    "coffee-script": "1.x"
   }
 }
