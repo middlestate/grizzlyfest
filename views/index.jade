@@ -43,50 +43,6 @@ block content
 		#artists.container.masonry
 			.row.text-center
 				.col-sm-12
-					h2 THE LINEUP
-					.separator
-			.row.masonry__container.text-center
-				if contentful.featuredArtists != undefined
-					- var max = 9
-					for item in contentful.featuredArtists
-						- max--
-						if max >= 0
-							.artist.angle.col-sm-4.col-xs-6.masonry__item
-								a(href="#{item._url}")
-									img.artist-photo(src="#{asset(item.artistPhoto)}")
-									span.artist-name= item.artistName
-									if item.socialLinks != undefined
-										ul.social-media
-											for link in item.socialLinks
-												li
-													a(href="#{link.fields.url}" target="_blank")
-														i.fa(class="fa-#{link.fields.site}")
-				//-.artist.col-sm-4.col-xs-6.masonry__item
-					a(href="#")
-						img.artist-photo(src="/img/artists/snoopDogg.jpg")
-						span.artist-name Snoop Dogg
-						ul.social-media
-							li
-								a(href="#" target="_blank")
-									i.fa.fa-instagram
-		.container
-			.row.text-center
-				.col-sm-12
-					a.btn.white.angle(href="/artists")
-						span.btn__text.color-maroon View all artists
-			.row.text-center
-				.col-sm-12.mt--1
-					a(href="/img/schedule.png" data-lightbox="true")
-						img(src="/img/schedule.png")
-				.col-sm-12.mt--1
-					a.btn.white.angle(href="/schedule")
-						.btn__text.color-maroon View the Schedule
-	//-section.angle.imagebg.blue.heavy(data-overlay)
-		.background-image-holder
-			img(src="/img/bg/home-img4.jpg")
-		.container.masonry
-			.row.text-center
-				.col-sm-12
 					h2 THE SCHEDULE
 					.separator
 			#events.row.masonry__container
@@ -128,37 +84,6 @@ block content
 	section.angle.imagebg.blue.heavy(data-overlay)
 		.background-image-holder
 			img(src="/img/bg/home-img5.jpg")
-		.container
-			.row.text-center
-				.col-sm-12
-					h2 THE SPONSORS
-					.separator
-			.row.text-center
-				.col-sm-6.col-center
-					a(href="http://www.805beer.com/" target="_blank")
-						img(src="/img/sponsors/805-white.png")
-			.masonry
-				.row.masonry__container.text-center
-					if contentful.sponsors != undefined
-						//-- var maxSponsors = 3
-						for sponsor in contentful.sponsors
-							//-if maxSponsors > 0
-								//-- maxSponsors --
-							.col-sm-4.col-xs-6.masonry__item
-								if sponsor.website != undefined
-									a(href="#{sponsor.website}" target="_blank")
-										img(src="#{asset(sponsor.logo)}")
-										//-span.artist-name= sponsor.name
-								else
-									img(src="#{asset(sponsor.logo)}")
-									//-span.artist-name= sponsor.name
-			//-.row.text-center
-				.col-sm-12
-					a.btn.white.angle(href="/sponsors")
-						span.btn__text.color-blue View all sponsors
-	//-section.angle.imagebg.lightblue(data-overlay)
-		.background-image-holder
-			img(src="/img/bg/home-img6.jpg")
 		.container
 			.row.text-center
 				.col-sm-12
