@@ -128,45 +128,45 @@ block content
 	section.angle.imagebg.blue.heavy(data-overlay)
 		.background-image-holder
 			img(src="/img/bg/home-img5.jpg")
-#		.container
-#			.row.text-center
-#				.col-sm-12
-#					h2 THE SPONSORS
-#					.separator
-#			.row.text-center
-#				.col-sm-6.col-center
-#					a(href="http://www.805beer.com/" target="_blank")
-#						img(src="/img/sponsors/805-white.png")
-#			.masonry
-#				.row.masonry__container.text-center
-#					if contentful.sponsors != undefined
-#						//-- var maxSponsors = 3
-#						for sponsor in contentful.sponsors
-#							//-if maxSponsors > 0
-#								//-- maxSponsors --
-#							.col-sm-4.col-xs-6.masonry__item
-#								if sponsor.website != undefined
-#									a(href="#{sponsor.website}" target="_blank")
-#										img(src="#{asset(sponsor.logo)}")
-#										//-span.artist-name= sponsor.name
-#								else
-#									img(src="#{asset(sponsor.logo)}")
-#									//-span.artist-name= sponsor.name
-#			//-.row.text-center
-#				.col-sm-12
-#					a.btn.white.angle(href="/sponsors")
-#						span.btn__text.color-blue View all sponsors
-#	//-section.angle.imagebg.lightblue(data-overlay)
-#		.background-image-holder
-#			img(src="/img/bg/home-img6.jpg")
-#		.container
-#			.row.text-center
-#				.col-sm-12
-#					h2 THE AREA
-#					.separator
-#				.col-sm-12
-#					a(href="/img/map.jpg" data-lightbox="map")
-#						img(src="/img/map.jpg")
+		.container
+			.row.text-center
+				.col-sm-12
+//					h2 THE SPONSORS
+					.separator
+			.row.text-center
+				.col-sm-6.col-center
+					a(href="http://www.805beer.com/" target="_blank")
+						img(src="/img/sponsors/805-white.png")
+			.masonry
+				.row.masonry__container.text-center
+					if contentful.sponsors != undefined
+						//-- var maxSponsors = 3
+						for sponsor in contentful.sponsors
+							//-if maxSponsors > 0
+								//-- maxSponsors --
+							.col-sm-4.col-xs-6.masonry__item
+								if sponsor.website != undefined
+									a(href="#{sponsor.website}" target="_blank")
+										img(src="#{asset(sponsor.logo)}")
+										//-span.artist-name= sponsor.name
+								else
+									img(src="#{asset(sponsor.logo)}")
+									//-span.artist-name= sponsor.name
+			//-.row.text-center
+				.col-sm-12
+					a.btn.white.angle(href="/sponsors")
+						span.btn__text.color-blue View all sponsors
+	//-section.angle.imagebg.lightblue(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/home-img6.jpg")
+		.container
+			.row.text-center
+				.col-sm-12
+					h2 THE AREA
+					.separator
+				.col-sm-12
+					a(href="/img/map.jpg" data-lightbox="map")
+//						img(src="/img/map.jpg")
 					a.btn.white.angle(href="/area" target="_blank" style='margin-top:30px;')
 						span.btn__text.color-lightblue View the area
 					//-a.btn.white.angle(href="https://www.google.com/maps?q=woodward+park&safe=active&ssui=on&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiKpbDpt5nZAhVQ-GMKHStpBPMQ_AUICigB" target="_blank" style='margin-top:30px;')
