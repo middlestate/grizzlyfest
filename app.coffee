@@ -45,11 +45,12 @@ module.exports =
 		js_pipeline(files: ['assets/js/*.js','assets/js/*.coffee']),
 		css_pipeline(files: ['assets/css/*.css','assets/css/*.styl'])
 		contentful
-			access_token:'c10986d7c5b416f01517fa6ebe1fbf5f57fc7914d8f329a4ade723b8c39491a5'
+			access_token:'fb797d472d17600de75f774baa5bfe92301d5a24213012aaf7efe5e9ae4a4502'
 			#	'74cacbafcaa3ea5e845b748967be91f6697e813b0e51272726505dc47d292a8c'
 			# access_token:'54d3406ca2d8cafe6cf0fe9e85d8c450e8a8f9134f22ec1a734a6f78516cb2ba'
 			# preview: true
 			space_id:'vl7lk4dt7d56'
+			#'iqajn39axb7g'
 			content_types:
 				artists:
 					id:'artist'
