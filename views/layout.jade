@@ -6,12 +6,12 @@ html(xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#")
 		meta(http-equiv='X-UA-Compatible', content='IE=edge, chrome=1')
 		meta(name='author', content= "JJ Fry - http://4cc.co")
 		meta(name="viewport" content="width=device-width, initial-scale=1")
-		
+
 		//- title, description and favicon
 		title= 'Grizzly Fest'
-		meta(name='description', content='Hibernation Ends May 18th')
+		meta(name='description', content='Hibernation Ends May 4th')
 		link(rel="icon" href="/img/logo/favicon.png")
-		
+
 		//- load jquery first
 		script(src="/customjs/01jquery-3.1.1.min.js")
 		script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js")
@@ -26,8 +26,8 @@ html(xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#")
 			var pageClass = '#{pageClass}'
 		block head
 		!= css("/")
-	
-	
+
+
 	//-- console.log(pageClass)
 	body.dropdowns--hover(class="#{pageClass}")
 		include /partials/_header
