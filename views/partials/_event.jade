@@ -7,7 +7,7 @@ block content
 		//-p= JSON.stringify(subPages)
 	section.angle.imagebg.purple.heavy(data-overlay)
 		.background-image-holder
-			img(src="/img/bg/home-header.jpg")
+			img(src="/img/bg/home-header2.jpg")
 		.container
 			.row.text-center
 				.col-sm-12
@@ -61,7 +61,7 @@ block content
 													.gallery-image.angle.col-sm-4.col-xs-6.masonry__item
 														a(href="#{asset(image)}" data-lightbox="true")
 															img.blog-photo(src="#{asset(image)}")
-											
+
 								else if block.sys.contentType.sys.id === 'videoSection'
 									if block.fields.iframe != undefined
 										.md!= block.fields.iframe
