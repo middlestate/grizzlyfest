@@ -30,10 +30,10 @@ html(xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#")
 
 	//-- console.log(pageClass)
 	body.dropdowns--hover(class="#{pageClass}")
-		include /partials/_header
+		include ./partials/_header
 		.content
 			block content
-		include /partials/_footer
+		include ./partials/_footer
 		!= js("/")
 		//-
 			Start of Orbit Interactive Tag: Please do not remove
