@@ -2,3 +2,23 @@ body {
   padding: 50px;
   font-family: system-ui;
 }
+
+.ticket-block {
+  position: relative;
+  background: $white;
+  border: 1px solid $gray-light;
+  text-align: center;
+  float: left;
+  margin: 0 5px 1.5em 0;
+  padding: 14px 6px;
+  width: 85px;
+  height: 85px;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.ticket-price {
+  display: block;
+  @include font-size(1.875);
+  font-family: 'Source Sans Pro';
+  margin-bottom: 5px;
