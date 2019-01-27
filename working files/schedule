@@ -21,7 +21,7 @@ block content
 									li.color-purple.active(data-masonry-filter="*") All Events
 									for category in contentful.eventCategories
 										li.color-purple(data-masonry-filter="#{category.id}")= category.text
-					
+
 				#events.masonry__container
 					for event in contentful.events
 						- var cats = ''
