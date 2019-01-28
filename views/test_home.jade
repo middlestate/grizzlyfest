@@ -44,48 +44,16 @@ block content
 					h5.color-white.
 						2:00PM - MIDNIGHT#[br]
 						ALL AGES
-						.row.text-center
-							.col-sm-12.mt--1
-								a(href="/img/schedule.png" data-lightbox="true")
-									img(src="/img/fliers/grizzlyfest_poster.jpg")
-							.col-sm-12.mt--1		
-	section.angle.imagebg.maroon.heavy(data-overlay)
+	section.angle.imagebg(data-overlay)
 		.background-image-holder
-			img(src="/img/bg/home-img2.jpg")
+			img(src="/img/fliers/grizzlyfest_poster.jpg")
 		#artists.container.masonry
 			.row.text-center
 				.col-sm-12
 					h2 THE LINEUP
 					.separator
 			.row.masonry__container.text-center
-				if contentful.featuredArtists != undefined
-					- var max = 9
-					for item in contentful.featuredArtists
-						- max--
-						if max >= 0
-							.artist.angle.col-sm-4.col-xs-6.masonry__item
-								a(href="#{item._url}")
-									img.artist-photo(src="#{asset(item.artistPhoto)}")
-									span.artist-name= item.artistName
-									if item.socialLinks != undefined
-										ul.social-media
-											for link in item.socialLinks
-												li
-													a(href="#{link.fields.url}" target="_blank")
-														i.fa(class="fa-#{link.fields.site}")
-				//-.artist.col-sm-4.col-xs-6.masonry__item
-					a(href="#")
-						img.artist-photo(src="/img/artists/snoopDogg.jpg")
-						span.artist-name Snoop Dogg
-						ul.social-media
-							li
-								a(href="#" target="_blank")
-									i.fa.fa-instagram
-		.container
-			.row.text-center
-				.col-sm-12
-					a.btn.white.angle(href="/artists")
-						span.btn__text.color-maroon View all artists
+				
 	section.angle#map.unpad
 		.map-container.border--round.gmaps-active.height-50(
 		data-maps-api-key='AIzaSyBFxlargzJc2CmgNeXHpnAeXJ1y4C5n64U', 
