@@ -13,16 +13,15 @@ block content
 					h2 THE ARTISTS
 					.separator
 				.col-sm-12.mb--1
-					a.btn.white.angle(href="/schedule")
-						.btn__text.color-maroon See the Schedule
+					
 			if contentful.eventCategories != undefined
 				.row.text-center
 					.masonry-filter-holder.masonry-filters--horizontal
 						.masonry__filters
 							ul
-								li.color-purple.active(data-masonry-filter="*") All Events
-								li.color-purple.active(data-masonry-filter="day1") Day One
-								li.color-purple.active(data-masonry-filter="day2") Day Two
+								li.color-purple.active(data-masonry-filter="*") All Artists
+								li.color-purple.active(data-masonry-filter="day1") Day One Artists
+								li.color-purple.active(data-masonry-filter="day2") Day Two Artists
 			.row.masonry__container.text-center
 				if contentful.artists != undefined
 					for artist in contentful.artists
