@@ -1,87 +1,87 @@
 extends layout
 
 block content
-  //-p= JSON.stringify(contentful.artists)
-  section#first-section.imagebg.parallax.pink(data-overlay)
-    .background-image-holder
-      img(src="/img/bg/home-header2.jpg")
-    .container
-      .row.text-center
-        .col-sm-12
-          img#big-logo(src="/img/logo/logo-blue.png")
-          #date-container.counter-class(data-date='2019/05/04 18:00:00')
-            #countdown-timer
-              .countdown-section
-                span.countdown-amount.first-item.countdown-days.counter-days XXX
-                span.countdown-period Days
-              .countdown-section
-                span.countdown-amount.countdown-hours.counter-hours XX
-                span.countdown-period Hours
-              .countdown-section
-                span.countdown-amount.countdown-minutes.counter-minutes XX
-                span.countdown-period Minutes
-              .countdown-section
-                span.countdown-amount.countdown-seconds.counter-seconds XX
-                span.countdown-period Seconds
-          h2 MAY 4TH & 5TH 2019
-          h3 VIP AND GA TICKETS ON SALE NOW!
-          <a target="_blank" href="https://www.grizzlyfestival.com/tickets" class="btn white angle"><span class="btn__text color-blue">Buy Tickets</span></a>
-      .row.text-center
-  section.angle.imagebg.bg-ct
-    .background-image-holder
-      img(src="/img/bg/home-img1.jpg")
-    .container
-      .row.text-center
-        .x-pad.col-sm-6.col-sm-offset-6.bg-blue.bg-t5.angle.info-box
-          h2 THE LOCATION
-          .separator
-          h5.color-white.
-            FRESNO, CALIFORNIA #[br]
-            WOODWARD PARK#[br]
-            section.angle.imagebg.maroon.heavy(data-overlay)
-              .background-image-holder
-                img(src="/img/bg/home-img2.jpg")
-              #artists.container.masonry
-                .row.text-center
-                  .col-sm-12
-                    h2 THE LINEUP
-                    .separator
-                .row.masonry__container.text-center
-                  if contentful.featuredArtists != undefined
-                    - var max = 9
-                    for item in contentful.featuredArtists
-                      - max--
-                      if max >= 0
-                        .artist.angle.col-sm-4.col-xs-6.masonry__item
-                          a(href="#{item._url}")
-                            img.artist-photo(src="#{asset(item.artistPhoto)}")
-                            span.artist-name= item.artistName
-                            if item.socialLinks != undefined
-                              ul.social-media
-                                for link in item.socialLinks
-                                  li
-                                    a(href="#{link.fields.url}" target="_blank")
-                                      i.fa(class="fa-#{link.fields.site}")
-                  //-.artist.col-sm-4.col-xs-6.masonry__item
-                    a(href="#")
-                      img.artist-photo(src="/img/artists/snoopDogg.jpg")
-                      span.artist-name Snoop Dogg
-                      ul.social-media
-                        li
-                          a(href="#" target="_blank")
-                            i.fa.fa-instagram
-              .container
-                .row.text-center
-                  .col-sm-12
-                    a.btn.white.angle(href="/artists")
-                      span.btn__text.color-maroon View all artists            
-          //-a.btn.white.angle(href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25535.277846298675!2d-119.79430402975113!3d36.86857946320614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDUxJzUzLjgiTiAxMTnCsDQ3JzE3LjgiVw!5e0!3m2!1sen!2sus!4v1545081541277" target="_blank" style='margin-top:30px;')
-            span.btn__text.color-lightblue View the area
-  section.angle#map.unpad
-    .map-container.border--round.gmaps-active.height-50(
-    data-maps-api-key='AIzaSyBFxlargzJc2CmgNeXHpnAeXJ1y4C5n64U' ,
-    data-address='173 E Audubon Dr Fresno, CA 93720',
-    data-map-zoom='14',
-    style='position: relative; overflow: hidden;',
-    data-map-style='[{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]'
-    )
+	//-p= JSON.stringify(contentful.artists)
+	section#first-section.imagebg.parallax.pink(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/home-header2.jpg")
+		.container
+			.row.text-center
+				.col-sm-12
+					img#big-logo(src="/img/logo/logo-blue.png")
+					#date-container.counter-class(data-date='2019/05/04 18:00:00')
+						#countdown-timer
+							.countdown-section
+								span.countdown-amount.first-item.countdown-days.counter-days XXX
+								span.countdown-period Days
+							.countdown-section
+								span.countdown-amount.countdown-hours.counter-hours XX
+								span.countdown-period Hours
+							.countdown-section
+								span.countdown-amount.countdown-minutes.counter-minutes XX
+								span.countdown-period Minutes
+							.countdown-section
+								span.countdown-amount.countdown-seconds.counter-seconds XX
+								span.countdown-period Seconds
+					h2 MAY 4TH & 5TH 2019
+					h3 VIP AND GA TICKETS ON SALE NOW!
+					<a target="_blank" href="https://www.grizzlyfestival.com/tickets" class="btn white angle"><span class="btn__text color-blue">Buy Tickets</span></a>
+			.row.text-center
+	section.angle.imagebg.bg-ct
+		.background-image-holder
+			img(src="/img/bg/home-img1.jpg")
+		.container
+			.row.text-center
+				.x-pad.col-sm-6.col-sm-offset-6.bg-blue.bg-t5.angle.info-box
+					h2 THE LOCATION
+					.separator
+					h5.color-white.
+						FRESNO, CALIFORNIA #[br]
+						WOODWARD PARK#[br]
+						section.angle.imagebg.maroon.heavy(data-overlay)
+							.background-image-holder
+								img(src="/img/bg/home-img2.jpg")
+							#artists.container.masonry
+								.row.text-center
+									.col-sm-12
+										h2 THE LINEUP
+										.separator
+								.row.masonry__container.text-center
+									if contentful.featuredArtists != undefined
+										- var max = 9
+										for item in contentful.featuredArtists
+											- max--
+											if max >= 0
+												.artist.angle.col-sm-4.col-xs-6.masonry__item
+													a(href="#{item._url}")
+														img.artist-photo(src="#{asset(item.artistPhoto)}")
+														span.artist-name= item.artistName
+														if item.socialLinks != undefined
+															ul.social-media
+																for link in item.socialLinks
+																	li
+																		a(href="#{link.fields.url}" target="_blank")
+																			i.fa(class="fa-#{link.fields.site}")
+									//-.artist.col-sm-4.col-xs-6.masonry__item
+										a(href="#")
+											img.artist-photo(src="/img/artists/snoopDogg.jpg")
+											span.artist-name Snoop Dogg
+											ul.social-media
+												li
+													a(href="#" target="_blank")
+														i.fa.fa-instagram
+							.container
+								.row.text-center
+									.col-sm-12
+										a.btn.white.angle(href="/artists")
+											span.btn__text.color-maroon View all artists            
+					//-a.btn.white.angle(href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25535.277846298675!2d-119.79430402975113!3d36.86857946320614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDUxJzUzLjgiTiAxMTnCsDQ3JzE3LjgiVw!5e0!3m2!1sen!2sus!4v1545081541277" target="_blank" style='margin-top:30px;')
+						span.btn__text.color-lightblue View the area
+	section.angle#map.unpad
+		.map-container.border--round.gmaps-active.height-50(
+		data-maps-api-key='AIzaSyBFxlargzJc2CmgNeXHpnAeXJ1y4C5n64U' ,
+		data-address='173 E Audubon Dr Fresno, CA 93720',
+		data-map-zoom='14',
+		style='position: relative; overflow: hidden;',
+		data-map-style='[{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]'
+		)
