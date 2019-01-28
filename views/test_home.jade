@@ -27,6 +27,94 @@ block content
           h3 VIP AND GA TICKETS ON SALE NOW!
           <a target="_blank" href="https://www.grizzlyfestival.com/tickets" class="btn white angle"><span class="btn__text color-blue">Buy Tickets</span></a>
       .row.text-center
+      section.angle.imagebg.maroon.heavy(data-overlay)
+    		.background-image-holder
+    			img(src="/img/bg/home-img2.jpg")
+    		#artists.container.masonry
+    			.row.text-center
+    				.col-sm-12
+    					h2 THE LINEUP
+    					.separator
+    			.row.masonry__container.text-center
+    				if contentful.featuredArtists != undefined
+    					- var max = 9
+    					for item in contentful.featuredArtists
+    						- max--
+    						if max >= 0
+    							.artist.angle.col-sm-4.col-xs-6.masonry__item
+    								a(href="#{item._url}")
+    									img.artist-photo(src="#{asset(item.artistPhoto)}")
+    									span.artist-name= item.artistName
+    									if item.socialLinks != undefined
+    										ul.social-media
+    											for link in item.socialLinks
+    												li
+    													a(href="#{link.fields.url}" target="_blank")
+    														i.fa(class="fa-#{link.fields.site}")
+    				//-.artist.col-sm-4.col-xs-6.masonry__item
+    					a(href="#")
+    						img.artist-photo(src="/img/artists/snoopDogg.jpg")
+    						span.artist-name Snoop Dogg
+    						ul.social-media
+    							li
+    								a(href="#" target="_blank")
+    									i.fa.fa-instagram
+    		.container
+    			.row.text-center
+    				.col-sm-12
+    					a.btn.white.angle(href="/artists")
+    						span.btn__text.color-maroon View all artists
+    			.row.text-center
+    				.col-sm-12.mt--1
+    					a(href="/img/schedule.png" data-lightbox="true")
+    						img(src="/img/schedule.png")
+    				.col-sm-12.mt--1
+    					a.btn.white.angle(href="/schedule")
+    						.btn__text.color-maroon View the Schedule
+    	//-section.angle.imagebg.blue.heavy(data-overlay)
+    		.background-image-holder
+    			img(src="/img/bg/home-img4.jpg")
+    		.container.masonry
+    			.row.text-center
+    				.col-sm-12
+    					h2 THE SCHEDULE
+    					.separator
+    			#events.row.masonry__container
+    				- var max = 4
+    				for event in contentful.events
+    					- max--
+    					if max >= 0
+    						- var cats = ''
+    						if event.categories != undefined
+    							for item in event.categories
+    								- cats+= " filter-"+item.fields.id
+    						.event.angle.row.text-center.masonry__item(class="#{cats}")
+    							//-#{event._url}
+    							a(href="#{event._url}")
+    								.col-sm-4.col-xs-6
+    									img.blog-photo(src="#{asset(event.featuredImage)}")
+    								.event-info.col-sm-8.col-xs-6
+    									h4.blog-name= event.title
+    									if event.featuredText != undefined
+    										p.featuredText.md!= md(event.featuredText)
+    									if event.timeSlot != undefined
+    										- var UTCoffset = -7
+    										- var date = new Date(event.timeSlot)
+    										- var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    										- var days = ['',"Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday", "Sunday"]
+    										- var ampm = date.getUTCHours() + UTCoffset >= 12 ? 'PM' : 'AM'
+    										- var minutes = date.getUTCMinutes() < 10 ? '0' + date.getUTCMinutes() : date.getUTCMinutes()
+    										//-- console.log(date.getUTCHours() + UTCoffset)
+    										if (date.getUTCHours() + UTCoffset) != 9
+    											h5= days[date.getUTCDay()]
+    											h6= months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - ' + (date.getUTCHours()+ UTCoffset) + ':' + minutes + ' ' + ampm
+    										else
+    											h5= days[date.getUTCDay()]
+    											h6= months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - time TBA'
+    			.row.text-center
+    				.col-sm-12
+    					a.btn.white.angle(href="/events")
+    						span.btn__text.color-blue View the Events
   section.angle.imagebg.bg-ct
     .background-image-holder
       img(src="/img/bg/home-img1.jpg")
