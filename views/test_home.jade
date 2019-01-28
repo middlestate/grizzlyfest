@@ -4,8 +4,8 @@ block content
 	//-p= JSON.stringify(contentful.artists)
 	section#first-section.imagebg.parallax.pink(data-overlay)
 		.background-image-holder
-			img(src="https://www.youtube.com/watch?v=nBOxtLNQ2Jo")
-		.container
+		video(width='1920', height='1080', controls='controls')
+			source(src='https://youtu.be/nBOxtLNQ2Jo', type='video/mp4', id='theVideo')
 			.row.text-center
 				.col-sm-12
 					img#big-logo(src="/img/logo/logo-blue.png")
