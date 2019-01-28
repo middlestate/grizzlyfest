@@ -48,3 +48,170 @@ block content
     style='position: relative; overflow: hidden;',
     data-map-style='[{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]'
     )
+	section.angle.imagebg.maroon.heavy(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/home-img2.jpg")
+		#artists.container.masonry
+			.row.text-center
+				.col-sm-12
+					h2 THE LINEUP
+					.separator
+			.row.masonry__container.text-center
+				if contentful.featuredArtists != undefined
+					- var max = 9
+					for item in contentful.featuredArtists
+						- max--
+						if max >= 0
+							.artist.angle.col-sm-4.col-xs-6.masonry__item
+								a(href="#{item._url}")
+									img.artist-photo(src="#{asset(item.artistPhoto)}")
+									span.artist-name= item.artistName
+									if item.socialLinks != undefined
+										ul.social-media
+											for link in item.socialLinks
+												li
+													a(href="#{link.fields.url}" target="_blank")
+														i.fa(class="fa-#{link.fields.site}")
+				//-.artist.col-sm-4.col-xs-6.masonry__item
+					a(href="#")
+						img.artist-photo(src="/img/artists/snoopDogg.jpg")
+						span.artist-name Snoop Dogg
+						ul.social-media
+							li
+								a(href="#" target="_blank")
+									i.fa.fa-instagram
+		.container
+			.row.text-center
+				.col-sm-12
+					a.btn.white.angle(href="/artists")
+						span.btn__text.color-maroon View all artists
+			.row.text-center
+				.col-sm-12.mt--1
+					a(href="/img/schedule.png" data-lightbox="true")
+						img(src="/img/schedule.png")
+				.col-sm-12.mt--1
+					a.btn.white.angle(href="/schedule")
+						.btn__text.color-maroon View the Schedule
+	//-section.angle.imagebg.blue.heavy(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/home-img4.jpg")
+		.container.masonry
+			.row.text-center
+				.col-sm-12
+					h2 THE SCHEDULE
+					.separator
+			#events.row.masonry__container
+				- var max = 4
+				for event in contentful.events
+					- max--
+					if max >= 0
+						- var cats = ''
+						if event.categories != undefined
+							for item in event.categories
+								- cats+= " filter-"+item.fields.id
+						.event.angle.row.text-center.masonry__item(class="#{cats}")
+							//-#{event._url}
+							a(href="#{event._url}")
+								.col-sm-4.col-xs-6
+									img.blog-photo(src="#{asset(event.featuredImage)}")
+								.event-info.col-sm-8.col-xs-6
+									h4.blog-name= event.title
+									if event.featuredText != undefined
+										p.featuredText.md!= md(event.featuredText)
+									if event.timeSlot != undefined
+										- var UTCoffset = -7
+										- var date = new Date(event.timeSlot)
+										- var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+										- var days = ['',"Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Saturday", "Sunday"]
+										- var ampm = date.getUTCHours() + UTCoffset >= 12 ? 'PM' : 'AM'
+										- var minutes = date.getUTCMinutes() < 10 ? '0' + date.getUTCMinutes() : date.getUTCMinutes()
+										//-- console.log(date.getUTCHours() + UTCoffset)
+										if (date.getUTCHours() + UTCoffset) != 9
+											h5= days[date.getUTCDay()]
+											h6= months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - ' + (date.getUTCHours()+ UTCoffset) + ':' + minutes + ' ' + ampm
+										else
+											h5= days[date.getUTCDay()]
+											h6= months[date.getUTCMonth()] + ' ' + date.getUTCDate() + ' - time TBA'
+			.row.text-center
+				.col-sm-12
+					a.btn.white.angle(href="/events")
+						span.btn__text.color-blue View the Events
+	section.angle.imagebg.blue.heavy(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/home-img5.jpg")
+		.container
+			.row.text-center
+				.col-sm-12
+					h2 THE SPONSORS
+					.separator
+			.row.text-center
+				.col-sm-6.col-center
+					a(href="http://www.805beer.com/" target="_blank")
+						img(src="/img/sponsors/805-white.png")
+			.masonry
+				.row.masonry__container.text-center
+					if contentful.sponsors != undefined
+						//-- var maxSponsors = 3
+						for sponsor in contentful.sponsors
+							//-if maxSponsors > 0
+								//-- maxSponsors --
+							.col-sm-4.col-xs-6.masonry__item
+								if sponsor.website != undefined
+									a(href="#{sponsor.website}" target="_blank")
+										img(src="#{asset(sponsor.logo)}")
+										//-span.artist-name= sponsor.name
+								else
+									img(src="#{asset(sponsor.logo)}")
+									//-span.artist-name= sponsor.name
+			//-.row.text-center
+				.col-sm-12
+					a.btn.white.angle(href="/sponsors")
+						span.btn__text.color-blue View all sponsors
+	//-section.angle.imagebg.lightblue(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/home-img6.jpg")
+		.container
+			.row.text-center
+				.col-sm-12
+					h2 THE AREA
+					.separator
+				.col-sm-12
+					a(href="/img/map.jpg" data-lightbox="map")
+						img(src="/img/map.jpg")
+					a.btn.white.angle(href="/area" target="_blank" style='margin-top:30px;')
+						span.btn__text.color-lightblue View the area
+					//-a.btn.white.angle(href="https://www.google.com/maps?q=woodward+park&safe=active&ssui=on&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiKpbDpt5nZAhVQ-GMKHStpBPMQ_AUICigB" target="_blank" style='margin-top:30px;')
+						span.btn__text.color-lightblue View the area
+	section.angle.imagebg.purple.heavy(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/home-img7.jpg")
+		.container.masonry
+			.row.text-center
+				.col-sm-12
+					h2 THE BLOG
+					.separator
+			.row.masonry__container.text-center
+				if contentful.blog != undefined
+					- var max = 3
+					for item in contentful.blog
+						- max--
+						if max >= 0
+							.blogPost.angle.col-sm-4.col-xs-6.masonry__item
+								a(href="#{item._url}")
+									img.blog-photo(src="#{asset(item.featuredImage)}")
+									span.blog-name= item.title
+									p.featuredText.md!= md(item.featuredText)
+			.row.text-center
+				.col-sm-12
+					a.btn.white.angle(href="/blog")
+						span.btn__text.color-purple View all posts
+	section.angle#map.unpad
+		.map-container.border--round.gmaps-active.height-50(
+		data-maps-api-key='AIzaSyBFxlargzJc2CmgNeXHpnAeXJ1y4C5n64U', 
+		data-address='7775 N Friant Rd, Fresno, CA 93720', 
+		data-map-zoom='14', 
+		style='position: relative; overflow: hidden;',
+		data-map-style='[{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]'
+		)
+
+		
