@@ -3,15 +3,16 @@ extends layout
 block content
 	//-p= JSON.stringify(contentful.artists)
 	section#first-section.imagebg.parallax.pink(data-overlay)
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/313948500?autoplay=1&loop=1&color=03c9ae&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>		
-.container
+		.background-image-holder
+			video(src="/img/bg/home-header2.jpg")
+		.container
 			.row.text-center
 				.col-sm-12
 					img#big-logo(src="/img/logo/logo-blue.png")
 					h2 MAY 4TH & 5TH 2019
 					<a target="_blank" href="https://www.festivalticketing.com/cart/4E619283-F903-4A5F-8C59-028BAC65B534/tickets/2068" class="btn blue angle"><span class="btn__text color-white">Buy Tickets</span></a>
 					
-			.row.ttext-center
+			.row.text-center
 	section.angle.imagebg.maroon.heavy(data-overlay)
 		.background-image-holder
 			img(src="")
