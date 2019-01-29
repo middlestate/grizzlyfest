@@ -2,15 +2,16 @@ extends layout
 
 block content
 	//-p= JSON.stringify(contentful.artists)
-	section#first-section
-	.videobg .container,
-	.videobg .background-image-holder {
-			opacity: 0;
-			transition: 0.3s linear;
-			-webkit-transition: 0.3s linear;
-			-moz-transition: 0.3s linear;
-	}	
-			video(src="https://vimeo.com/313943506")
+	section#first-section.imagebg.parallax.pink(data-overlay)
+		//- .background-image-holder
+		//- 	img(src="/img/bg/home-header2.jpg")
+		.videobg 
+			.background-image-holder
+			<div class=“videoBackground”>
+				<video playsinline autoplay muted loop poster=“”>
+					<source src=“https://player.vimeo.com/external/314026233.sd.mp4?s=0ffb36cef7885d2f1bf9b1b0fc48fa83b39b2f68&profile_id=165” type=“video/mp4">
+				</video>
+			</div>
 		.container
 			.row.text-center
 				.col-sm-12
