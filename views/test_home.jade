@@ -2,11 +2,16 @@ extends layout
 
 block content
 	//-p= JSON.stringify(contentful.artists)
-	section#first-section.videobg.parallax.pink(data-overlay)
-		.background-image-holder
-		<video playsinline autoplay muted loop poster=“https://vimeo.com/313943506”>
-		    <source src=“https://vimeo.com/313943506" type=“video/mp4”>
-		</video>		.container
+	section#first-section
+	.videobg .container,
+	.videobg .background-image-holder {
+			opacity: 0;
+			transition: 0.3s linear;
+			-webkit-transition: 0.3s linear;
+			-moz-transition: 0.3s linear;
+	}	
+			video(src="https://vimeo.com/313943506")
+		.container
 			.row.text-center
 				.col-sm-12
 					img#big-logo(src="/img/logo/logo-blue.png")
