@@ -22,35 +22,8 @@ block content
 				.col-sm-12
 					h2 THE LINEUP
 					.separator
-			.row.masonry__container.text-center
-				if contentful.featuredArtists != undefined
-					- var max = 9
-					for item in contentful.featuredArtists
-						- max--
-						if max >= 0
-							.artist.angle.col-sm-4.col-xs-6.masonry__item
-								a(href="#{item._url}")
-									img.artist-photo(src="#{asset(item.artistPhoto)}")
-									span.artist-name= item.artistName
-									if item.socialLinks != undefined
-										ul.social-media
-											for link in item.socialLinks
-												li
-													a(href="#{link.fields.url}" target="_blank")
-														i.fa(class="fa-#{link.fields.site}")
-				//-.artist.col-sm-4.col-xs-6.masonry__item
-					a(href="#")
-						img.artist-photo(src="/img/artists/snoopDogg.jpg")
-						span.artist-name Snoop Dogg
-						ul.social-media
-							li
-								a(href="#" target="_blank")
-									i.fa.fa-instagram
-		.container
-			.row.text-center
-				.col-sm-12
-					a.btn.white.angle(href="/artists")
-						span.btn__text.color-maroon View all artists
+					.row.text-center
+			<iframe src="https://player.vimeo.com/video/76979871?background=1" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 			.row.text-center
 				.col-sm-12.mt--1
 					a(href="/img/fliers/grizzlyfest_poster.jpg" data-lightbox="true")
