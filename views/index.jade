@@ -1,50 +1,55 @@
 extends layout
 
 block content
-  //-p= JSON.stringify(contentful.artists)
-  section#first-section.imagebg.parallax.pink(data-overlay)
-    .background-image-holder
-      img(src="/img/bg/home-header2.jpg")
-    .container
-      .row.text-center
-        .col-sm-12
-          img#big-logo(src="/img/logo/logo-blue.png")
-          #date-container.counter-class(data-date='2019/05/04 18:00:00')
-            #countdown-timer
-              .countdown-section
-                span.countdown-amount.first-item.countdown-days.counter-days XXX
-                span.countdown-period Days
-              .countdown-section
-                span.countdown-amount.countdown-hours.counter-hours XX
-                span.countdown-period Hours
-              .countdown-section
-                span.countdown-amount.countdown-minutes.counter-minutes XX
-                span.countdown-period Minutes
-              .countdown-section
-                span.countdown-amount.countdown-seconds.counter-seconds XX
-                span.countdown-period Seconds
-          h2 MAY 4TH & 5TH 2019
-          h3 VIP AND GA TICKETS ON SALE NOW!
-          <a target="_blank" href="https://www.grizzlyfestival.com/tickets" class="btn white angle"><span class="btn__text color-blue">Buy Tickets</span></a>
-      .row.text-center
-  section.angle.imagebg.bg-ct
-    .background-image-holder
-      img(src="/img/bg/home-img1.jpg")
-    .container
-      .row.text-center
-        .x-pad.col-sm-6.col-sm-offset-6.bg-blue.bg-t5.angle.info-box
-          h2 THE LOCATION
-          .separator
-          h5.color-white.
-            FRESNO, CALIFORNIA #[br]
-            WOODWARD PARK#[br]
-          //-a.btn.white.angle(href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25535.277846298675!2d-119.79430402975113!3d36.86857946320614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDUxJzUzLjgiTiAxMTnCsDQ3JzE3LjgiVw!5e0!3m2!1sen!2sus!4v1545081541277" target="_blank" style='margin-top:30px;')
-            span.btn__text.color-lightblue View the area
-  section.angle#map.unpad
-    .map-container.border--round.gmaps-active.height-50(
-    data-maps-api-key='AIzaSyBFxlargzJc2CmgNeXHpnAeXJ1y4C5n64U' ,
-    data-address='173 E Audubon Dr Fresno, CA 93720',
-    data-map-zoom='14',
-    style='position: relative; overflow: hidden;',
-    data-map-style='[{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]'
-    )
+	//-p= JSON.stringify(contentful.artists)
+	section#first-section.imagebg.parallax(data-overlay)
+		//- .background-image-holder
+		//- 	img(src="/img/bg/home-header2.jpg")
+		<div class="videoBackground"><video playsinline autoplay muted loop poster=""><source src="https://player.vimeo.com/external/314026233.sd.mp4?s=0ffb36cef7885d2f1bf9b1b0fc48fa83b39b2f68&profile_id=165" type="video/mp4"></video></div>
+		.container
+			.row.text-center
+				.col-sm-12
+					img#big-logo(src="/img/logo/logo-blue.png")
+					h2 MAY 4TH & 5TH 2019
+					<a target="_blank" href="https://www.festivalticketing.com/cart/4E619283-F903-4A5F-8C59-028BAC65B534/tickets/2068" class="btn blue angle"><span class="btn__text color-white">Buy Tickets</span></a>
+			.row.text-center
+			
+	
+	section.angle.imagebg.maroon.heavy(data-overlay)
+		.background-image-holder
+			img(src="")
+		#artists.container.masonry
+			.row.text-center
+				.col-sm-12
+					h2 THE LINEUP
+					.separator
+					.row.text-center
+					
+					.row.text-center
+				.col-sm-12.mt--1
+					a(href="/img/fliers/grizzlyfest_poster.jpg" data-lightbox="true")
+						img(src="/img/fliers/grizzlyfest_poster.jpg")
+				.col-sm-12.mt--1
+					a.btn.white.angle(href="https://www.festivalticketing.com/cart/4E619283-F903-4A5F-8C59-028BAC65B534/tickets/2068")
+						.btn__text.color-maroon Buy Tickets
+	//-section.angle.imagebg.blue.heavy(data-overlay)
+	section.angle.imagebg.bg-ct
+		.background-image-holder
+			img(src="/img/bg/home-img1.jpg")
+		.container
+			.row.text-center
+				.x-pad.col-sm-6.col-sm-offset-6.bg-blue.bg-t5.angle.info-box
+					h2 2018 HIGHLIGHTS
+					.separator
+					<iframe src="https://player.vimeo.com/video/313948500?autoplay=1&color=03c9ae&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+
+	section.angle#map.unpad
+		.map-container.border--round.gmaps-active.height-50(
+		data-maps-api-key='AIzaSyBFxlargzJc2CmgNeXHpnAeXJ1y4C5n64U', 
+		data-address='7775 N Friant Rd, Fresno, CA 93720', 
+		data-map-zoom='14', 
+		style='position: relative; overflow: hidden;',
+		data-map-style='[{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]'
+		)
+
+		
