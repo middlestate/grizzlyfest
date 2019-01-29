@@ -2,10 +2,9 @@ extends layout
 
 block content
 	//-p= JSON.stringify(contentful.artists)
-	section#first-section.videobg video(data-overlay)
-		.videobg .container,
-			.videobg .background-image-holder
-			video(src="https://vimeo.com/313948500")
+	section#first-section.imagebg.parallax.pink(data-overlay)
+			image(src="/img/bg/home-header2.jpg")
+			.videobg video {
 
 		.container
 			.row.text-center
