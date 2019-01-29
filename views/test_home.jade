@@ -2,15 +2,10 @@ extends layout
 
 block content
 	//-p= JSON.stringify(contentful.artists)
-	section#first-section
-	.videobg .container,
-	.videobg .background-image-holder {
-			opacity: 0;
-			transition: 0.3s linear;
-			-webkit-transition: 0.3s linear;
-			-moz-transition: 0.3s linear;
-	}	
-			video(src="https://vimeo.com/313943506")
+	section#first-section.imagebg.parallax.pink(data-overlay)
+		//- .background-image-holder
+		//- 	img(src="/img/bg/home-header2.jpg")
+		<div class="videoBackground"><video playsinline autoplay muted loop poster=""><source src="https://player.vimeo.com/external/314026233.sd.mp4?s=0ffb36cef7885d2f1bf9b1b0fc48fa83b39b2f68&profile_id=165" type="video/mp4"></video></div>
 		.container
 			.row.text-center
 				.col-sm-12
@@ -18,7 +13,7 @@ block content
 					h2 MAY 4TH & 5TH 2019
 					<a target="_blank" href="https://www.festivalticketing.com/cart/4E619283-F903-4A5F-8C59-028BAC65B534/tickets/2068" class="btn blue angle"><span class="btn__text color-white">Buy Tickets</span></a>
 			.row.text-center
-	
+			
 			<iframe src="https://player.vimeo.com/video/313948500?autoplay=1&color=03c9ae&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
 
 	

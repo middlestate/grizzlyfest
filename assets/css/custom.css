@@ -18,3 +18,21 @@
   @include font-size(1.875);
   font-family: 'Source Sans Pro';
   margin-bottom: 5px;
+}
+
+.videoBackground {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+.videoBackground video {
+	width: auto;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
