@@ -10,45 +10,46 @@ block content
 			.row.text-center
 				.col-sm-12
 					img#big-logo(src="/img/logo/logo-blue.png")
-					h2 MAY 4TH & 5TH
-					<a target="_blank" href="https://www.festivalticketing.com/cart/4E619283-F903-4A5F-8C59-028BAC65B534/tickets/2068" class="btn rouge angle"><span class="btn__text color-white">Buy Tickets</span></a>
+					h2 MAY 4TH & 5TH 2019
+					<a target="_blank" href="https://www.festivalticketing.com/cart/4E619283-F903-4A5F-8C59-028BAC65B534/tickets/2068" class="btn blue angle"><span class="btn__text color-white">Buy Tickets</span></a>
 			.row.text-center
-	section.imagebg.angle(data-overlay)
-		.background-image-holder
-			img(src="/img/bg/bgstars.jpg")
-		#artists.container.masonry
-				.row.text-center
-					.col-sm-12
-						h2 THE LINEUP
-						.separator
-						.row.text-center
-							
-							.row.text-center
-						.col-sm-12.mt--1
-							<div style="padding:42.19% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/313532700?loop=1&color=f16e7d&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+			
 	
+	section.angle.imagebg.maroon.heavy(data-overlay)
+		.background-image-holder
+			img(src="")
 		#artists.container.masonry
 			.row.text-center
 				.col-sm-12
-
+					h2 THE LINEUP
+					.separator
+					.row.text-center
+					
 					.row.text-center
 				.col-sm-12.mt--1
-					a(href="/img/bg/bg_poster.png" data-lightbox="true")
-						img(src="/img/bg/bg_poster.png")
+					a(href="/img/fliers/grizzlyfest_poster.jpg" data-lightbox="true")
+						img(src="/img/fliers/grizzlyfest_poster.jpg")
 				.col-sm-12.mt--1
-					a.btn.rouge.angle(href="https://www.festivalticketing.com/cart/4E619283-F903-4A5F-8C59-028BAC65B534/tickets/2068")
+					a.btn.white.angle(href="https://www.festivalticketing.com/cart/4E619283-F903-4A5F-8C59-028BAC65B534/tickets/2068")
 						.btn__text.color-maroon Buy Tickets
 	//-section.angle.imagebg.blue.heavy(data-overlay)
-	section.imagebg.maroon.heavy.angle(data-overlay)
+	section.angle.imagebg.bg-ct
 		.background-image-holder
-			img(src="/img/bg/cwbg.jpg")
-		#artists.container.masonry
+			img(src="/img/bg/home-img1.jpg")
+		.container
 			.row.text-center
-				.col-sm-12
-					h2 2018 Highlights
-						.separator
-						.row.text-center
-						<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/313948500?loop=1&color=03c9ae&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+				.x-pad.col-sm-6.col-sm-offset-6.bg-blue.bg-t5.angle.info-box
+					h2 2018 HIGHLIGHTS
+					.separator
+					<iframe src="https://player.vimeo.com/video/313948500?autoplay=1&color=03c9ae&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
 
+	section.angle#map.unpad
+		.map-container.border--round.gmaps-active.height-50(
+		data-maps-api-key='AIzaSyBFxlargzJc2CmgNeXHpnAeXJ1y4C5n64U', 
+		data-address='7775 N Friant Rd, Fresno, CA 93720', 
+		data-map-zoom='14', 
+		style='position: relative; overflow: hidden;',
+		data-map-style='[{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]'
+		)
 
-			
+		
