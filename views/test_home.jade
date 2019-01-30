@@ -1,0 +1,53 @@
+extends layout
+
+block content
+	//-p= JSON.stringify(contentful.artists)
+	section#first-section.imagebg.parallax(data-overlay)
+		//- .background-image-holder
+		//- 	img(src="/img/bg/home-header2.jpg")
+		<div class="videoBackground"><video playsinline autoplay muted loop poster=""><source src="https://player.vimeo.com/external/314026233.sd.mp4?s=0ffb36cef7885d2f1bf9b1b0fc48fa83b39b2f68&profile_id=165" type="video/mp4"></video></div>
+		.container
+			.row.text-center
+				.col-sm-12
+					img#big-logo(src="/img/logo/logo-blue.png")
+					h2 MAY 4TH & 5TH 2019
+					<a target="_blank" href="https://www.festivalticketing.com/cart/4E619283-F903-4A5F-8C59-028BAC65B534/tickets/2068" class="btn blue angle"><span class="btn__text color-white">Buy Tickets</span></a>
+			.row.text-center
+
+
+	section.angle.imagebg.maroon.heavy(data-overlay)
+		.background-image-holder
+			img(src="/img/bg/poster_bg_01.jpg")
+		#artists.container.masonry
+			.row.text-center
+				.col-sm-12
+					h2 THE LINEUP
+					.separator
+					.row.text-center
+
+					.row.text-center
+				.col-sm-12.mt--1
+					a(href="" data-lightbox="true")
+						img(src="")
+				.col-sm-12.mt--1
+					a.btn.white.angle(href="https://www.festivalticketing.com/cart/4E619283-F903-4A5F-8C59-028BAC65B534/tickets/2068")
+						.btn__text.color-maroon Buy Tickets
+	//-section.angle.imagebg.blue.heavy(data-overlay)
+	section.angle.imagebg.bg-ct
+		.background-image-holder
+			img(src="/img/bg/home-img1.jpg")
+		.container
+			.row.text-center
+				.x-pad.col-sm-6.col-sm-offset-6.bg-blue.bg-t5.angle.info-box
+					h2 2018 HIGHLIGHTS
+					.separator
+					<iframe src="https://player.vimeo.com/video/313948500?autoplay=1&color=03c9ae&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+
+	section.angle#map.unpad
+		.map-container.border--round.gmaps-active.height-50(
+		data-maps-api-key='AIzaSyBFxlargzJc2CmgNeXHpnAeXJ1y4C5n64U',
+		data-address='7775 N Friant Rd, Fresno, CA 93720',
+		data-map-zoom='14',
+		style='position: relative; overflow: hidden;',
+		data-map-style='[{"featureType":"landscape","stylers":[{"hue":"#FFBB00"},{"saturation":43.400000000000006},{"lightness":37.599999999999994},{"gamma":1}]},{"featureType":"road.highway","stylers":[{"hue":"#FFC200"},{"saturation":-61.8},{"lightness":45.599999999999994},{"gamma":1}]},{"featureType":"road.arterial","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":51.19999999999999},{"gamma":1}]},{"featureType":"road.local","stylers":[{"hue":"#FF0300"},{"saturation":-100},{"lightness":52},{"gamma":1}]},{"featureType":"water","stylers":[{"hue":"#0078FF"},{"saturation":-13.200000000000003},{"lightness":2.4000000000000057},{"gamma":1}]},{"featureType":"poi","stylers":[{"hue":"#00FF6A"},{"saturation":-1.0989010989011234},{"lightness":11.200000000000017},{"gamma":1}]}]'
+		)
