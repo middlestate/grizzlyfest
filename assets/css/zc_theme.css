@@ -3291,6 +3291,10 @@ a {
     color: #e23636;
 }
 
+.color--accent {
+    color: #f16e7d;
+}
+
 .bg--dark {
     background: #252525;
 }
