@@ -680,7 +680,7 @@ img {
     [data-overlay]:before {
         position: absolute;
         content: '';
-        background: #252525;
+        background: #;
         width: 100%;
         height: 100%;
         top: 0;
