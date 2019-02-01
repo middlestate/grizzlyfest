@@ -45,3 +45,10 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+h6
+	font-family $shen
+	font-size 14px
+	line-height 22px
+	font-weight 900
+	color $white
