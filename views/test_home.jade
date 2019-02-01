@@ -1,4 +1,5 @@
 extends layout
+html, body {width: auto!important; overflow-x: hidden!important} 
 
 block content
 	//-p= JSON.stringify(contentful.artists)
@@ -48,8 +49,7 @@ block content
 					a(href="/img/bg/bg_poster.png" data-lightbox="true")
 						img(src="/img/bg/bg_poster.png")
 				.col-sm-12.mt--1
-					a.btn.rouge.angle(href="https://www.festivalticketing.com/cart/4E619283-F903-4A5F-8C59-028BAC65B534/tickets/2068")
-						.btn__text.color-maroon Get Early Bird Tickets
+					
 	//-section.angle.imagebg.blue.heavy(data-overlay)
 	section.imagebg.maroon.heavy(data-overlay)
 		.background-image-holder
