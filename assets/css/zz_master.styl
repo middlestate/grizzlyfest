@@ -112,6 +112,8 @@ p, .md ul li
 	color $lightblue
 .color-white
 	color $white
+.color-gray
+	color $gray
 
 .btn
 	border none
@@ -129,11 +131,13 @@ p, .md ul li
 	&.white
 		background-color $white
 	&.rouge
-			background-color #f16e7d
+			background-color $white
 	.btn__text
-		font-weight 600
+		font-weight 100
 		font-size 18px
 		text-transform uppercase
+		font-family BebasNeue
+		letter-spacing 2px
 
 [data-overlay]
 	&::before
@@ -262,9 +266,9 @@ imgAnglesEven()
 // 	.footer.angle
 // 		margin-top 0
 a.btn.angle
-	clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
-	&:hover
-		clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+	// clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+	// &:hover
+	// 	clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
 #map.angle
 	padding 0
 

@@ -1001,8 +1001,8 @@ div[data-overlay] ul {
     border-radius: 6px;
     padding-top: 0.46428571em;
     padding-bottom: 0.46428571em;
-    padding-right: 2.78571429em;
-    padding-left: 2.78571429em;
+    /* padding-right: 2.78571429em;
+    padding-left: 2.78571429em; */
     border: 1px solid #252525;
     border-width: 1px;
     font-size: inherit;
