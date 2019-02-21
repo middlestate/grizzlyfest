@@ -6195,7 +6195,7 @@ body.dropdowns--hover .nav-sidebar-column .dropdown:hover > .dropdown__container
         }*/
 
 .menu-horizontal > .dropdown > .dropdown__trigger:after {
-    content: '\e80a';
+    /* content: '\e80a'; */
     margin-left: 4px;
 }
 

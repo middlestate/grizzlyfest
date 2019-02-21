@@ -566,15 +566,18 @@ body.index
 
 header
 	height $headerHeight
+	background-color $blue
 	position absolute
 	z-index 10
 	width 100%
+	padding-top 10px
+	border-bottom: 0.7px solid #757373;
 	.hamburger-toggle
 		display block
 		position relative
 		height 25px
 		width 22px
-		top 17px
+		top 10px
 		right 10px
 		margin-left 22px
 		float right
@@ -623,6 +626,9 @@ header
 	// div
 	// 	position relative
 	// 	height 100%
+	li
+		font-family BebasNeue
+
 	a.logo
 		height 100px
 		position absolute
@@ -633,23 +639,41 @@ header
 		.logo
 			height 100px
 
-
 	.nav-container
 		height 100%
+
+	button.ticket-button
+		font-family BebasNeue
+		letter-spacing 2px
+		font-weight 100
+		font-size 18px
+		height 35px
+		line-height 1px
+		background-color $white
+		color #696969
+		width 110px
+		border: 0.5px solid #d3d3d3;
+
+	.header-logo
+		height 40px
+		width 50px
 
 	nav
 		#mega-menu
 			position relative
 			//top 20px
 			a, span.dropdown__trigger
+				letter-spacing 2px
 				text-decoration none
 				text-transform uppercase
 				opacity 1
 				color $white
 				transition .2s
-				font-size 16px
+				font-size 18px
 				line-height inherit
-				font-weight 600
+				font-weight 50
+				font-family BebasNeue
+				padding-left 40px
 				&:hover
 					// color $blue
 					transition .2s
@@ -660,7 +684,7 @@ header
 				position relative
 				//top 10px
 				&>li
-					line-height 120px
+					line-height 50px
 					display inline-block
 					&.header-btn
 						margin-right 0px
