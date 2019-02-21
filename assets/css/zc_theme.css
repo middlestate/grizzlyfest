@@ -690,6 +690,7 @@ img {
 
     [data-overlay] *:not(.container):not(.background-image-holder) {
         z-index: 2;
+        margin-bottom: 10px;
     }
 
     [data-overlay].image--light:before {
@@ -4136,8 +4137,10 @@ section.text-right > .container:last-child > .row:only-child > div[class*='col-'
 /**! 37. Spacing **/
 section,
 footer {
-    padding-top: 7.42857143em;
-    padding-bottom: 7.42857143em;
+    /* padding-top: 7.42857143em;
+    padding-bottom: 7.42857143em; */
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
     section.space--xxs,
