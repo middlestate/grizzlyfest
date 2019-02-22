@@ -363,12 +363,18 @@ img.angle
 
 
 
-.videoBackground video 
+.videoBackground video
 	position fixed
-	right	0
-	bottom 0
-	min-width 100vw
+	top 50%
+	left 50%
+	z-index -100
+	min-width 100%
 	min-height 100%
+	width auto
+	height auto
+	-webkit-transform translate(-50%, -50%)
+	-ms-transform translate(-50%, -50%)
+	transform translate(-50%, -50%)
 
 
 
