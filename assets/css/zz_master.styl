@@ -68,73 +68,6 @@ p, .md ul li
 			text-decoration underline
 .subHeadRow:not(:first-child)
 	margin-top 60px
-.footer
-	padding-top 0
-	.ticket-bar
-		height 70px
-		border-bottom 0.5px solid $gray
-		&>img 
-			width 15%
-		&>a>button.ga-tickets
-			float left
-			height 35px
-			width 200px
-			background-color $white
-			border 0.5px solid $gray
-			font-family BebasNeue
-			letter-spacing 3px
-			font-size 18px
-			position relative
-			top	20px
-			margin-left 20%
-
-		&>a>button.vip-tickets
-			float right
-			height 35px
-			width 180px
-			background-color $white
-			border 0.5px solid $gray
-			font-family BebasNeue
-			letter-spacing 3px
-			font-size 18px
-			position relative
-			top	20px
-			margin-right 20%
-
-		&>a>button:hover
-			background-color $buttonPink
-			color	$black
-			border-color $white
-
-	.subscribe-bar
-		height 40vh
-		.subscribe-bar-content
-			position relative
-			top	40%
-			.col-sm-12.col-md-4
-				&>.text-center
-					&>p
-						font-family BebasNeue
-						color $white
-						letter-spacing 2px
-					&>a>button.tickets-button
-						height 35px
-						width 110px
-						background-color $white
-						border 0.5px solid $gray
-						font-family BebasNeue
-						letter-spacing 3px
-						font-size 18px
-					&>a>button:hover
-						background-color $buttonPink
-						color	$black
-						border-color $white
-					&>a>button.subscribe-button
-						height 40px
-						width 80%
-						background-color $white
-						border none
-						border-radius 50px
 
 	h1,h2,h3,h4,h5,h6,p,span
 		&>a
@@ -1082,6 +1015,76 @@ section.amenities
 			&:hover
 				background-image url('/img/bg/gridbox_shop.png')
 				cursor pointer
+
+.footer
+	padding-top 0
+	.ticket-bar
+		height 70px
+		border-bottom 0.5px solid $gray
+		&>img 
+			width 15%
+		&>a>button.ga-tickets
+			float left
+			height 35px
+			width 200px
+			background-color $white
+			border 0.5px solid $gray
+			font-family BebasNeue
+			letter-spacing 3px
+			font-size 18px
+			position relative
+			top	20px
+			margin-left 20%
+
+		&>a>button.vip-tickets
+			float right
+			height 35px
+			width 180px
+			background-color $white
+			border 0.5px solid $gray
+			font-family BebasNeue
+			letter-spacing 3px
+			font-size 18px
+			position relative
+			top	20px
+			margin-right 20%
+
+		&>a>button:hover
+			background-color $buttonPink
+			color	$black
+			border-color $white
+
+	.subscribe-bar
+		height 40vh
+		.subscribe-bar-content
+			position relative
+			top	40%
+			.col-sm-12.col-md-4
+				&>.text-center
+					background-color $blue
+					&>p
+						font-family BebasNeue
+						color $white
+						letter-spacing 2px
+					&>a>button.tickets-button
+						height 35px
+						width 110px
+						background-color $white
+						border 0.5px solid $gray
+						font-family BebasNeue
+						letter-spacing 3px
+						font-size 18px
+					&>a>button:hover
+						background-color $buttonPink
+						color	$black
+						border-color $white
+					&>a>button.subscribe-button
+						height 40px
+						width 80%
+						background-color $white
+						border none
+						border-radius 50px
+
 
 @media (min-width: 20px)
 	section.amenities
