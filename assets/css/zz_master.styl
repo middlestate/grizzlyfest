@@ -74,7 +74,7 @@ p, .md ul li
 		height 70px
 		border-bottom 0.5px solid $gray
 		&>img 
-			width 20%
+			width 15%
 		&>a>button.ga-tickets
 			float left
 			height 35px
@@ -108,6 +108,28 @@ p, .md ul li
 
 	.subscribe-bar
 		height 40vh
+		.subscribe-bar-content
+			position relative
+			top	40%
+			.col-sm-12.col-md-4
+				&>.text-center
+					&>p
+						font-family BebasNeue
+						color $white
+						letter-spacing 2px
+					&>a>button.tickets-button
+						height 35px
+						width 110px
+						background-color $white
+						border 0.5px solid $gray
+						font-family BebasNeue
+						letter-spacing 3px
+						font-size 18px
+					&>a>button:hover
+						background-color $buttonPink
+						color	$black
+						border-color $white
+
 	h1,h2,h3,h4,h5,h6,p,span
 		&>a
 			color inherit !important
