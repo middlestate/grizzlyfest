@@ -1033,7 +1033,6 @@ section.amenities
 			font-size 18px
 			position relative
 			top	20px
-			margin-left 20%
 
 		&>a>button.vip-tickets
 			float right
@@ -1046,7 +1045,6 @@ section.amenities
 			font-size 18px
 			position relative
 			top	20px
-			margin-right 20%
 
 		&>a>button:hover
 			background-color $buttonPink
@@ -1117,6 +1115,29 @@ section.amenities
 	.subscribe-bar-content
 		top 20%
 
+	.ga-tickets
+		margin-left 20%
+
+	.vip-tickets
+		margin-right 20%
+
+@media (min-width: 425px)
+	.ticket-bar
+		height 80px
+
+	.ga-tickets
+		margin-left 1%
+
+	.vip-tickets
+		margin-right 1%
+
+@media (min-width: 500px) and (max-width: 767px)
+	.ga-tickets
+		margin-left 5%
+
+	.vip-tickets
+		margin-right 5%
+
 @media (min-width: 768px)
 	section.amenities
 		height 620px
@@ -1147,6 +1168,13 @@ section.amenities
 
 	.ga-tickets
 		margin-bottom 0px
+
+	.ga-tickets
+		margin-left 20%
+
+	.vip-tickets
+		margin-right 20%
+	
 
 @media (min-width: 1024px)
 	section.amenities
