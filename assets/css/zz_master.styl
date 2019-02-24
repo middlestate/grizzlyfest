@@ -969,7 +969,7 @@ ul.footer-social-icons
 				
 section.amenities
 	background-color $white
-	border-bottom 0.5px solid black
+	border-bottom 0.5px solid $gray
 
 	.amenities-block-title
 		font-family BebasNeue
@@ -1019,7 +1019,6 @@ section.amenities
 .footer
 	padding-top 0
 	.ticket-bar
-		height 70px
 		border-bottom 0.5px solid $gray
 		&>img 
 			width 15%
@@ -1039,7 +1038,7 @@ section.amenities
 		&>a>button.vip-tickets
 			float right
 			height 35px
-			width 180px
+			width 200px
 			background-color $white
 			border 0.5px solid $gray
 			font-family BebasNeue
@@ -1058,7 +1057,6 @@ section.amenities
 		height 40vh
 		.subscribe-bar-content
 			position relative
-			top	40%
 			.col-sm-12.col-md-4
 				&>.text-center
 					background-color $blue
@@ -1108,6 +1106,17 @@ section.amenities
 				height 60%
 				border 10px solid $white
 
+	.ticket-bar
+		height 150px
+		&>img
+			display none
+
+	.ga-tickets
+		margin-bottom 30px
+
+	.subscribe-bar-content
+		top 20%
+
 @media (min-width: 768px)
 	section.amenities
 		height 620px
@@ -1133,6 +1142,12 @@ section.amenities
 				height 100%
 				border 5px solid $white
 
+	.ticket-bar
+		height 70px
+
+	.ga-tickets
+		margin-bottom 0px
+
 @media (min-width: 1024px)
 	section.amenities
 		height 800px
@@ -1140,3 +1155,10 @@ section.amenities
 			height 450px
 		.bottom-row-amenities
 			height 250px
+
+	.ticket-bar
+		&>img
+			display initial
+
+	.subscribe-bar-content
+		top 40%
