@@ -337,7 +337,7 @@ img.angle
 		imgAnglesEven()
 
 .social_media_icons_container
-	width 250px
+	width 150px
 	margin 0 auto
 
 .social_media_icons
@@ -1076,23 +1076,24 @@ section.amenities
 					// 	background-color $white
 					// 	border none
 					// 	border-radius 50px
-					&>div.social_media_icons_container>ul.social_media_icons>li>a>i
-						color $black
-						background-color $white
-						width	35px
-						height 35px
-						margin 5px
-						border-radius 50%
-					&>div.social_media_icons_container>ul.social_media_icons>li>a>i::before
-						position relative
-						bottom -5px
-					&>div.social_media_icons_container>ul.social_media_icons>li>a>i.fa-spotify:hover
-						color #1db954
-					&>div.social_media_icons_container>ul.social_media_icons>li>a>i.fa-facebook:hover
-						color #3b5998
-					&>div.social_media_icons_container>ul.social_media_icons>li>a>i.fa-envelope-o:hover
-						color #DC143C
-
+					&>div.social_media_icons_container
+						width 250px
+						&>ul.social_media_icons>li>a>i
+							color $black
+							background-color $white
+							width	35px
+							height 35px
+							margin 5px
+							border-radius 50%
+						&>ul.social_media_icons>li>a>i::before
+							position relative
+							bottom -5px
+						&>ul.social_media_icons>li>a>i.fa-spotify:hover
+							color #1db954
+						&>ul.social_media_icons>li>a>i.fa-facebook:hover
+							color #3b5998
+						&>ul.social_media_icons>li>a>i.fa-envelope-o:hover
+							color #DC143C
 
 @media (min-width: 20px)
 	section.amenities
