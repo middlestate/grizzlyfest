@@ -25,7 +25,7 @@ block content
 										.row.text-center.subHeadRow(id="#{blockId}")
 											.col-sm-12
 												h2= block.fields.subhead
-												.separator
+												
 									if block.fields.body != undefined
 										- var align = block.fields.align == undefined ? '' : 'text-'+block.fields.align
 										.row(class="#{align}")
