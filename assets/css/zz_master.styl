@@ -1139,30 +1139,69 @@ section.amenities
 
 	// vipExperiences
 	section.vipExp-container
-		height 3000px
+		height 3500px
+		padding-bottom 0
+		.current-ticket-promotion
+			margin-top -10px
+		.see-all-ticket-packages
+			margin-bottom 10px
 
 	.platinum, .gold, .general
-		height 26.5%
+		height 27%
+		&>.col-md-6>h1
+			font-family BebasNeue
+			color $white
+			letter-spacing 3px
+			font-weight 100
+			text-align center
+			padding-top 10%
+			margin-bottom 0
+		&>.col-md-6>p
+			color $white
+			letter-spacing 2px
+			font-weight 100
+			padding 7%
+			padding-bottom 0
+			margin-bottom 0
+			font-size 16px
+		&>.col-md-6>ul
+			padding 5%
+			margin-left 5%
+		&>.col-md-6>ul>li
+			padding 2%
+			list-style-type disc
+			color $white
+			font-weight 100
+			font-size 15px
 
 	.platinum
 		margin-top 2%
-		background-color yellow
+		background-color #9FCEE8
 	.gold
-		background-color green
+		background-color #9FCEE8
 	.general
-		background-color gray
+		background-color #9FCEE8
 
 	.platinum-vip-img
-		background-color blue
-		height 50%
+		background url('/img/bg/gridbox_vip.png')
+		background-size cover
+		height 30%
 	.gold-vip-img
-		background-color purple
-		height 50%
+		background url('/img/bg/gridbox_vip.png')
+		background-size cover
+		height 30%
 	.general-admission-img
-		background-color red
-		height 50%
+		background url('/img/bg/gridbox_vip.png')
+		background-size cover
+		height 30%
 
 @media (min-width: 425px)
+	.platinum, .gold, .general
+		&>.col-md-6>p
+			font-size 18px
+		&>.col-md-6>ul>li
+			font-size 17px
+
 	.ticket-bar
 		height 80px
 
@@ -1223,10 +1262,15 @@ section.amenities
 
 	.platinum, .gold, .general
 		height 25%
+		padding 5%
+		&>.col-md-6>h1
+			padding-top 0
+			margin-bottom initial
+		&>.col-md-6>ul
+			padding-top 0
 
 	.platinum
 		margin-top 2%
-		background-color yellow
 	.gold
 		background-color green
 	.general
