@@ -645,13 +645,6 @@ section.ticket-packages-container
 		height 500px
 
 
-
-
-
-
-
-
-
 // --- header
 .fa-times-thin:before
 	content '\00d7'
@@ -676,20 +669,17 @@ body.index
 	transition 0.5s
 	&.custom-toggled-class
 		z-index 0
-		//display none
 		background rgba(0,0,0,0.0)
 		transition 0.5s
 .dropdown__content
 	border-radius 0 !important
-	//box-shadow none !important
+
 	li
-		//padding 10px 20px
 		a
 			padding 20px 40px
 #menu1
 	width auto
 	float none !important
-	//padding-top 10px
 
 header
 	height $headerHeight
@@ -751,9 +741,6 @@ header
 							.dropdown__container
 								top 80px
 
-	// div
-	// 	position relative
-	// 	height 100%
 	li
 		font-family BebasNeue
 
@@ -859,11 +846,6 @@ header
 					padding 0
 					z-index 10
 
-
-
-
-
-
 // --- footer
 ul.footer-social-icons
 	li
@@ -887,20 +869,17 @@ ul.footer-social-icons
 		height 100vh
 		overflow-y auto
 		transition 0.5s
-		//width 100vw
 		background $maroon
 		top 0
 		&.custom-toggled-class
 			transition 0.5s
 			right -80vw !important
-			//display none
 		.container
 			width auto
 			padding 50px 25px 50px 0
 	#menu-overlay-toggle
 		display block !important
 	.content
-		//padding-top 56px
 	.col-img-fix
 		position relative
 		min-height 300px
@@ -936,16 +915,6 @@ ul.footer-social-icons
 		.dropdown__trigger
 			font-size 15px
 
-
-	// #menu1
-	// 	width 80vw
-	// 	position fixed
-	// 	right 0
-	// 	transition 0.5s
-	// 	padding-top 0px
-	// 	//height 90vh
-	// 	overflow-y auto
-	// 	overflow-x hidden
 	.logo-mobile
 		margin-left 15px !important
 	.stack-menu
@@ -957,12 +926,6 @@ ul.footer-social-icons
 				margin-right 15px
 			&.header-btn
 				margin-left 0 !important
-
-
-
-		// background: rgb(237,204,225);
-		// background: linear-gradient(180deg, rgba(237,204,225,1) 0%, rgba(115,142,192,1) 100%);
-
 				
 section.amenities
 	background-color $white
@@ -987,8 +950,6 @@ section.amenities
 			border 10px solid $white
 
 		.music-player
-			// background-image url('/img/bg/gridbox_player.png')
-			// background-size cover
 			padding 0
 			border 10px solid $white
 
@@ -1048,34 +1009,11 @@ section.amenities
 			border-color $white
 
 	.subscribe-bar
-		height 30vh
+		height 300px
 		.subscribe-bar-content
 			position relative
 			.col-sm-12.col-md-4
 				&>.text-center
-					// background-color $blue
-					// &>p
-					// 	font-family BebasNeue
-					// 	color $white
-					// 	letter-spacing 2px
-					// &>a>button.tickets-button
-					// 	height 35px
-					// 	width 110px
-					// 	background-color $white
-					// 	border 0.5px solid $gray
-					// 	font-family BebasNeue
-					// 	letter-spacing 3px
-					// 	font-size 18px
-					// &>a>button:hover
-					// 	background-color $buttonPink
-					// 	color	$black
-					// 	border-color $white
-					// &>a>button.subscribe-button
-					// 	height 40px
-					// 	width 60%
-					// 	background-color $white
-					// 	border none
-					// 	border-radius 50px
 					&>div.social_media_icons_container
 						width 250px
 						&>ul.social_media_icons>li>a>i
@@ -1084,10 +1022,6 @@ section.amenities
 							width	35px
 							height 35px
 							margin 5px
-							// border-radius 50%
-						// &>ul.social_media_icons>li>a>i::before
-						// 	position relative
-						// 	bottom -5px
 						&>ul.social_media_icons>li>a>i.fa-spotify:hover
 							color #1db954
 						&>ul.social_media_icons>li>a>i.fa-facebook:hover
@@ -1139,15 +1073,16 @@ section.amenities
 
 	// vipExperiences
 	section.vipExp-container
-		height 3600px
+		height 2500px
 		padding-bottom 0
+		padding 10px
 		.current-ticket-promotion
 			margin-top -10px
 		.see-all-ticket-packages
 			margin-bottom 10px
 
 	.platinum, .gold, .general
-		height 27%
+		height 34%
 		&>.col-md-6>h1
 			font-family BebasNeue
 			color $white
@@ -1258,14 +1193,14 @@ section.amenities
 	// vipExperiences
 	section.vipExp-container
 		margin-top 50px
-		height 2300px
+		height 2000px
 
 	section.vipExp-container
 		.current-ticket-promotion
 			margin-top 0px
 
 	.platinum, .gold, .general
-		height 27.5%
+		height 34%
 		padding 5%
 		border-bottom 1px solid $white
 		&>.col-md-6>h1
@@ -1308,7 +1243,7 @@ section.amenities
 		top 40%
 
 	.platinum
-		margin-top 5px
+		margin-top 0
 
 	.platinum, .gold, .general
 		&>.col-md-6>p
