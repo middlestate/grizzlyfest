@@ -342,6 +342,7 @@ img.angle
 
 .social_media_icons
 	display flex
+	width 100%
 
 .social_media_icons li
 	font-size 25px
@@ -969,19 +970,11 @@ section.amenities
 .footer
 	padding-top 0
 	.ticket-bar
+		padding-top 20px		
 		&>img 
 			width 15%
-		&>a>button.ga-tickets
-			float left
+		&>a>button.ga-tickets, &>a>button.vip-tickets
 			width 200px
-			position relative
-			top	20px
-
-		&>a>button.vip-tickets
-			float right
-			width 200px
-			position relative
-			top	20px
 
 	.subscribe-bar
 		height 300px
@@ -1041,12 +1034,6 @@ section.amenities
 
 	.ticket-bar
 		height 140px
-
-	.ga-tickets
-		margin-left 20%
-
-	.vip-tickets
-		margin-right 20%
 
 	// vipExperiences
 	section.vipExp-container
@@ -1127,9 +1114,11 @@ section.amenities
 
 	.ga-tickets
 		margin-left 1%
+		float left
 
 	.vip-tickets
 		margin-right 1%
+		float right
 
 @media (min-width: 500px) and (max-width: 767px)
 	.ga-tickets
