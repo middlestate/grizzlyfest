@@ -584,6 +584,7 @@ section.ticket-packages-container
 	.current-ticket-promotion, .see-all-ticket-packages
 		background: rgb(135,124,180);
 		background: linear-gradient(180deg, rgba(135,124,180,1) 0%, rgba(196,172,204,1) 100%);
+		padding 5%
 
 		&>h1
 			font-family BebasNeue
@@ -1053,7 +1054,6 @@ section.amenities
 			letter-spacing 3px
 			font-weight 100
 			text-align center
-			padding-top 10%
 			margin-bottom 0
 		&>.col-md-6>p
 			color $white
@@ -1093,6 +1093,10 @@ section.amenities
 		margin-top 10%
 		background-size cover
 		height 30%
+	.platinum-vip-package
+		padding-bottom 10%
+		&>h1
+			padding-top 0
 	.gold-vip-img
 		background url('/img/bg/gold_vip.png')
 		background-size cover
@@ -1104,6 +1108,8 @@ section.amenities
 
 @media (min-width: 425px)
 	.platinum, .gold, .general
+		&>.col-md-6>h1
+			padding-top 10%
 		&>.col-md-6>p
 			font-size 18px
 		&>.col-md-6>ul>li
