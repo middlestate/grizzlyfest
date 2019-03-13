@@ -592,7 +592,7 @@ section.ticket-packages-container
 			letter-spacing 5px
 			font-weight	100
 			position relative
-			top	25%
+			top	30%
 
 		&>p
 			font-family BebasNeue
@@ -605,7 +605,16 @@ section.ticket-packages-container
 
 		&>a>button
 			position relative
-			top	110px
+			top	80px
+
+	.current-ticket-promotion
+		background: linear-gradient(180deg, rgba(237,204,225,0.5) 0%, rgba(20, 74, 173, 0.5) 100%), url('/img/bg/announcement.png')
+		background-size cover
+		background-color $maroon
+
+	.current-ticket-promotion:hover
+		background-image url('/img/bg/announcement.png')
+		cursor pointer
 
 	.see-all-ticket-packages
 		background: rgb(73,190,227);
@@ -940,6 +949,7 @@ section.amenities
 			&:hover
 				background-image url('/img/bg/gridbox_artists.png')
 				cursor pointer
+				text-decoration none
 			border 10px solid $white
 
 		.music-player
@@ -953,20 +963,22 @@ section.amenities
 			&:hover
 				background-image url('/img/bg/gridbox_food.png')
 				cursor pointer
+				text-decoration none
 		.vip-exp
 			background: linear-gradient(180deg, rgba(237,204,225,0.5) 0%, rgba(20, 74, 173, 0.5) 100%), url('/img/bg/gridbox_vip.png')
 			background-size cover
 			&:hover
 				background-image url('/img/bg/gridbox_vip.png')
 				cursor pointer
-
+				text-decoration none
 		.shop-block
-			// background: linear-gradient(180deg, rgba(237,204,225,0.5) 0%, rgba(20, 74, 173, 0.5) 100%), url('/img/bg/gridbox_shop.png')
-			// background-size cover
+			background: linear-gradient(180deg, rgba(237,204,225,0.5) 0%, rgba(20, 74, 173, 0.5) 100%), url('/img/bg/gridbox_shop.png')
+			background-size cover
 			background-color $maroon
 			&:hover
-				// background-image url('/img/bg/gridbox_shop.png')
+				background-image url('/img/bg/gridbox_shop.png')
 				cursor pointer
+				text-decoration none
 
 .footer
 	padding-top 0
