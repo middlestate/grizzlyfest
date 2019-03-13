@@ -3,8 +3,6 @@
 // normalize-css()
 // base()
 
-html
-	overflow-x hidden
 
 body
 	.content,footer
@@ -68,7 +66,7 @@ p, .md ul li
 			text-decoration underline
 .subHeadRow:not(:first-child)
 	margin-top 60px
-
+.footer
 	h1,h2,h3,h4,h5,h6,p,span
 		&>a
 			color inherit !important
@@ -114,10 +112,6 @@ p, .md ul li
 	color $lightblue
 .color-white
 	color $white
-.color-gray
-	color $gray
-.color-black
-	color $black
 
 .btn
 	border none
@@ -135,13 +129,11 @@ p, .md ul li
 	&.white
 		background-color $white
 	&.rouge
-			background-color $white
+			background-color #f16e7d
 	.btn__text
-		font-weight 100
+		font-weight 600
 		font-size 18px
 		text-transform uppercase
-		font-family BebasNeue
-		letter-spacing 2px
 
 [data-overlay]
 	&::before
@@ -171,9 +163,6 @@ p, .md ul li
 .fa-facebook
 	&:hover
 		color #3A589E
-.fa-envelope-o
-	&:hover
-		color #DC143C
 .fa-instagram
 	&:hover
 		background linear-gradient(0deg, #F57A2D 0%, #D62F80 50%, #5858CA 90%)
@@ -238,8 +227,8 @@ imgAnglesEven()
 		clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
 
 #first-section
-	// padding-bottom 200px
-	// padding-top 100px
+	padding-bottom 200px
+	padding-top 100px
 	@media(max-width:992px)
 		padding-bottom -100px
 	@media(max-width:767px)
@@ -273,17 +262,9 @@ imgAnglesEven()
 // 	.footer.angle
 // 		margin-top 0
 a.btn.angle
-	height: 40px
-	color $gray
-	width 150px
-	// clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
-	// &:hover
-	// 	clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
-a.btn.angle:hover
-	background-color $buttonPink
-	border 0.5px solid $white
-	color $black
-
+	clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+	&:hover
+		clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
 #map.angle
 	padding 0
 
@@ -336,17 +317,10 @@ img.angle
 	&.angle:nth-child(even)
 		imgAnglesEven()
 
-.social_media_icons_container
-	width 150px
-	margin 0 auto
 
-.social_media_icons
-	display flex
-	width 100%
 
-.social_media_icons li
-	font-size 25px
-	padding-right 20px
+
+
 
 
 //--- blog posts
@@ -372,18 +346,7 @@ img.angle
 
 
 
-.videoBackground video
-	position fixed
-	top 50%
-	left 50%
-	z-index -100
-	min-width 100%
-	min-height 100%
-	width auto
-	height auto
-	-webkit-transform translate(-50%, -50%)
-	-ms-transform translate(-50%, -50%)
-	transform translate(-50%, -50%)
+
 
 
 
@@ -420,7 +383,7 @@ iframe
 .map-container
 	min-height 500px
 #big-logo
-	margin-top 13%
+	max-width 75%
 .pos-vertical-center
 	@media(max-width:992px)
 		top auto
@@ -464,19 +427,6 @@ section
 	&.shift-up
 		padding-top 0
 
-button
-	height 35px
-	width 150px
-	background-color $white
-	border 0.5px solid $gray
-	font-family BebasNeue
-	letter-spacing 3px
-	font-size 18px
-
-button:hover
-	background-color $buttonPink
-	color	$black
-	border-color $white
 
 
 // --- artists bio page
@@ -573,96 +523,6 @@ button:hover
 
 
 
-section.ticket-packages-container
-	width 100%
-	height 100%
-	padding 0
-	background-color $white
-	border-top 15px solid $white
-	border-bottom 15px solid $white
-
-	.current-ticket-promotion, .see-all-ticket-packages
-		background: rgb(135,124,180);
-		background: linear-gradient(180deg, rgba(135,124,180,1) 0%, rgba(196,172,204,1) 100%);
-		padding 5%
-
-		&>h1
-			font-family BebasNeue
-			color $white
-			letter-spacing 5px
-			font-weight	100
-			position relative
-			top	30%
-
-		&>p
-			font-family BebasNeue
-			color $white
-			letter-spacing 3px
-			font-weight	100
-			font-size 23px
-			position relative
-			top	25%
-
-		&>a>button
-			position relative
-			top	80px
-
-	.current-ticket-promotion
-		background: linear-gradient(180deg, rgba(237,204,225,0.5) 0%, rgba(20, 74, 173, 0.5) 100%), url('/img/bg/announcement.png')
-		background-size cover
-		background-color $maroon
-
-	.current-ticket-promotion:hover
-		background-image url('/img/bg/announcement.png')
-		cursor pointer
-		text-decoration none
-
-	.see-all-ticket-packages
-		background: rgb(73,190,227);
-		background: linear-gradient(180deg, rgba(73,190,227,1) 0%, rgba(178,204,227,1) 100%);
-
-	.vimeo-video
-		background: rgb(237,204,225);
-		background: linear-gradient(180deg, rgba(237,204,225,1) 0%, rgba(115,142,192,1) 100%);
-		margin-top 15px
-
-@media (min-width 0px)
-	.current-ticket-promotion
-		border-bottom 7.5px solid $white
-		height 350px
-
-	.see-all-ticket-packages
-		border-top 7.5px solid $white
-		height 350px
-
-	.poster
-		padding 5px
-
-	.amenities
-		padding-top 0
-
-	.vimeo-video
-		height 350px
-
-	.vimeo-video iframe
-		padding 5% 2% 5% 2%
-
-@media (min-width 768px)
-	.current-ticket-promotion
-		border-bottom 0
-		border-right 7.5px solid $white
-		height 400px
-
-	.see-all-ticket-packages
-		border-top 0
-		border-left 7.5px solid $white
-		height 400px
-
-	.poster
-		padding 0
-
-	.vimeo-video
-		height 500px
 
 
 // --- header
@@ -689,32 +549,32 @@ body.index
 	transition 0.5s
 	&.custom-toggled-class
 		z-index 0
+		//display none
 		background rgba(0,0,0,0.0)
 		transition 0.5s
 .dropdown__content
 	border-radius 0 !important
-
+	//box-shadow none !important
 	li
+		//padding 10px 20px
 		a
 			padding 20px 40px
 #menu1
 	width auto
 	float none !important
+	//padding-top 10px
 
 header
 	height $headerHeight
-	background-color $blue
 	position absolute
 	z-index 10
 	width 100%
-	padding-top 10px
-	padding-bottom 65px
 	.hamburger-toggle
 		display block
 		position relative
 		height 25px
 		width 22px
-		top 10px
+		top 17px
 		right 10px
 		margin-left 22px
 		float right
@@ -740,7 +600,6 @@ header
 		height 80px
 		position fixed
 		background $bluet5
-		padding-bottom 80px
 		a.logo
 			height 70px
 			.logo
@@ -761,9 +620,9 @@ header
 							.dropdown__container
 								top 80px
 
-	li
-		font-family BebasNeue
-
+	// div
+	// 	position relative
+	// 	height 100%
 	a.logo
 		height 100px
 		position absolute
@@ -774,39 +633,23 @@ header
 		.logo
 			height 100px
 
+
 	.nav-container
 		height 100%
-
-	button.ticket-button
-		line-height 1px
-		color #696969
-		width 110px
-		padding-left 5px
-		border: 0.5px solid #d3d3d3;
-
-	button.ticket-button:hover
-		color $black
-
-	.header-logo
-		height 40px
-		width 50px
 
 	nav
 		#mega-menu
 			position relative
 			//top 20px
 			a, span.dropdown__trigger
-				letter-spacing 2px
 				text-decoration none
 				text-transform uppercase
 				opacity 1
 				color $white
 				transition .2s
-				font-size 18px
+				font-size 16px
 				line-height inherit
-				font-weight 50
-				font-family BebasNeue
-				padding-left 33px
+				font-weight 600
 				&:hover
 					// color $blue
 					transition .2s
@@ -817,7 +660,7 @@ header
 				position relative
 				//top 10px
 				&>li
-					line-height 50px
+					line-height 120px
 					display inline-block
 					&.header-btn
 						margin-right 0px
@@ -860,6 +703,11 @@ header
 					padding 0
 					z-index 10
 
+
+
+
+
+
 // --- footer
 ul.footer-social-icons
 	li
@@ -870,6 +718,7 @@ ul.footer-social-icons
 			i
 				color $white
 				font-size 30px
+
 
 
 // --- queries
@@ -883,31 +732,33 @@ ul.footer-social-icons
 		height 100vh
 		overflow-y auto
 		transition 0.5s
+		//width 100vw
 		background $maroon
 		top 0
 		&.custom-toggled-class
 			transition 0.5s
 			right -80vw !important
+			//display none
 		.container
 			width auto
 			padding 50px 25px 50px 0
 	#menu-overlay-toggle
 		display block !important
 	.content
+		//padding-top 56px
 	.col-img-fix
 		position relative
 		min-height 300px
+		margin 15px 0
 	#updates-section
 		margin-top -25px
 	header
 		height 60px !important
-		padding-bottom 0
 		.float-left
 			float left
 		.float-right
 			float right
 		&.sticky
-			padding-bottom 0
 			a.logo
 				height 55px
 				img
@@ -928,6 +779,16 @@ ul.footer-social-icons
 		.dropdown__trigger
 			font-size 15px
 
+
+	// #menu1
+	// 	width 80vw
+	// 	position fixed
+	// 	right 0
+	// 	transition 0.5s
+	// 	padding-top 0px
+	// 	//height 90vh
+	// 	overflow-y auto
+	// 	overflow-x hidden
 	.logo-mobile
 		margin-left 15px !important
 	.stack-menu
@@ -939,465 +800,3 @@ ul.footer-social-icons
 				margin-right 15px
 			&.header-btn
 				margin-left 0 !important
-				
-section.amenities
-	background-color $white
-
-	.amenities-block-title
-		font-family BebasNeue
-		letter-spacing 3px
-		color $white
-		position relative
-		top 50%
-		transform translateY(-50%)
-		-webkit-transform translateY(-50%)
-		-ms-transform: translateY(-50%)	
-
-	.top-row-amenities
-		.artists
-			background: linear-gradient(180deg, rgba(237,204,225,0.5) 0%, rgba(20, 74, 173, 0.5) 100%), url('/img/bg/gridbox_artists.png')
-			background-size cover
-			&:hover
-				background-image url('/img/bg/gridbox_artists.png')
-				cursor pointer
-				text-decoration none
-			border 10px solid $white
-
-		.music-player
-			padding 0
-			border 10px solid $white
-
-	.bottom-row-amenities
-		.food-drink
-			background: linear-gradient(180deg, rgba(237,204,225,0.5) 0%, rgba(20, 74, 173, 0.5) 100%), url('/img/bg/gridbox_food.png')
-			background-size cover
-			&:hover
-				background-image url('/img/bg/gridbox_food.png')
-				cursor pointer
-				text-decoration none
-		.vip-exp
-			background: linear-gradient(180deg, rgba(237,204,225,0.5) 0%, rgba(20, 74, 173, 0.5) 100%), url('/img/bg/gridbox_vip.png')
-			background-size cover
-			&:hover
-				background-image url('/img/bg/gridbox_vip.png')
-				cursor pointer
-				text-decoration none
-		.shop-block
-			background: linear-gradient(180deg, rgba(237,204,225,0.5) 0%, rgba(20, 74, 173, 0.5) 100%), url('/img/bg/gridbox_shop.png')
-			background-size cover
-			background-color $maroon
-			&:hover
-				background-image url('/img/bg/gridbox_shop.png')
-				cursor pointer
-				text-decoration none
-
-.footer
-	padding-top 0
-	.ticket-bar
-		padding-top 20px		
-		&>img 
-			width 15%
-		&>a>button.ga-tickets, &>a>button.vip-tickets
-			width 200px
-
-	.subscribe-bar
-		height 300px
-		.subscribe-bar-content
-			position relative
-			.col-sm-12.col-md-4
-				&>.text-center
-					&>div.social_media_icons_container
-						width 250px
-						&>ul.social_media_icons>li>a>i
-							color $white
-							// background-color $white
-							width	35px
-							height 35px
-							margin 5px
-						&>ul.social_media_icons>li>a>i.fa-spotify:hover
-							color #1db954
-						&>ul.social_media_icons>li>a>i.fa-facebook:hover
-							color #3b5998
-						&>ul.social_media_icons>li>a>i.fa-envelope-o:hover
-							color #DC143C
-
-@media (min-width: 20px)
-	#big-logo
-		max-width 75%
-	section.amenities
-		height 1950px
-		.top-row-amenities
-			height 500px
-			.artists
-				height 60%
-			.music-player
-				height 60%
-
-		.bottom-row-amenities
-			height 500px
-			.food-drink
-				height 60%
-				border 10px solid $white
-			.vip-exp
-				height 60%
-				border 10px solid $white
-			.shop-block
-				height 60%
-				border 10px solid $white
-	
-	.poster-tickets-button
-		bottom 5px
-
-	.subscribe-bar-content
-		height 150px
-		&>.col-sm-12.col-md-4>.text-center>img
-			display none
-
-	.ga-tickets
-		margin-bottom 30px
-
-	.subscribe-bar-content
-		top 20%
-
-	.ticket-bar
-		height 140px
-
-	// vipExperiences
-	section.vipExp-container
-		height 3000px
-		padding-bottom 0
-		padding 10px
-		.current-ticket-promotion
-			margin-top -10px
-		.see-all-ticket-packages
-			margin-bottom 10px
-
-	.platinum, .gold, .general
-		height 34%
-		&>.col-md-6>h1
-			font-family BebasNeue
-			color $white
-			letter-spacing 3px
-			font-weight 100
-			text-align center
-			margin-bottom 0
-		&>.col-md-6>p
-			color $white
-			letter-spacing 2px
-			font-weight 100
-			padding 7%
-			padding-bottom 0
-			margin-bottom 0
-			font-size 16px
-		&>.col-md-6>ul
-			padding 5%
-			margin-left 5%
-		&>.col-md-6>ul>li
-			padding 2%
-			list-style-type disc
-			color $white
-			font-weight 100
-			font-size 15px
-		&>.col-md-6>ul>a>button
-			margin 0 auto
-			display block
-			margin-top 5%
-		&>.col-md-6>ul>a:hover
-			text-decoration none
-		
-
-	.platinum
-		margin-top 2%
-		background-color #9FCEE8
-	.gold
-		background-color #9FCEE8
-	.general
-		background-color #9FCEE8
-
-	.platinum-vip-img
-		// background url('/img/bg/gridbox_vip.png')
-		margin-top 10%
-		background-size cover
-		height 30%
-	.platinum-vip-package
-		padding-bottom 10%
-		&>h1
-			padding-top 0
-	.gold-vip-img
-		background url('/img/bg/gold_vip.png')
-		background-size cover
-		height 30%
-	.general-admission-img
-		background url('/img/bg/general_admission.png')
-		background-size cover
-		height 30%
-
-@media (min-width: 375px)
-	section.amenities
-		height 2000px
-
-@media (min-width: 425px)
-	section.amenities
-		height 2050px
-
-	.platinum, .gold, .general
-		&>.col-md-6>h1
-			padding-top 10%
-		&>.col-md-6>p
-			font-size 18px
-		&>.col-md-6>ul>li
-			font-size 17px
-
-	.ticket-bar
-		height 80px
-
-	.ga-tickets
-		margin-left 1%
-		float left
-
-	.vip-tickets
-		margin-right 1%
-		float right
-
-@media (min-width: 500px) and (max-width: 767px)
-	.ga-tickets
-		margin-left 5%
-
-	.vip-tickets
-		margin-right 5%
-
-@media (min-width: 500px)
-	section.amenities
-		height 2100px
-
-	.poster-tickets-button
-		bottom 25px
-
-@media (min-width: 550px)
-	section.amenities
-		height 2200px
-
-@media (min-width: 650px)
-	section.amenities
-		height 2300px
-
-@media (min-width: 768px)
-	#big-logo
-		max-width 45%
-	section.amenities
-		height 1300px
-		.top-row-amenities
-			height 350px
-			.artists
-				height 100%
-				border-left 5px solid $white
-			.music-player
-				background-color red
-				height 100%
-				border-right 5px solid $white
-
-		.bottom-row-amenities
-			height 200px
-			.food-drink
-				height 100%
-				border 5px solid $white
-			.vip-exp
-				height 100%
-				border 5px solid $white
-			.shop-block
-				height 100%
-				border 5px solid $white
-
-	.poster-tickets-button
-		bottom 50px
-
-	.ticket-bar
-		height 70px
-
-	.ga-tickets
-		margin-bottom 0px
-
-	.ga-tickets
-		margin-left 20%
-
-	.vip-tickets
-		margin-right 20%
-
-	// vipExperiences
-	section.vipExp-container
-		margin-top 50px
-		height 2500px
-		background-color #9fcee8;
-
-	section.vipExp-container
-		.current-ticket-promotion
-			margin-top 0px
-
-	.platinum, .gold, .general
-		height 34%
-		padding 5%
-		display flex
-		align-items center
-		flex-wrap wrap
-		border-bottom 1px solid $white
-		&>.col-md-6>h1
-			padding-top 0
-			margin-bottom initial
-		&>.col-md-6>p
-			font-size 15px			
-		&>.col-md-6>ul
-			padding-top 0
-		&>.col-md-6>ul>li
-			font-size 14px
-
-	.platinum
-		margin-top 2%
-
-	.platinum-vip-img
-		// background-color blue
-		margin-top 0
-		height 65%
-	.gold-vip-img
-		background-color purple
-		height 65%
-		position relative
-		left 50%
-	.gold-vip-package
-		position relative
-		right 50%
-	.general-admission-img
-		background-color red
-		height 65%
-
-@media (min-width: 990px)
-	section.amenities
-		height 1400px
-
-@media (min-width: 992px)
-	section.amenities
-		height 1500px
-	
-
-@media (min-width: 1024px)
-	section.amenities
-		height 1650px
-		.top-row-amenities
-			height 450px
-		.bottom-row-amenities
-			height 250px
-
-	.subscribe-bar-content
-		&>.col-sm-12.col-md-4>.text-center>img
-			display initial
-
-	.subscribe-bar-content
-		top 40%
-
-	.platinum
-		margin-top 0
-
-	.platinum, .gold, .general
-		&>.col-md-6>p
-			font-size 18px
-		&>.col-md-6>ul>li
-			font-size 17px
-
-	.social-block
-		padding-left 10%
-
-	.grizzlyfest-block
-		padding-right 10%
-
-	.popup
-		&>iframe
-			width 70vw
-			height 70vh
-
-@media (min-width: 1200px)
-	section.amenities
-		height 1800px
-
-@media (min-width: 1440px)
-	section.amenities
-		height 1800px
-
-@media (min-width: 1700px)
-	.social-block
-		padding-left 20%
-	
-	.grizzlyfest-block
-		padding-right 20%
-
-@media (min-width: 2000px)
-	.ga-tickets
-		margin-left 25%
-
-	.vip-tickets
-		margin-right 25%
-
-	.social-block
-		padding-left 25%
-	
-	.grizzlyfest-block
-		padding-right 25%
-
-// @media (min-width: 2300px)
-// 	.ga-tickets
-// 		margin-left 30%
-
-// 	.vip-tickets
-// 		margin-right 30%
-
-// 	.social-block
-// 		padding-left 30%
-	
-// 	.grizzlyfest-block
-// 		padding-right 30%
-
-//=================================================================//
-.overlay
-	position absolute
-	top 0
-	bottom 0
-	left 0
-	right 0
-	background rgba(0,0,0,0.5)
-	transition opacity 200ms
-	visibility hidden
-	opacity 0
-
-.overlay:target
-	visibility visible
-	opacity 1
-	z-index 5000
-
-.popup
-	margin 75px auto 
-	padding 20px
-	background #ffffff
-	border 1px solid #666666
-	width 80%
-	box-shadow 0 0 50px rgba(0,0,0,0.5)
-	position relative
-
-.video-title
-	font-family BebasNeue
-	letter-spacing 3px
-	margin-top 5%
-
-.close
-	position absolute
-	width 20px
-	height 20px
-	top 20px
-	right 20px
-	opacity 0.8
-	transition all 200ms
-	font-size 24px
-	font-weight bold
-	text-decoration none
-	color #666666
-
-.poster
-	position relative
-	top	65px
