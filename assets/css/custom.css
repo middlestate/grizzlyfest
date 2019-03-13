@@ -21,7 +21,7 @@
 }
 
 .videoBackground {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -31,8 +31,8 @@
 }
 .videoBackground video {
 	width: auto;
-	height: 100%;
-	position: absolute;
+	height: 70%;
+	position: fixed;
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
@@ -47,9 +47,19 @@
   transform: translateX(-50%);
 }
 
+/* changes title screen background for mobile screensizes */
+
+  /* @media only screen and (max-width: 500px) {
+    #first-section {
+      background-color: black;
+    }
+  } */
+
 h6
 	font-family $shen
 	font-size 14px
 	line-height 22px
 	font-weight 900
 	color $white
+
+
