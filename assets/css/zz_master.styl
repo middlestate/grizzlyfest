@@ -1264,63 +1264,40 @@ section.amenities
 			font-size 17px
 
 //=================================================================//
-
-.popupBox
-	// default popupBox to hidden
-	display none
-
-	// position and style
-	position fixed
-	z-index 999
-	width 100%
-	height 100%
-	text-align center
+.overlay
+	position absolute
 	top 0
+	bottom 0
 	left 0
-	background rgba(0,0,0,0.8)
+	right 0
+	background rgba(0,0,0,0.5)
+	transition opacity 200ms
+	visibility hidden
+	opacity 0
 
-.popupBox:target
-	// remove default browser outline
-	outline none
+.overlay:target
+	visibility visible
+	opacity 1
+	z-index 5000
 
-	// unhide popupBox
-	display block
-
-// videoModal
-#videoModal
-	border-radius 0
-	width 870px
-	margin auto
-
-.modal-header
-	background #000
-	border 0
-	color #ffffff
+.popup
+	margin 75px auto 
+	padding 20px
+	background #ffffff
+	border 1px solid #666666
+	width 100%
+	box-shadow 0 0 50px rgba(0,0,0,0.5)
 	position relative
-	height 35px
-	&>h3
-		font-size 18px
-		line-height 22px
-		font-family Arial, Helvetica, sans-serif
-		padding 5px
-
-.modal-body
-	height 489px
-	padding 0
-	max-height none
-	overflow hidden
-
-.modal-footer:empty
-	display none !important
 
 .close
-	background #db00b8
-	color #fff
-	font-size 24px
-	margin 0
-	opacity 1
 	position absolute
-	right 0
-	text-shadow none
-	top 0
-	width 38px
+	width 20px
+	height 20px
+	top 20px
+	right 20px
+	opacity 0.8
+	transition all 200ms
+	font-size 24px
+	font-weight bold
+	text-decoration none
+	color #666666
