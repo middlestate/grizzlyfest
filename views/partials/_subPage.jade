@@ -13,7 +13,7 @@ block content
 				- var heavy = section.fields.heavyColor ? 'heavy' : ''
 				- var color = section.fields.overlayColor == undefined ? '' : section.fields.overlayColor
 				- var bgpos = section.fields.bgPosition == undefined ? '' : section.fields.bgPosition
-				section.angle.imagebg(class="#{heavy+' '+color+' '+bgpos}", data-overlay)
+				section.imagebg(class="#{heavy+' '+color+' '+bgpos}", data-overlay)
 					.background-image-holder
 						img(src="#{asset(section.fields.backgroundImage)}")
 					.container
@@ -25,7 +25,6 @@ block content
 										.row.text-center.subHeadRow(id="#{blockId}")
 											.col-sm-12
 												h2= block.fields.subhead
-												.separator
 									if block.fields.body != undefined
 										- var align = block.fields.align == undefined ? '' : 'text-'+block.fields.align
 										.row(class="#{align}")
