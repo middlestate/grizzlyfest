@@ -282,6 +282,7 @@ a.btn.angle
 	height: 40px
 	color $gray
 	width 150px
+	top	87%
 	// clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
 	// &:hover
 	// 	clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
@@ -1033,7 +1034,7 @@ section.amenities
 	#big-logo
 		max-width 75%
 	section.amenities
-		height 1850px
+		height 2600px
 		.top-row-amenities
 			height 500px
 			.artists
@@ -1058,6 +1059,10 @@ section.amenities
 		width 100%
 
 	.poster-col
+		background-image url('/img/bg/bg_poster2.png')
+		background-size: 99% 100%
+		background-repeat no-repeat
+		background-position center
 		height 300px
 
 	.poster-tickets-button
@@ -1152,17 +1157,26 @@ section.amenities
 	.general-admission-package
 		&>h1
 			padding-top 20%
+	.maps
+		padding	5%
+	.venue-map, .parking-map
+		height 70%
+	.venue-map
+		margin-bottom 2%
 
 @media (min-width: 375px)
 	section.amenities
-		height 1900px
+		height 2600px
 
 	.poster-col
 		height 350px
 
+	.maps
+		padding	0
+
 @media (min-width: 425px)
 	section.amenities
-		height 1950px
+		height 2700px
 
 	.platinum, .gold, .general
 		&>.col-md-6>h1
@@ -1195,7 +1209,7 @@ section.amenities
 
 @media (min-width: 500px)
 	section.amenities
-		height 2100px
+		height 2800px
 
 	.platinum, .gold, .general
 		&>.col-md-6>h1
@@ -1209,11 +1223,11 @@ section.amenities
 
 @media (min-width: 550px)
 	section.amenities
-		height 2100px
+		height 2800px
 
 @media (min-width: 650px)
 	section.amenities
-		height 2200px
+		height 2900px
 
 	.poster-col
 		height 600px
@@ -1222,7 +1236,7 @@ section.amenities
 	#big-logo
 		max-width 45%
 	section.amenities
-		height 1300px
+		height 1700px
 		.top-row-amenities
 			height 350px
 			.artists
@@ -1313,22 +1327,27 @@ section.amenities
 		position relative
 		bottom 5%
 
+	.venue-map, .parking-map
+		height 100%
+	.venue-map
+		margin-bottom 0
+
 @media (min-width: 900px)
 	.platinum-vip-img
 		bottom 30%
 
 @media (min-width: 990px)
 	section.amenities
-		height 1400px
+		height 1700px
 
 @media (min-width: 992px)
 	section.amenities
-		height 1500px
+		height 1700px
 
 
 @media (min-width: 1024px)
 	section.amenities
-		height 1650px
+		height 2100px
 		.top-row-amenities
 			height 450px
 		.bottom-row-amenities
@@ -1372,11 +1391,11 @@ section.amenities
 
 @media (min-width: 1200px)
 	section.amenities
-		height 1700px
+		height 2100px
 
 @media (min-width: 1440px)
 	section.amenities
-		height 1700px
+		height 2100px
 
 	section.vipExp-container
 		height 2300px
@@ -1482,3 +1501,49 @@ section.amenities
 .poster
 	position relative
 	top	-10px
+
+/* The Modal (background) */
+.modal
+	display none /* Hidden by default */
+	position fixed /* Stay in place */
+	z-index 1 /* Sit on top */
+	left 0
+	top 0
+	width 100% /* Full width */
+	height 100% /* Full height */
+	overflow auto /* Enable scroll if needed */
+	background-color rgb(0,0,0) /* Fallback color */
+	background-color rgba(0,0,0,0.4) /* Black w/ opacity */
+
+/* Modal Content/Box */
+.modal-content
+	background-color #fefefe
+	margin 15% auto /* 15% from the top and centered */
+	padding 20px
+	border 1px solid #888
+	width 80% /* Could be more or less, depending on screen size */
+
+/* The Close Button */
+.close
+	color #aaa
+	float right
+	font-size 28px
+	font-weight bold
+
+.close:hover,
+.close:focus
+	color black
+	text-decoration none
+	cursor pointer
+
+.venue-map
+	background: url('/img/VenueMAP.jpg')
+	background-size 95% auto
+	background-repeat no-repeat
+	background-position center
+
+.parking-map
+	background: url('/img/PARKINGMAP.jpg')
+	background-size 95% auto
+	background-repeat no-repeat
+	background-position center
