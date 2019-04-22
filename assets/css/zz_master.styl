@@ -1162,7 +1162,16 @@ section.amenities
 	.venue-map, .parking-map
 		height 70%
 	.venue-map
-		margin-bottom 2%
+		background: url('/img/VenueMAP.jpg')
+		background-repeat no-repeat
+		background-position center
+		background-size contain
+
+	.parking-map
+		background: url('/img/PARKINGMAP.jpg')
+		background-repeat no-repeat
+		background-position center
+		background-size contain
 
 @media (min-width: 375px)
 	section.amenities
@@ -1173,6 +1182,9 @@ section.amenities
 
 	.maps
 		padding	0
+
+	.venue-map
+		margin-bottom 3%
 
 @media (min-width: 425px)
 	section.amenities
@@ -1200,6 +1212,11 @@ section.amenities
 	.poster-col
 		height 400px
 
+	.venue-map
+		background-size 95% 100%
+	.parking-map
+		background-size 95% 100%
+
 @media (min-width: 500px) and (max-width: 767px)
 	.ga-tickets
 		margin-left 5%
@@ -1209,7 +1226,7 @@ section.amenities
 
 @media (min-width: 500px)
 	section.amenities
-		height 2800px
+		height 3100px
 
 	.platinum, .gold, .general
 		&>.col-md-6>h1
@@ -1220,14 +1237,17 @@ section.amenities
 
 	.poster-tickets-button
 		bottom 90px
+	
+	.venue-map, .parking-map
+		height 100%
 
 @media (min-width: 550px)
 	section.amenities
-		height 2800px
+		height 3100px
 
 @media (min-width: 650px)
 	section.amenities
-		height 2900px
+		height 3200px
 
 	.poster-col
 		height 600px
@@ -1331,6 +1351,9 @@ section.amenities
 		height 100%
 	.venue-map
 		margin-bottom 0
+		background-size 95% 100%
+	.parking-map
+		background-size 95% 100%
 
 @media (min-width: 900px)
 	.platinum-vip-img
@@ -1535,15 +1558,3 @@ section.amenities
 	color black
 	text-decoration none
 	cursor pointer
-
-.venue-map
-	background: url('/img/VenueMAP.jpg')
-	background-size 95% auto
-	background-repeat no-repeat
-	background-position center
-
-.parking-map
-	background: url('/img/PARKINGMAP.jpg')
-	background-size 95% auto
-	background-repeat no-repeat
-	background-position center
