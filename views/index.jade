@@ -73,7 +73,7 @@ block content
 
 					#myModal.modal
 						.modal-content
-							span.close &times;
+							span#close.close &times;
 							img(src="/img/schedule2.png", alt="schedule")
 			.row.top-row-amenities.artists.maps
 				.col-xs-12.col-sm-7.col-md-7.venue-map
@@ -119,7 +119,7 @@ block content
 						var btn = document.getElementById("myBtn");
 
 						// Get the <span> element that closes the modal
-						var span = document.getElementsByClassName("close")[0];
+						var span = document.getElementById("close");
 
 						// When the user clicks on the button, open the modal 
 						btn.onclick = function() {

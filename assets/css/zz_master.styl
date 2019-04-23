@@ -1068,6 +1068,9 @@ section.amenities
 	.poster-tickets-button
 		bottom 80px
 
+	.poster-tickets-button::hover
+		cursor pointer
+
 	.subscribe-bar-content
 		height 150px
 		&>.col-sm-12.col-md-4>.text-center>img
@@ -1172,6 +1175,29 @@ section.amenities
 		background-repeat no-repeat
 		background-position center
 		background-size contain
+
+	/* The Close Button */
+	.close
+		position relative
+		width 20px
+		height 20px
+		top 5px
+		right 0px
+		opacity 0.8
+		transition all 200ms
+		font-size 24px
+		font-weight bold
+		text-decoration none
+		color black
+		float right
+		font-size 28px
+		font-weight bold
+
+	.close:hover,
+	.close:focus
+		color red
+		text-decoration none
+		cursor pointer
 
 @media (min-width: 375px)
 	section.amenities
@@ -1508,19 +1534,6 @@ section.amenities
 	letter-spacing 3px
 	margin-top 5%
 
-.close
-	position absolute
-	width 20px
-	height 20px
-	top 20px
-	right 20px
-	opacity 0.8
-	transition all 200ms
-	font-size 24px
-	font-weight bold
-	text-decoration none
-	color #666666
-
 .poster
 	position relative
 	top	-10px
@@ -1540,21 +1553,10 @@ section.amenities
 
 /* Modal Content/Box */
 .modal-content
+	position relative
+	top 20%
 	background-color #fefefe
-	margin 15% auto /* 15% from the top and centered */
+	margin 0 auto
 	padding 20px
 	border 1px solid #888
 	width 80% /* Could be more or less, depending on screen size */
-
-/* The Close Button */
-.close
-	color #aaa
-	float right
-	font-size 28px
-	font-weight bold
-
-.close:hover,
-.close:focus
-	color black
-	text-decoration none
-	cursor pointer
